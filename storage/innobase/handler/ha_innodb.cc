@@ -21407,6 +21407,12 @@ static MYSQL_SYSVAR_ULONG(nvdimm_pc_threshold_pct, srv_nvdimm_pc_threshold_pct,
                           "The ratio of remaining free pages to determine when "
                           "the page cleaner to wakeup for NVDIMM buffer",
                           NULL, NULL, 5, 0, 50, 0);
+
+static MYSQL_SYSVAR_STR(nvdimm_home_dir, srv_nvdimm_home_dir,
+                        PLUGIN_VAR_RQCMDARG | PLUGIN_VAR_READONLY |
+                        PLUGIN_VAR_NOPERSIST,
+                         "Path to NVDIMM-aware files.", NULL, NULL, NULL);
+
 #endif /* UNIV_NVDIMM_CACHE */
 
 static SYS_VAR *innobase_system_variables[] = {
@@ -21618,6 +21624,7 @@ static SYS_VAR *innobase_system_variables[] = {
     MYSQL_SYSVAR(nvdimm_buffer_pool_size),
     MYSQL_SYSVAR(nvdimm_buffer_pool_instances),
     MYSQL_SYSVAR(nvdimm_pc_threshold_pct),
+    MYSQL_SYSVAR(nvdimm_home_dir),
 #endif /* UNIV_NVDIMM_CACHE */
     NULL};
 

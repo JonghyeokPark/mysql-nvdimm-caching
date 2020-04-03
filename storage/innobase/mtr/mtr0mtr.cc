@@ -46,6 +46,11 @@ this program; if not, write to the Free Software Foundation, Inc.,
 #include "trx0purge.h"
 #endif /* !UNIV_HOTBACKUP */
 
+#ifdef UNIV_NVDIMM_CACHE
+#include "pmem_mmap_obj.h"
+extern char* gb_pm_mmap;
+#endif
+
 static_assert(static_cast<int>(MTR_MEMO_PAGE_S_FIX) ==
                   static_cast<int>(RW_S_LATCH),
               "");
@@ -316,6 +321,11 @@ class mtr_t::Command {
   release the resources. */
   void execute();
 
+#ifdef UNIV_NVDIMM_CACHE
+	/** Write the mtr log (undo + redo of undo) record,and release the resorces */
+	void execute_nvm();
+#endif
+
   /** Add blocks modified in this mini-transaction to the flush list. */
   void add_dirty_blocks_to_flush_list(lsn_t start_lsn, lsn_t end_lsn);
 
@@ -354,6 +364,34 @@ bool mtr_t::is_block_dirtied(const buf_block_t *block) {
   is only during write that the value is reset to 0. */
   return (block->page.oldest_modification == 0);
 }
+
+#ifdef UNIV_NVDIMM_CACHE
+/* Write the block contents to the NVDIMM mtr log area */
+struct mtr_nvm_write_log_t {
+	/** Append a block to the NVDIM mtr log buffer.
+		@return whether the appending should continue */
+	bool operator()(const mtr_buf_t::block_t *block) {
+		if (block->used() == 0) {
+			return (true);
+		}
+		// write nvdimm mtr log buffer 
+
+		if (pm_mmap_mtrlogbuf_write(block->begin(), block->used(), m_lsn) <= 0) { 
+			PMEMMMAP_ERROR_PRINT("pm_mmap_mlogbuf_write failed\n");
+		}
+		
+		// TODO(jhpark): add nvdimm mtr logging
+		//if (pm_wrapper_mtrlogbuf_write(gb_pmw, block->begin(), block->used(), m_lsn) <= 0){ 
+		//	PMEMOBJ_ERROR_PRINT("mlogbuf_write failed\n");
+		//}
+
+		m_left_to_write -= block->used();
+		return (true);
+	}
+  ulint m_lsn;
+	ulint m_left_to_write;
+};
+#endif
 
 #ifndef UNIV_HOTBACKUP
 /** Write the block contents to the REDO log */
@@ -495,8 +533,9 @@ void mtr_t::commit_nvm() {
     ut_ad(!is_inside_ibuf());
     ut_ad(m_impl.m_magic_n == MTR_MAGIC_N);
     m_impl.m_state = MTR_STATE_COMMITTING;
-    // jhpark: release the mtr structure 
     Command cmd(this);
+    cmd.execute_nvm();
+    // jhpark: release the mtr structure 
     cmd.release_all();
     cmd.release_resources();
 }
@@ -682,6 +721,31 @@ void mtr_t::Command::execute() {
   release_all();
   release_resources();
 }
+
+#ifdef UNIV_NVDIMM_CACHE
+void mtr_t::Command::execute_nvm() {
+  ut_ad(m_impl->m_log_mode != MTR_LOG_NONE);
+  ulint len;
+	// same as normal mtr redo log write process
+  len = prepare_write();
+  if (len > 0) {
+		mtr_nvm_write_log_t write_nvm_log;
+		write_nvm_log.m_left_to_write = len;
+    // FIXME(jhpark): dummy log buffer reservation (len = 0);
+    // check the currenet lsn and store the start_lsn of log handler
+    // In forwarding process, we can eagerly decide which mtr log is stale.
+    write_nvm_log.m_lsn = log_get_lsn(*log_sys);
+		m_impl->m_log.for_each_block(write_nvm_log);
+		// do we need to this ?
+    //add_dirty_blocks_to_flush_list(handle.start_lsn, handle.end_lsn);
+    //m_impl->m_mtr->m_commit_lsn = handle.end_lsn;
+
+  } else {
+    DEBUG_SYNC_C("mtr_noredo_before_add_dirty_blocks");
+    add_dirty_blocks_to_flush_list(0, 0);
+  }
+}
+#endif
 
 #ifndef UNIV_HOTBACKUP
 #ifdef UNIV_DEBUG

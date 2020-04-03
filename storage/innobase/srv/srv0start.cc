@@ -119,6 +119,9 @@ this program; if not, write to the Free Software Foundation, Inc.,
 
 #ifdef UNIV_NVDIMM_CACHE
 #include "buf0nvdimm.h"
+#include "pmem_mmap_obj.h"
+extern char* gb_pm_mmap;
+char  PMEM_FILE_PATH [PMEM_MMAP_MAX_FILE_NAME_LENGTH];
 #endif /* UNIV_NVDIMM_CACHE */
 
 /** fil_space_t::flags for hard-coded tablespaces */
@@ -1859,6 +1862,18 @@ dberr_t srv_start(bool create_new_db, const std::string &scan_directories) {
   /* Reset the start state. */
   srv_start_state = SRV_START_STATE_NONE;
 
+#ifdef UNIV_NVDIMM_CACHE
+	sprintf(PMEM_FILE_PATH, "%s/%s", srv_nvdimm_home_dir, NVDIMM_MMAP_FILE_NAME);
+	size_t srv_pmem_pool_size = 8 * 1024;
+	uint64_t pool_size = srv_pmem_pool_size * 1024 * 1024UL;
+	gb_pm_mmap = pm_mmap_create(PMEM_FILE_PATH, pool_size);
+  if (!gb_pm_mmap) {
+    PMEMMMAP_ERROR_PRINT("gb_pm_mmap created failed  dir: %s\nsize: %zu\n", PMEM_FILE_PATH, pool_size);
+	  assert(gb_pm_mmap);
+	}
+#endif
+
+
 #ifdef UNIV_LINUX
 #ifdef HAVE_FALLOC_PUNCH_HOLE_AND_KEEP_SIZE
   ib::info(ER_IB_MSG_1107);
@@ -2317,6 +2332,10 @@ dberr_t srv_start(bool create_new_db, const std::string &scan_directories) {
   }
 
   ut_a(log_sys != nullptr);
+
+#ifdef UNIV_NVDIMM_CACHE
+  pm_mmap_mtrlogbuf_alloc(1024*1024*256);
+#endif /* UNIV_PMEM_MMAP */
 
   /* Open all log files and data files in the system
   tablespace: we keep them open until database shutdown.
@@ -3339,6 +3358,12 @@ void srv_shutdown() {
   if (srv_conc_get_active_threads() != 0) {
     ib::warn(ER_IB_MSG_1154, ulonglong{srv_conc_get_active_threads()});
   }
+
+  // TODO(jhpark): change this location after the shutdown issue resolved.
+#ifdef UNIV_NVDIMM_CACHE
+  uint64_t srv_pmem_pool_size = 8 * 1024 * 1024 * 1024UL;
+  pm_mmap_free(srv_pmem_pool_size);
+#endif
 
   /* 2. Make all threads created by InnoDB to exit */
   srv_shutdown_all_bg_threads();
