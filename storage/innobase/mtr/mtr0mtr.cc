@@ -534,7 +534,8 @@ void mtr_t::commit_nvm() {
     ut_ad(m_impl.m_magic_n == MTR_MAGIC_N);
     m_impl.m_state = MTR_STATE_COMMITTING;
     Command cmd(this);
-    cmd.execute_nvm();
+    // (jhpark): feature/caching-only
+    //cmd.execute_nvm();
     // jhpark: release the mtr structure 
     cmd.release_all();
     cmd.release_resources();
