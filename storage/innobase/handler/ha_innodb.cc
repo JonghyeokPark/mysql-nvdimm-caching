@@ -21415,6 +21415,21 @@ static MYSQL_SYSVAR_STR(nvdimm_home_dir, srv_nvdimm_home_dir,
 
 #endif /* UNIV_NVDIMM_CACHE */
 
+#if defined(UNIV_NVDIMM_CACHE) && defined(UNIV_DYNAMIC_NVDIMM_CACHE)
+static MYSQL_SYSVAR_BOOL(use_dynamic_nvdimm_caching, srv_use_dynamic_nvdimm_caching,
+                         PLUGIN_VAR_NOCMDARG | PLUGIN_VAR_READONLY,
+                         "Enable dynamic NVDIMM caching (disabled by default).",
+                         NULL, NULL, FALSE);
+
+
+static MYSQL_SYSVAR_STR(dynamic_nvdimm_tables, srv_dynamic_nvdimm_tables,
+                        PLUGIN_VAR_RQCMDARG | PLUGIN_VAR_READONLY |
+                        PLUGIN_VAR_NOPERSIST,
+                        "List of table 'table1;table2;..;tableN' to caching "
+                        "tables dynamically. Default is NULL",
+                        NULL, NULL, NULL);
+#endif
+
 static SYS_VAR *innobase_system_variables[] = {
     MYSQL_SYSVAR(api_trx_level),
     MYSQL_SYSVAR(api_bk_commit_interval),
@@ -21626,6 +21641,12 @@ static SYS_VAR *innobase_system_variables[] = {
     MYSQL_SYSVAR(nvdimm_pc_threshold_pct),
     MYSQL_SYSVAR(nvdimm_home_dir),
 #endif /* UNIV_NVDIMM_CACHE */
+
+#if defined(UNIV_NVDIMM_CACHE) && defined(UNIV_DYNAMIC_NVDIMM_CACHE)
+    MYSQL_SYSVAR(use_dynamic_nvdimm_caching),
+    MYSQL_SYSVAR(dynamic_nvdimm_tables),
+#endif
+
     NULL};
 
 mysql_declare_plugin(innobase){

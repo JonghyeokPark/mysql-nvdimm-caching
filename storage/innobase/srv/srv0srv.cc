@@ -383,6 +383,13 @@ ulong srv_nvdimm_pc_threshold_pct = 5;
 char* srv_nvdimm_home_dir = NULL;
 #endif /* UNIV_NVDIMM_CACHE */
 
+#if defined(UNIV_NVDIMM_CACHE) && defined(UNIV_DYNAMIC_NVDIMM_CACHE)
+/* If true then enable dynamic nvdimm caching */
+bool srv_use_dynamic_nvdimm_caching = FALSE;
+/* Dynamic nvdimm caching tables string */
+char* srv_dynamic_nvdimm_tables = NULL;
+#endif
+
 /** Dedicated server setting */
 bool srv_dedicated_server = true;
 /** Requested size in bytes */
