@@ -54,10 +54,11 @@ ARCH_STATE_ACTIVE	include/arch0arch.h	/^  ARCH_STATE_ACTIVE,$/;"	e	enum:Arch_Sta
 ARCH_STATE_IDLE	include/arch0arch.h	/^  ARCH_STATE_IDLE,$/;"	e	enum:Arch_State
 ARCH_STATE_INIT	include/arch0arch.h	/^  ARCH_STATE_INIT = 0,$/;"	e	enum:Arch_State
 ARCH_STATE_PREPARE_IDLE	include/arch0arch.h	/^  ARCH_STATE_PREPARE_IDLE,$/;"	e	enum:Arch_State
+ASMFLUSH	include/pmem_mmap_obj.h	34;"	d
 ASSERT_ZERO	page/page0zip.cc	99;"	d	file:
 ASSERT_ZERO_BLOB	page/page0zip.cc	104;"	d	file:
-ATTRIB_USED_ONLY_IN_DEBUG	trx/trx0rec.cc	2338;"	d	file:
-ATTRIB_USED_ONLY_IN_DEBUG	trx/trx0rec.cc	2340;"	d	file:
+ATTRIB_USED_ONLY_IN_DEBUG	trx/trx0rec.cc	2372;"	d	file:
+ATTRIB_USED_ONLY_IN_DEBUG	trx/trx0rec.cc	2374;"	d	file:
 AUTOINC_NEW_STYLE_LOCKING	handler/ha_innodb.cc	/^static const long AUTOINC_NEW_STYLE_LOCKING = 1;$/;"	v	file:
 AUTOINC_NO_LOCKING	handler/ha_innodb.cc	/^static const long AUTOINC_NO_LOCKING = 2;$/;"	v	file:
 AUTOINC_OLD_STYLE_LOCKING	handler/ha_innodb.cc	/^static const long AUTOINC_OLD_STYLE_LOCKING = 0;$/;"	v	file:
@@ -194,11 +195,11 @@ BUF_BLOCK_READY_FOR_USE	include/buf0buf.h	/^  BUF_BLOCK_READY_FOR_USE, \/*!< whe
 BUF_BLOCK_REMOVE_HASH	include/buf0buf.h	/^  BUF_BLOCK_REMOVE_HASH    \/*!< hash index should be removed$/;"	e	enum:Cache_hint::buf_page_state
 BUF_BLOCK_ZIP_DIRTY	include/buf0buf.h	/^  BUF_BLOCK_ZIP_DIRTY,  \/*!< contains a compressed$/;"	e	enum:Cache_hint::buf_page_state
 BUF_BLOCK_ZIP_PAGE	include/buf0buf.h	/^  BUF_BLOCK_ZIP_PAGE,   \/*!< contains a clean$/;"	e	enum:Cache_hint::buf_page_state
-BUF_BUDDY_HIGH	include/buf0types.h	144;"	d
-BUF_BUDDY_LOW	include/buf0types.h	133;"	d
-BUF_BUDDY_LOW_SHIFT	include/buf0types.h	130;"	d
-BUF_BUDDY_SIZES	include/buf0types.h	136;"	d
-BUF_BUDDY_SIZES_MAX	include/buf0types.h	139;"	d
+BUF_BUDDY_HIGH	include/buf0types.h	141;"	d
+BUF_BUDDY_LOW	include/buf0types.h	130;"	d
+BUF_BUDDY_LOW_SHIFT	include/buf0types.h	127;"	d
+BUF_BUDDY_SIZES	include/buf0types.h	133;"	d
+BUF_BUDDY_SIZES_MAX	include/buf0types.h	136;"	d
 BUF_BUDDY_STAMP_FREE	buf/buf0buddy.cc	78;"	d	file:
 BUF_BUDDY_STAMP_NONFREE	buf/buf0buddy.cc	82;"	d	file:
 BUF_BUDDY_STAMP_OFFSET	buf/buf0buddy.cc	74;"	d	file:
@@ -212,15 +213,14 @@ BUF_FLUSH_LIST	include/buf0types.h	/^  BUF_FLUSH_LIST,        \/*!< flush via th
 BUF_FLUSH_LRU	include/buf0types.h	/^  BUF_FLUSH_LRU = 0,     \/*!< flush via the LRU list *\/$/;"	e	enum:buf_flush_t
 BUF_FLUSH_N_TYPES	include/buf0types.h	/^  BUF_FLUSH_N_TYPES      \/*!< index of last element + 1  *\/$/;"	e	enum:buf_flush_t
 BUF_FLUSH_SINGLE_PAGE	include/buf0types.h	/^  BUF_FLUSH_SINGLE_PAGE, \/*!< flush via the LRU list$/;"	e	enum:buf_flush_t
-BUF_FLUSH_TO_NVDIMM	include/buf0types.h	/^  BUF_FLUSH_TO_NVDIMM,   \/*!< flush to the NVDIMM buffer *\/$/;"	e	enum:buf_flush_t
-BUF_FLUSH_VALIDATE_SKIP	buf/buf0flu.cc	247;"	d	file:
+BUF_FLUSH_VALIDATE_SKIP	buf/buf0flu.cc	255;"	d	file:
 BUF_IO_NONE	include/buf0types.h	/^  BUF_IO_NONE = 0, \/**< no pending I\/O *\/$/;"	e	enum:buf_io_fix
 BUF_IO_PIN	include/buf0types.h	/^  BUF_IO_PIN       \/**< disallow relocation of$/;"	e	enum:buf_io_fix
 BUF_IO_READ	include/buf0types.h	/^  BUF_IO_READ,     \/**< read pending *\/$/;"	e	enum:buf_io_fix
 BUF_IO_WRITE	include/buf0types.h	/^  BUF_IO_WRITE,    \/**< write pending *\/$/;"	e	enum:buf_io_fix
 BUF_LRU_DROP_SEARCH_SIZE	buf/buf0lru.cc	/^static const ulint BUF_LRU_DROP_SEARCH_SIZE = 1024;$/;"	v	file:
 BUF_LRU_IO_TO_UNZIP_FACTOR	buf/buf0lru.cc	/^static const ulint BUF_LRU_IO_TO_UNZIP_FACTOR = 50;$/;"	v	file:
-BUF_LRU_MIN_LEN	buf/buf0flu.cc	211;"	d	file:
+BUF_LRU_MIN_LEN	buf/buf0flu.cc	219;"	d	file:
 BUF_LRU_NON_OLD_MIN_LEN	buf/buf0lru.cc	70;"	d	file:
 BUF_LRU_OLD_MIN_LEN	include/buf0lru.h	57;"	d
 BUF_LRU_OLD_RATIO_DIV	include/buf0lru.h	216;"	d
@@ -237,9 +237,9 @@ BUF_PAGE_READ_MAX_RETRIES	buf/buf0buf.cc	/^static const ulint BUF_PAGE_READ_MAX_
 BUF_PAGE_STATE_BITS	include/buf0buf.h	1166;"	d
 BUF_POOL_SIZE_THRESHOLD	include/srv0start.h	67;"	d
 BUF_POOL_WATCH_SIZE	include/buf0buf.h	108;"	d
-BUF_POOL_ZIP_FOLD	include/buf0buf.h	1524;"	d
-BUF_POOL_ZIP_FOLD_BPAGE	include/buf0buf.h	1525;"	d
-BUF_POOL_ZIP_FOLD_PTR	include/buf0buf.h	1523;"	d
+BUF_POOL_ZIP_FOLD	include/buf0buf.h	1530;"	d
+BUF_POOL_ZIP_FOLD_BPAGE	include/buf0buf.h	1531;"	d
+BUF_POOL_ZIP_FOLD_PTR	include/buf0buf.h	1529;"	d
 BUF_READ_AHEAD_AREA	include/buf0rea.h	138;"	d
 BUF_READ_AHEAD_PAGES	buf/buf0buf.cc	/^static const ulint BUF_READ_AHEAD_PAGES = 64;$/;"	v	file:
 BUF_READ_AHEAD_PEND_LIMIT	buf/buf0rea.cc	60;"	d	file:
@@ -283,6 +283,7 @@ Buf_fetch_normal	buf/buf0buf.cc	/^  Buf_fetch_normal(const page_id_t &page_id, c
 Buf_fetch_normal	buf/buf0buf.cc	/^struct Buf_fetch_normal : public Buf_fetch<Buf_fetch_normal> {$/;"	s	file:
 Buf_fetch_other	buf/buf0buf.cc	/^  Buf_fetch_other(const page_id_t &page_id, const page_size_t &page_size)$/;"	f	struct:Buf_fetch_other
 Buf_fetch_other	buf/buf0buf.cc	/^struct Buf_fetch_other : public Buf_fetch<Buf_fetch_other> {$/;"	s	file:
+CACHE_LINE_SIZE	include/pmem_mmap_obj.h	33;"	d
 CACHE_MIN_IDLE_TIME_US	trx/trx0i_s.cc	827;"	d	file:
 CACHE_STORAGE_HASH_CELLS	trx/trx0i_s.cc	189;"	d	file:
 CACHE_STORAGE_INITIAL_SIZE	trx/trx0i_s.cc	187;"	d	file:
@@ -377,7 +378,7 @@ CLONE_TASK_META_LEN	clone/clone0desc.cc	/^static const uint CLONE_TASK_META_LEN 
 CLUST_INDEX_SIZE_COL_NO	include/dict0stats.h	/^  static constexpr unsigned CLUST_INDEX_SIZE_COL_NO = 4;$/;"	m	class:TableStatsRecord
 COMMIT_NODE_SEND	include/trx0trx.h	/^  COMMIT_NODE_SEND = 1, \/*!< about to send a commit signal to$/;"	e	enum:commit_node_state
 COMMIT_NODE_WAIT	include/trx0trx.h	/^  COMMIT_NODE_WAIT      \/*!< commit signal sent to the transaction,$/;"	e	enum:commit_node_state
-COMPLETE_WORK	include/clone0monitor.h	/^  enum { NOT_STARTED = 0, ESTIMATE_WORK, COMPLETE_WORK } m_cur_phase;$/;"	e	enum:Clone_Monitor::__anon6
+COMPLETE_WORK	include/clone0monitor.h	/^  enum { NOT_STARTED = 0, ESTIMATE_WORK, COMPLETE_WORK } m_cur_phase;$/;"	e	enum:Clone_Monitor::__anon24
 COUNT_ALL_NON_BORING_AND_SKIP_DEL_MARKED	dict/dict0stats.cc	/^  COUNT_ALL_NON_BORING_AND_SKIP_DEL_MARKED, \/* scan all records on$/;"	e	enum:page_scan_method_t	file:
 COUNT_ALL_NON_BORING_INCLUDE_DEL_MARKED	dict/dict0stats.cc	/^  COUNT_ALL_NON_BORING_INCLUDE_DEL_MARKED \/* scan all records on$/;"	e	enum:page_scan_method_t	file:
 Cache_hint	include/buf0buf.h	/^enum class Cache_hint {$/;"	c
@@ -446,7 +447,7 @@ DATA_DECIMAL	include/data0type.h	81;"	d
 DATA_DOUBLE	include/data0type.h	80;"	d
 DATA_ENGLISH	include/data0type.h	157;"	d
 DATA_ERROR	include/data0type.h	161;"	d
-DATA_FILE	include/os0file.h	/^    DATA_FILE = 8,$/;"	e	enum:Encryption::IORequest::__anon17
+DATA_FILE	include/os0file.h	/^    DATA_FILE = 8,$/;"	e	enum:Encryption::IORequest::__anon29
 DATA_FIXBINARY	include/data0type.h	63;"	d
 DATA_FLOAT	include/data0type.h	79;"	d
 DATA_FTS_DOC_ID	include/data0type.h	194;"	d
@@ -493,7 +494,7 @@ DATA_VARCHAR	include/data0type.h	53;"	d
 DATA_VARMYSQL	include/data0type.h	82;"	d
 DATA_VAR_POINT	include/data0type.h	103;"	d
 DATA_VIRTUAL	include/data0type.h	222;"	d
-DBLWR_RECOVER	include/os0file.h	/^    DBLWR_RECOVER = 4,$/;"	e	enum:Encryption::IORequest::__anon17
+DBLWR_RECOVER	include/os0file.h	/^    DBLWR_RECOVER = 4,$/;"	e	enum:Encryption::IORequest::__anon29
 DBUG_INJECT_CRASH	include/ut0dbg.h	72;"	d
 DBUG_INJECT_CRASH	include/ut0dbg.h	86;"	d
 DBUG_INJECT_CRASH_WITH_LOG_FLUSH	include/ut0dbg.h	79;"	d
@@ -886,8 +887,8 @@ DICT_TF_WIDTH_ZIP_SSIZE	include/dict0mem.h	152;"	d
 DICT_UNIQUE	include/dict0mem.h	88;"	d
 DICT_VIRTUAL	include/dict0mem.h	99;"	d
 DIR_NAME	srv/srv0tmp.cc	/^static const char DIR_NAME[] = "#innodb_temp";$/;"	m	namespace:ibt	file:
-DISABLE_PARTIAL_IO_WARNINGS	include/os0file.h	/^    DISABLE_PARTIAL_IO_WARNINGS = 32,$/;"	e	enum:Encryption::IORequest::__anon17
-DISPLAY	fil/fil0fil.cc	8850;"	d	file:
+DISABLE_PARTIAL_IO_WARNINGS	include/os0file.h	/^    DISABLE_PARTIAL_IO_WARNINGS = 32,$/;"	e	enum:Encryption::IORequest::__anon29
+DISPLAY	fil/fil0fil.cc	8853;"	d	file:
 DONE	include/os0once.h	/^  static const state_t DONE = 2;$/;"	m	class:os_once
 DONE_SCANNING	handler/p_s.cc	/^  DONE_SCANNING$/;"	e	enum:scan_pass	file:
 DOT_CFG	include/fil0fil.h	331;"	d
@@ -903,7 +904,7 @@ DOT_SLASH	fil/fil0fil.cc	/^char *Fil_path::DOT_SLASH = ".\/";$/;"	m	class:Fil_pa
 DOT_SLASH	include/fil0fil.h	/^  static char *DOT_SLASH;$/;"	m	class:Fil_path
 DOT_SLASH	include/fil0fil.h	/^  static constexpr auto DOT_SLASH = ".\/";$/;"	m	class:Fil_path
 DOT_SLASH	include/fil0fil.h	/^  static constexpr auto DOT_SLASH = ".\\\\";$/;"	m	class:Fil_path
-DO_NOT_WAKE	include/os0file.h	/^    DO_NOT_WAKE = 64,$/;"	e	enum:Encryption::IORequest::__anon17
+DO_NOT_WAKE	include/os0file.h	/^    DO_NOT_WAKE = 64,$/;"	e	enum:Encryption::IORequest::__anon29
 DROP_LOG	include/log0ddl.h	/^  DROP_LOG,$/;"	m	class:Log_Type
 DTUPLE_EST_ALLOC	include/data0data.h	230;"	d
 DYN_ARRAY_DATA_SIZE	include/dyn0types.h	41;"	d
@@ -949,7 +950,7 @@ ENCRYPTION_SERVER_UUID_LEN	include/os0file.h	/^static const ulint ENCRYPTION_SER
 ENCRYPTION_VERSION_1	include/os0file.h	/^    ENCRYPTION_VERSION_1 = 0,$/;"	e	enum:Encryption::Version
 ENCRYPTION_VERSION_2	include/os0file.h	/^    ENCRYPTION_VERSION_2 = 1,$/;"	e	enum:Encryption::Version
 ENCRYPTION_VERSION_3	include/os0file.h	/^    ENCRYPTION_VERSION_3 = 2,$/;"	e	enum:Encryption::Version
-END	include/ut0stage.h	/^    END = 7,$/;"	e	enum:ut_stage_alter_t::__anon9
+END	include/ut0stage.h	/^    END = 7,$/;"	e	enum:ut_stage_alter_t::__anon26
 END_OF_ST_FIELD_INFO	handler/i_s.cc	205;"	d	file:
 EOB_ACT_CONTINUE_SCAN	fts/fts0blex.cc	226;"	d	file:
 EOB_ACT_CONTINUE_SCAN	fts/fts0tlex.cc	225;"	d	file:
@@ -962,7 +963,7 @@ EOB_ACT_LAST_MATCH	fts/fts0tlex.cc	227;"	d	file:
 EOB_ACT_LAST_MATCH	pars/lexyy.cc	178;"	d	file:
 EQ_CURRENT_THD	handler/ha_innodb.cc	217;"	d	file:
 ERROR_CREATING_MSG	handler/ha_innodb.cc	/^const char *ERROR_CREATING_MSG =$/;"	v
-ESTIMATE_WORK	include/clone0monitor.h	/^  enum { NOT_STARTED = 0, ESTIMATE_WORK, COMPLETE_WORK } m_cur_phase;$/;"	e	enum:Clone_Monitor::__anon6
+ESTIMATE_WORK	include/clone0monitor.h	/^  enum { NOT_STARTED = 0, ESTIMATE_WORK, COMPLETE_WORK } m_cur_phase;$/;"	e	enum:Clone_Monitor::__anon24
 EXIT_SUCCESS	fts/fts0pars.cc	284;"	d	file:
 EXIT_SUCCESS	fts/fts0pars.cc	312;"	d	file:
 EXIT_SUCCESS	pars/pars0grm.cc	363;"	d	file:
@@ -1081,7 +1082,7 @@ FLST_LEN	include/fut0lst.ic	48;"	d	file:
 FLST_NEXT	include/fut0lst.ic	42;"	d	file:
 FLST_NODE_SIZE	include/fut0lst.h	/^constexpr ulint FLST_NODE_SIZE = 2 * FIL_ADDR_SIZE;$/;"	v
 FLST_PREV	include/fut0lst.ic	38;"	d	file:
-FLUSH	include/ut0stage.h	/^    FLUSH = 4,$/;"	e	enum:ut_stage_alter_t::__anon9
+FLUSH	include/ut0stage.h	/^    FLUSH = 4,$/;"	e	enum:ut_stage_alter_t::__anon26
 FORCE_RECOVERY_MSG	handler/ha_innodb.cc	/^const char *FORCE_RECOVERY_MSG = "Please refer to " REFMAN$/;"	v
 FOREIGN_KEY_CONSTRAINTS_MSG	handler/ha_innodb.cc	/^const char *FOREIGN_KEY_CONSTRAINTS_MSG =$/;"	v
 FRAG_ID_NULL	include/lob0impl.h	/^const ulint FRAG_ID_NULL = std::numeric_limits<uint16_t>::max();$/;"	m	namespace:lob
@@ -1428,10 +1429,10 @@ IBUF_HEADER_PAGE_NO	include/ibuf0ibuf.h	350;"	d
 IBUF_MAX_N_PAGES_MERGED	ibuf/ibuf0ibuf.cc	/^const ulint IBUF_MAX_N_PAGES_MERGED = IBUF_MERGE_AREA;$/;"	v
 IBUF_MERGE_AREA	ibuf/ibuf0ibuf.cc	/^const ulint IBUF_MERGE_AREA = 8;$/;"	v
 IBUF_MERGE_THRESHOLD	ibuf/ibuf0ibuf.cc	/^const ulint IBUF_MERGE_THRESHOLD = 4;$/;"	v
-IBUF_OP_COUNT	include/ibuf0ibuf.h	/^  IBUF_OP_COUNT = 3$/;"	e	enum:__anon19
-IBUF_OP_DELETE	include/ibuf0ibuf.h	/^  IBUF_OP_DELETE = 2,$/;"	e	enum:__anon19
-IBUF_OP_DELETE_MARK	include/ibuf0ibuf.h	/^  IBUF_OP_DELETE_MARK = 1,$/;"	e	enum:__anon19
-IBUF_OP_INSERT	include/ibuf0ibuf.h	/^  IBUF_OP_INSERT = 0,$/;"	e	enum:__anon19
+IBUF_OP_COUNT	include/ibuf0ibuf.h	/^  IBUF_OP_COUNT = 3$/;"	e	enum:__anon30
+IBUF_OP_DELETE	include/ibuf0ibuf.h	/^  IBUF_OP_DELETE = 2,$/;"	e	enum:__anon30
+IBUF_OP_DELETE_MARK	include/ibuf0ibuf.h	/^  IBUF_OP_DELETE_MARK = 1,$/;"	e	enum:__anon30
+IBUF_OP_INSERT	include/ibuf0ibuf.h	/^  IBUF_OP_INSERT = 0,$/;"	e	enum:__anon30
 IBUF_PAGE_SIZE_PER_FREE_SPACE	include/ibuf0ibuf.ic	43;"	d	file:
 IBUF_REC_COMPACT	ibuf/ibuf0ibuf.cc	286;"	d	file:
 IBUF_REC_FIELD_MARKER	ibuf/ibuf0ibuf.cc	256;"	d	file:
@@ -1455,53 +1456,53 @@ IBUF_USE_NONE	include/ibuf0ibuf.h	/^  IBUF_USE_NONE = 0,$/;"	e	enum:ibuf_use_t
 IB_ATOMICS_STARTUP_MSG	include/os0atomic.h	146;"	d
 IB_ATOMICS_STARTUP_MSG	include/os0atomic.h	259;"	d
 IB_ATOMICS_STARTUP_MSG	include/os0atomic.h	261;"	d
-IB_BINARY	include/api0api.h	/^  IB_BINARY = 3, \/*!< Fixed length binary, similar to$/;"	e	enum:__anon21
-IB_BLOB	include/api0api.h	/^  IB_BLOB = 5, \/*!< Binary large object, or$/;"	e	enum:__anon21
+IB_BINARY	include/api0api.h	/^  IB_BINARY = 3, \/*!< Fixed length binary, similar to$/;"	e	enum:__anon8
+IB_BLOB	include/api0api.h	/^  IB_BLOB = 5, \/*!< Binary large object, or$/;"	e	enum:__anon8
 IB_CFG_BINLOG_ENABLED	include/api0api.h	389;"	d
-IB_CFG_CB	include/api0api.h	/^  IB_CFG_CB \/*!< The configuration parameter is$/;"	e	enum:__anon20
+IB_CFG_CB	include/api0api.h	/^  IB_CFG_CB \/*!< The configuration parameter is$/;"	e	enum:__anon7
 IB_CFG_DISABLE_ROWLOCK	include/api0api.h	391;"	d
-IB_CFG_IBOOL	include/api0api.h	/^  IB_CFG_IBOOL, \/*!< The configuration parameter is$/;"	e	enum:__anon20
+IB_CFG_IBOOL	include/api0api.h	/^  IB_CFG_IBOOL, \/*!< The configuration parameter is$/;"	e	enum:__anon7
 IB_CFG_MDL_ENABLED	include/api0api.h	390;"	d
-IB_CFG_TEXT	include/api0api.h	/^  IB_CFG_TEXT, \/*!< The configuration parameter is$/;"	e	enum:__anon20
-IB_CFG_ULINT	include/api0api.h	/^  IB_CFG_ULINT, \/*!< The configuration parameter is$/;"	e	enum:__anon20
-IB_CFG_ULONG	include/api0api.h	/^  IB_CFG_ULONG, \/*!< The configuration parameter is$/;"	e	enum:__anon20
-IB_CHAR	include/api0api.h	/^  IB_CHAR = 2, \/*!< Fixed length character string. The$/;"	e	enum:__anon21
-IB_CHAR_ANYCHARSET	include/api0api.h	/^  IB_CHAR_ANYCHARSET = 13 \/*!< Any charset, fixed length *\/$/;"	e	enum:__anon21
-IB_CLOSEST_MATCH	include/api0api.h	/^  IB_CLOSEST_MATCH, \/*!< Closest match possible *\/$/;"	e	enum:__anon27
-IB_CLUSTERED	include/api0api.h	/^  IB_CLUSTERED = 1, \/*!< clustered index *\/$/;"	e	enum:__anon25
-IB_COL_CUSTOM1	include/api0api.h	/^  IB_COL_CUSTOM1 = 8, \/*!< Custom precision type, this is$/;"	e	enum:__anon23
-IB_COL_CUSTOM2	include/api0api.h	/^  IB_COL_CUSTOM2 = 16, \/*!< Custom precision type, this is$/;"	e	enum:__anon23
-IB_COL_CUSTOM3	include/api0api.h	/^  IB_COL_CUSTOM3 = 32 \/*!< Custom precision type, this is$/;"	e	enum:__anon23
-IB_COL_NONE	include/api0api.h	/^  IB_COL_NONE = 0, \/*!< No special attributes. *\/$/;"	e	enum:__anon23
-IB_COL_NOT_NULL	include/api0api.h	/^  IB_COL_NOT_NULL = 1, \/*!< Column data can't be NULL. *\/$/;"	e	enum:__anon23
-IB_COL_NOT_USED	include/api0api.h	/^  IB_COL_NOT_USED = 4, \/*!< Future use, reserved. *\/$/;"	e	enum:__anon23
-IB_COL_UNSIGNED	include/api0api.h	/^  IB_COL_UNSIGNED = 2, \/*!< Column is IB_INT and unsigned. *\/$/;"	e	enum:__anon23
-IB_CUR_G	include/api0api.h	/^  IB_CUR_G = 1, \/*!< If search key is not found then$/;"	e	enum:__anon26
-IB_CUR_GE	include/api0api.h	/^  IB_CUR_GE = 2, \/*!< If the search key not found then$/;"	e	enum:__anon26
-IB_CUR_L	include/api0api.h	/^  IB_CUR_L = 3, \/*!< If search key is not found then$/;"	e	enum:__anon26
-IB_CUR_LE	include/api0api.h	/^  IB_CUR_LE = 4 \/*!< If search key is not found then$/;"	e	enum:__anon26
-IB_DECIMAL	include/api0api.h	/^  IB_DECIMAL = 11, \/*!< Decimal stored as an ASCII$/;"	e	enum:__anon21
-IB_DOUBLE	include/api0api.h	/^  IB_DOUBLE = 10, \/*!> C (double) floating point value. *\/$/;"	e	enum:__anon21
-IB_EXACT_MATCH	include/api0api.h	/^  IB_EXACT_MATCH, \/*!< Search using a complete key$/;"	e	enum:__anon27
-IB_EXACT_PREFIX	include/api0api.h	/^  IB_EXACT_PREFIX \/*!< Search using a key prefix which$/;"	e	enum:__anon27
+IB_CFG_TEXT	include/api0api.h	/^  IB_CFG_TEXT, \/*!< The configuration parameter is$/;"	e	enum:__anon7
+IB_CFG_ULINT	include/api0api.h	/^  IB_CFG_ULINT, \/*!< The configuration parameter is$/;"	e	enum:__anon7
+IB_CFG_ULONG	include/api0api.h	/^  IB_CFG_ULONG, \/*!< The configuration parameter is$/;"	e	enum:__anon7
+IB_CHAR	include/api0api.h	/^  IB_CHAR = 2, \/*!< Fixed length character string. The$/;"	e	enum:__anon8
+IB_CHAR_ANYCHARSET	include/api0api.h	/^  IB_CHAR_ANYCHARSET = 13 \/*!< Any charset, fixed length *\/$/;"	e	enum:__anon8
+IB_CLOSEST_MATCH	include/api0api.h	/^  IB_CLOSEST_MATCH, \/*!< Closest match possible *\/$/;"	e	enum:__anon14
+IB_CLUSTERED	include/api0api.h	/^  IB_CLUSTERED = 1, \/*!< clustered index *\/$/;"	e	enum:__anon12
+IB_COL_CUSTOM1	include/api0api.h	/^  IB_COL_CUSTOM1 = 8, \/*!< Custom precision type, this is$/;"	e	enum:__anon10
+IB_COL_CUSTOM2	include/api0api.h	/^  IB_COL_CUSTOM2 = 16, \/*!< Custom precision type, this is$/;"	e	enum:__anon10
+IB_COL_CUSTOM3	include/api0api.h	/^  IB_COL_CUSTOM3 = 32 \/*!< Custom precision type, this is$/;"	e	enum:__anon10
+IB_COL_NONE	include/api0api.h	/^  IB_COL_NONE = 0, \/*!< No special attributes. *\/$/;"	e	enum:__anon10
+IB_COL_NOT_NULL	include/api0api.h	/^  IB_COL_NOT_NULL = 1, \/*!< Column data can't be NULL. *\/$/;"	e	enum:__anon10
+IB_COL_NOT_USED	include/api0api.h	/^  IB_COL_NOT_USED = 4, \/*!< Future use, reserved. *\/$/;"	e	enum:__anon10
+IB_COL_UNSIGNED	include/api0api.h	/^  IB_COL_UNSIGNED = 2, \/*!< Column is IB_INT and unsigned. *\/$/;"	e	enum:__anon10
+IB_CUR_G	include/api0api.h	/^  IB_CUR_G = 1, \/*!< If search key is not found then$/;"	e	enum:__anon13
+IB_CUR_GE	include/api0api.h	/^  IB_CUR_GE = 2, \/*!< If the search key not found then$/;"	e	enum:__anon13
+IB_CUR_L	include/api0api.h	/^  IB_CUR_L = 3, \/*!< If search key is not found then$/;"	e	enum:__anon13
+IB_CUR_LE	include/api0api.h	/^  IB_CUR_LE = 4 \/*!< If search key is not found then$/;"	e	enum:__anon13
+IB_DECIMAL	include/api0api.h	/^  IB_DECIMAL = 11, \/*!< Decimal stored as an ASCII$/;"	e	enum:__anon8
+IB_DOUBLE	include/api0api.h	/^  IB_DOUBLE = 10, \/*!> C (double) floating point value. *\/$/;"	e	enum:__anon8
+IB_EXACT_MATCH	include/api0api.h	/^  IB_EXACT_MATCH, \/*!< Search using a complete key$/;"	e	enum:__anon14
+IB_EXACT_PREFIX	include/api0api.h	/^  IB_EXACT_PREFIX \/*!< Search using a key prefix which$/;"	e	enum:__anon14
 IB_EXPORT_CFG_VERSION_V1	include/row0quiesce.h	43;"	d
 IB_EXPORT_CFG_VERSION_V2	include/row0quiesce.h	45;"	d
 IB_EXPORT_CFG_VERSION_V3	include/row0quiesce.h	47;"	d
 IB_FALSE	include/api0api.h	74;"	d
-IB_FLOAT	include/api0api.h	/^  IB_FLOAT = 9, \/*!< C (float)  floating point value. *\/$/;"	e	enum:__anon21
+IB_FLOAT	include/api0api.h	/^  IB_FLOAT = 9, \/*!< C (float)  floating point value. *\/$/;"	e	enum:__anon8
 IB_ID_FMT	include/univ.i	429;"	d	file:
 IB_ID_MAX	include/univ.i	471;"	d	file:
-IB_INT	include/api0api.h	/^  IB_INT = 6, \/*!< Integer: can be any size$/;"	e	enum:__anon21
+IB_INT	include/api0api.h	/^  IB_INT = 6, \/*!< Integer: can be any size$/;"	e	enum:__anon8
 IB_LIKE_EXACT	include/data0type.h	/^  IB_LIKE_EXACT, \/**< e.g.  STRING *\/$/;"	e	enum:ib_like_t
 IB_LIKE_PREFIX	include/data0type.h	/^  IB_LIKE_PREFIX \/**< e.g., STRING% *\/$/;"	e	enum:ib_like_t
 IB_LIST_H	include/ut0list.h	53;"	d
-IB_LOCK_IS	include/api0api.h	/^  IB_LOCK_IS = 0, \/*!< Intention shared, an intention$/;"	e	enum:__anon24
-IB_LOCK_IX	include/api0api.h	/^  IB_LOCK_IX, \/*!< Intention exclusive, an intention$/;"	e	enum:__anon24
-IB_LOCK_NONE	include/api0api.h	/^  IB_LOCK_NONE, \/*!< This is used internally to note$/;"	e	enum:__anon24
-IB_LOCK_NUM	include/api0api.h	/^  IB_LOCK_NUM = IB_LOCK_NONE \/*!< number of lock modes *\/$/;"	e	enum:__anon24
-IB_LOCK_S	include/api0api.h	/^  IB_LOCK_S, \/*!< Shared locks should be used to$/;"	e	enum:__anon24
-IB_LOCK_TABLE_X	include/api0api.h	/^  IB_LOCK_TABLE_X, \/*!< exclusive table lock *\/$/;"	e	enum:__anon24
-IB_LOCK_X	include/api0api.h	/^  IB_LOCK_X, \/*!< Exclusive locks should be used to$/;"	e	enum:__anon24
+IB_LOCK_IS	include/api0api.h	/^  IB_LOCK_IS = 0, \/*!< Intention shared, an intention$/;"	e	enum:__anon11
+IB_LOCK_IX	include/api0api.h	/^  IB_LOCK_IX, \/*!< Intention exclusive, an intention$/;"	e	enum:__anon11
+IB_LOCK_NONE	include/api0api.h	/^  IB_LOCK_NONE, \/*!< This is used internally to note$/;"	e	enum:__anon11
+IB_LOCK_NUM	include/api0api.h	/^  IB_LOCK_NUM = IB_LOCK_NONE \/*!< number of lock modes *\/$/;"	e	enum:__anon11
+IB_LOCK_S	include/api0api.h	/^  IB_LOCK_S, \/*!< Shared locks should be used to$/;"	e	enum:__anon11
+IB_LOCK_TABLE_X	include/api0api.h	/^  IB_LOCK_TABLE_X, \/*!< exclusive table lock *\/$/;"	e	enum:__anon11
+IB_LOCK_X	include/api0api.h	/^  IB_LOCK_X, \/*!< Exclusive locks should be used to$/;"	e	enum:__anon11
 IB_LOG_LEVEL_ERROR	include/ha_prototypes.h	/^  IB_LOG_LEVEL_ERROR,$/;"	e	enum:ib_log_level_t
 IB_LOG_LEVEL_FATAL	include/ha_prototypes.h	/^  IB_LOG_LEVEL_FATAL$/;"	e	enum:ib_log_level_t
 IB_LOG_LEVEL_INFO	include/ha_prototypes.h	/^  IB_LOG_LEVEL_INFO,$/;"	e	enum:ib_log_level_t
@@ -1516,22 +1517,22 @@ IB_RBT_BLACK	include/ut0rbt.h	/^enum ib_rbt_color_t { IB_RBT_RED, IB_RBT_BLACK }
 IB_RBT_RED	include/ut0rbt.h	/^enum ib_rbt_color_t { IB_RBT_RED, IB_RBT_BLACK };$/;"	e	enum:ib_rbt_color_t
 IB_SQL_NULL	include/api0api.h	442;"	d
 IB_STRONG_MEMORY_MODEL	include/os0atomic.h	62;"	d
-IB_SYS	include/api0api.h	/^  IB_SYS = 8, \/*!< System column, this column can$/;"	e	enum:__anon21
-IB_TBL_COMPACT	include/api0api.h	/^  IB_TBL_COMPACT, \/*!< Compact row format, the column$/;"	e	enum:__anon22
-IB_TBL_COMPRESSED	include/api0api.h	/^  IB_TBL_COMPRESSED \/*!< Similar to dynamic format but$/;"	e	enum:__anon22
-IB_TBL_DYNAMIC	include/api0api.h	/^  IB_TBL_DYNAMIC, \/*!< Compact row format. BLOB prefixes$/;"	e	enum:__anon22
-IB_TBL_REDUNDANT	include/api0api.h	/^  IB_TBL_REDUNDANT, \/*!< Redundant row format, the column$/;"	e	enum:__anon22
+IB_SYS	include/api0api.h	/^  IB_SYS = 8, \/*!< System column, this column can$/;"	e	enum:__anon8
+IB_TBL_COMPACT	include/api0api.h	/^  IB_TBL_COMPACT, \/*!< Compact row format, the column$/;"	e	enum:__anon9
+IB_TBL_COMPRESSED	include/api0api.h	/^  IB_TBL_COMPRESSED \/*!< Similar to dynamic format but$/;"	e	enum:__anon9
+IB_TBL_DYNAMIC	include/api0api.h	/^  IB_TBL_DYNAMIC, \/*!< Compact row format. BLOB prefixes$/;"	e	enum:__anon9
+IB_TBL_REDUNDANT	include/api0api.h	/^  IB_TBL_REDUNDANT, \/*!< Redundant row format, the column$/;"	e	enum:__anon9
 IB_TO_STR	include/univ.i	51;"	d	file:
 IB_TRUE	include/api0api.h	72;"	d
-IB_TRX_READ_COMMITTED	include/api0api.h	/^  IB_TRX_READ_COMMITTED = 1, \/*!< Somewhat Oracle-like isolation,$/;"	e	enum:__anon29
-IB_TRX_READ_UNCOMMITTED	include/api0api.h	/^  IB_TRX_READ_UNCOMMITTED = 0, \/*!< Dirty read: non-locking SELECTs are$/;"	e	enum:__anon29
-IB_TRX_REPEATABLE_READ	include/api0api.h	/^  IB_TRX_REPEATABLE_READ = 2, \/*!< All consistent reads in the same$/;"	e	enum:__anon29
-IB_TRX_SERIALIZABLE	include/api0api.h	/^  IB_TRX_SERIALIZABLE = 3 \/*!< All plain SELECTs are converted to$/;"	e	enum:__anon29
+IB_TRX_READ_COMMITTED	include/api0api.h	/^  IB_TRX_READ_COMMITTED = 1, \/*!< Somewhat Oracle-like isolation,$/;"	e	enum:__anon16
+IB_TRX_READ_UNCOMMITTED	include/api0api.h	/^  IB_TRX_READ_UNCOMMITTED = 0, \/*!< Dirty read: non-locking SELECTs are$/;"	e	enum:__anon16
+IB_TRX_REPEATABLE_READ	include/api0api.h	/^  IB_TRX_REPEATABLE_READ = 2, \/*!< All consistent reads in the same$/;"	e	enum:__anon16
+IB_TRX_SERIALIZABLE	include/api0api.h	/^  IB_TRX_SERIALIZABLE = 3 \/*!< All plain SELECTs are converted to$/;"	e	enum:__anon16
 IB_UINT64_MAX	include/univ.i	467;"	d	file:
-IB_UNIQUE	include/api0api.h	/^  IB_UNIQUE = 2     \/*!< unique index *\/$/;"	e	enum:__anon25
-IB_VARBINARY	include/api0api.h	/^  IB_VARBINARY = 4, \/*!< Variable length binary *\/$/;"	e	enum:__anon21
-IB_VARCHAR	include/api0api.h	/^  IB_VARCHAR = 1, \/*!< Character varying length. The$/;"	e	enum:__anon21
-IB_VARCHAR_ANYCHARSET	include/api0api.h	/^  IB_VARCHAR_ANYCHARSET = 12, \/*!< Any charset, varying length *\/$/;"	e	enum:__anon21
+IB_UNIQUE	include/api0api.h	/^  IB_UNIQUE = 2     \/*!< unique index *\/$/;"	e	enum:__anon12
+IB_VARBINARY	include/api0api.h	/^  IB_VARBINARY = 4, \/*!< Variable length binary *\/$/;"	e	enum:__anon8
+IB_VARCHAR	include/api0api.h	/^  IB_VARCHAR = 1, \/*!< Character varying length. The$/;"	e	enum:__anon8
+IB_VARCHAR_ANYCHARSET	include/api0api.h	/^  IB_VARCHAR_ANYCHARSET = 12, \/*!< Any charset, varying length *\/$/;"	e	enum:__anon8
 IB_VECTOR_H	include/ut0vec.h	34;"	d
 IB_VEC_OFFSET	include/ut0vec.ic	35;"	d	file:
 IB_WORK_QUEUE_H	include/ut0wqueue.h	39;"	d
@@ -1539,7 +1540,7 @@ IB_mutex_guard	include/ut0mutex.h	/^  explicit IB_mutex_guard(ib_mutex_t *in_mut
 IB_mutex_guard	include/ut0mutex.h	/^struct IB_mutex_guard {$/;"	s
 IF_IN_POOL	include/buf0buf.h	/^  IF_IN_POOL,$/;"	m	class:Page_fetch
 IF_IN_POOL_OR_WATCH	include/buf0buf.h	/^  IF_IN_POOL_OR_WATCH,$/;"	m	class:Page_fetch
-IGNORE_MISSING	include/os0file.h	/^    IGNORE_MISSING = 128,$/;"	e	enum:Encryption::IORequest::__anon17
+IGNORE_MISSING	include/os0file.h	/^    IGNORE_MISSING = 128,$/;"	e	enum:Encryption::IORequest::__anon29
 IMPORT_PAGE_STATUS_ALL_ZERO	row/row0import.cc	/^    IMPORT_PAGE_STATUS_ALL_ZERO, \/*!< Page is all zeros *\/$/;"	e	enum:PageConverter::import_page_status_t	file:
 IMPORT_PAGE_STATUS_CORRUPTED	row/row0import.cc	/^    IMPORT_PAGE_STATUS_CORRUPTED \/*!< Page is corrupted *\/$/;"	e	enum:PageConverter::import_page_status_t	file:
 IMPORT_PAGE_STATUS_OK	row/row0import.cc	/^    IMPORT_PAGE_STATUS_OK,       \/*!< Page is OK *\/$/;"	e	enum:PageConverter::import_page_status_t	file:
@@ -1555,7 +1556,7 @@ INITIAL	fts/fts0tlex.cc	499;"	d	file:
 INITIAL	include/fts0blex.h	268;"	d
 INITIAL	include/fts0tlex.h	267;"	d
 INITIAL	pars/lexyy.cc	958;"	d	file:
-INIT_LOG_FILE0	srv/srv0start.cc	326;"	d	file:
+INIT_LOG_FILE0	srv/srv0start.cc	329;"	d	file:
 INIT_SCANNING	handler/p_s.cc	/^  INIT_SCANNING,$/;"	e	enum:scan_pass	file:
 INIT_SIZE	srv/srv0tmp.cc	/^const uint32_t INIT_SIZE = 10;$/;"	m	namespace:ibt	file:
 INNOBASE_ALTER_DATA	handler/handler0alter.cc	/^static const Alter_inplace_info::HA_ALTER_FLAGS INNOBASE_ALTER_DATA =$/;"	v	file:
@@ -1620,7 +1621,7 @@ INNODB_VERSION_MAJOR	include/univ.i	53;"	d	file:
 INNODB_VERSION_MINOR	include/univ.i	54;"	d	file:
 INNODB_VERSION_SHORT	include/univ.i	63;"	d	file:
 INNODB_VERSION_STR	include/univ.i	65;"	d	file:
-INSERT	include/ut0stage.h	/^    INSERT = 3,$/;"	e	enum:ut_stage_alter_t::__anon9
+INSERT	include/ut0stage.h	/^    INSERT = 3,$/;"	e	enum:ut_stage_alter_t::__anon26
 INSTANT_IMPOSSIBLE	handler/handler0alter.cc	/^  INSTANT_IMPOSSIBLE,$/;"	m	class:Instant_Type	file:
 INSTANT_NO_CHANGE	handler/handler0alter.cc	/^  INSTANT_NO_CHANGE,$/;"	m	class:Instant_Type	file:
 INSTANT_VIRTUAL_ONLY	handler/handler0alter.cc	/^  INSTANT_VIRTUAL_ONLY,$/;"	m	class:Instant_Type	file:
@@ -1848,8 +1849,8 @@ LOB_SMALL_CHANGE_THRESHOLD	include/lob0lob.h	/^  static const ulint LOB_SMALL_CH
 LOCKS_HASH_CELLS_NUM	trx/trx0i_s.cc	182;"	d	file:
 LOCK_AUTO_INC	include/lock0types.h	/^  LOCK_AUTO_INC,        \/* locks the auto-inc counter of a table$/;"	e	enum:lock_mode
 LOCK_CATS_THRESHOLD	lock/lock0lock.cc	/^static const int LOCK_CATS_THRESHOLD = 32;$/;"	v	file:
-LOCK_CLUST_PCUR	include/row0mysql.h	/^    LOCK_CLUST_PCUR,$/;"	e	enum:row_prebuilt_t::__anon8
-LOCK_COUNT	include/row0mysql.h	/^    LOCK_COUNT,$/;"	e	enum:row_prebuilt_t::__anon8
+LOCK_CLUST_PCUR	include/row0mysql.h	/^    LOCK_CLUST_PCUR,$/;"	e	enum:row_prebuilt_t::__anon6
+LOCK_COUNT	include/row0mysql.h	/^    LOCK_COUNT,$/;"	e	enum:row_prebuilt_t::__anon6
 LOCK_GAP	include/lock0lock.h	653;"	d
 LOCK_INSERT_INTENTION	include/lock0lock.h	670;"	d
 LOCK_IS	include/lock0types.h	/^  LOCK_IS = 0,          \/* intention shared *\/$/;"	e	enum:lock_mode
@@ -1866,7 +1867,7 @@ LOCK_NONE_UNSET	include/lock0types.h	/^  LOCK_NONE_UNSET = 255$/;"	e	enum:lock_m
 LOCK_NUM	include/lock0types.h	/^  LOCK_NUM = LOCK_NONE, \/* number of lock modes *\/$/;"	e	enum:lock_mode
 LOCK_ORDINARY	include/lock0lock.h	649;"	d
 LOCK_PAGE_BITMAP_MARGIN	include/lock0priv.h	/^static const ulint LOCK_PAGE_BITMAP_MARGIN = 64;$/;"	v
-LOCK_PCUR	include/row0mysql.h	/^    LOCK_PCUR,$/;"	e	enum:row_prebuilt_t::__anon8
+LOCK_PCUR	include/row0mysql.h	/^    LOCK_PCUR,$/;"	e	enum:row_prebuilt_t::__anon6
 LOCK_PRDT_PAGE	include/lock0lock.h	680;"	d
 LOCK_PREDICATE	include/lock0lock.h	679;"	d
 LOCK_REC	include/lock0lock.h	635;"	d
@@ -1882,7 +1883,7 @@ LOCK_TABLE_ID_FORMAT	trx/trx0i_s.cc	/^constexpr const char *LOCK_TABLE_ID_FORMAT
 LOCK_TYPE_MASK	include/lock0lock.h	636;"	d
 LOCK_WAIT	include/lock0lock.h	643;"	d
 LOCK_X	include/lock0types.h	/^  LOCK_X,               \/* exclusive *\/$/;"	e	enum:lock_mode
-LOG	include/os0file.h	/^    LOG = 16,$/;"	e	enum:Encryption::IORequest::__anon17
+LOG	include/os0file.h	/^    LOG = 16,$/;"	e	enum:Encryption::IORequest::__anon29
 LOG	include/os0file.h	/^  LOG = 23,$/;"	m	class:Encryption::AIO_mode
 LOGFILE	page/page0zip.cc	604;"	d	file:
 LOGFILE	page/page0zip.cc	609;"	d	file:
@@ -1917,14 +1918,14 @@ LOG_HEADER_FORMAT_8_0_3	include/log0types.h	/^  LOG_HEADER_FORMAT_8_0_3 = 3,$/;"
 LOG_HEADER_FORMAT_CURRENT	include/log0types.h	/^  LOG_HEADER_FORMAT_CURRENT = LOG_HEADER_FORMAT_8_0_3$/;"	e	enum:log_header_format_t
 LOG_HEADER_PAD1	include/log0log.h	/^constexpr uint32_t LOG_HEADER_PAD1 = 4;$/;"	v
 LOG_HEADER_START_LSN	include/log0log.h	/^constexpr uint32_t LOG_HEADER_START_LSN = 8;$/;"	v
-LOG_INDEX	include/ut0stage.h	/^    LOG_INDEX = 5,$/;"	e	enum:ut_stage_alter_t::__anon9
+LOG_INDEX	include/ut0stage.h	/^    LOG_INDEX = 5,$/;"	e	enum:ut_stage_alter_t::__anon26
 LOG_NO_CHECKSUM_MAGIC	include/log0log.h	/^constexpr uint32_t LOG_NO_CHECKSUM_MAGIC = 0xDEADBEEFUL;$/;"	v
 LOG_POOL_CHECKPOINT_RATIO_ASYNC	include/log0log.h	/^constexpr uint32_t LOG_POOL_CHECKPOINT_RATIO_ASYNC = 32;$/;"	v
 LOG_POOL_PREFLUSH_RATIO_ASYNC	include/log0log.h	/^constexpr uint32_t LOG_POOL_PREFLUSH_RATIO_ASYNC = 8;$/;"	v
 LOG_POOL_PREFLUSH_RATIO_SYNC	include/log0log.h	/^constexpr uint32_t LOG_POOL_PREFLUSH_RATIO_SYNC = 16;$/;"	v
 LOG_START_LSN	include/log0log.h	/^constexpr lsn_t LOG_START_LSN = 16 * OS_FILE_LOG_BLOCK_SIZE;$/;"	v
 LOG_SYNC_POINT	include/log0log.h	1112;"	d
-LOG_TABLE	include/ut0stage.h	/^    LOG_TABLE = 6,$/;"	e	enum:ut_stage_alter_t::__anon9
+LOG_TABLE	include/ut0stage.h	/^    LOG_TABLE = 6,$/;"	e	enum:ut_stage_alter_t::__anon26
 LOOP_READ_BYTES	include/ut0mem.ic	154;"	d	file:
 LRU	include/buf0buf.h	/^  UT_LIST_BASE_NODE_T(buf_page_t) LRU;$/;"	m	struct:Cache_hint::buf_pool_t
 LRU	include/buf0buf.h	/^  UT_LIST_NODE_T(buf_page_t) LRU;$/;"	m	class:Cache_hint::buf_page_t
@@ -1994,8 +1995,8 @@ MAX_CLONES	include/clone0clone.h	/^const int MAX_CLONES = 1;$/;"	v
 MAX_CLONES_PER_SNAPSHOT	clone/clone0snapshot.cc	/^const uint MAX_CLONES_PER_SNAPSHOT = 1;$/;"	v
 MAX_COMPRESSION_LEN	include/univ.i	379;"	d	file:
 MAX_DATABASE_NAME_LEN	include/univ.i	368;"	d	file:
-MAX_DATA_SIZE	include/dyn0buf.h	/^    enum { MAX_DATA_SIZE = SIZE - sizeof(block_node_t) + sizeof(ib_uint32_t) };$/;"	e	enum:dyn_buf_t::block_t::__anon14
-MAX_DATA_SIZE	include/dyn0buf.h	/^  enum { MAX_DATA_SIZE = block_t::MAX_DATA_SIZE };$/;"	e	enum:dyn_buf_t::__anon15
+MAX_DATA_SIZE	include/dyn0buf.h	/^    enum { MAX_DATA_SIZE = SIZE - sizeof(block_node_t) + sizeof(ib_uint32_t) };$/;"	e	enum:dyn_buf_t::block_t::__anon22
+MAX_DATA_SIZE	include/dyn0buf.h	/^  enum { MAX_DATA_SIZE = block_t::MAX_DATA_SIZE };$/;"	e	enum:dyn_buf_t::__anon23
 MAX_DB_UTF8_LEN	include/univ.i	384;"	d	file:
 MAX_DETAILED_ERROR_LEN	trx/trx0trx.cc	/^static const ulint MAX_DETAILED_ERROR_LEN = 256;$/;"	v	file:
 MAX_DOC_ID_OPT_VAL	include/fts0fts.h	73;"	d
@@ -2010,7 +2011,7 @@ MAX_PAGES_TO_CHECK	fil/fil0fil.cc	/^static const size_t MAX_PAGES_TO_CHECK = 3;$
 MAX_PAGE_HASH_LOCKS	include/buf0buf.h	/^constexpr ulint MAX_PAGE_HASH_LOCKS = 1024;$/;"	m	class:Cache_hint
 MAX_PARTIAL_UPDATE_LIMIT	include/lob0util.h	/^const uint32_t MAX_PARTIAL_UPDATE_LIMIT = 1000;$/;"	m	namespace:lob
 MAX_PROXIMITY_ITEM	fts/fts0que.cc	59;"	d	file:
-MAX_PURGE_THREADS	include/srv0srv.h	518;"	d
+MAX_PURGE_THREADS	include/srv0srv.h	540;"	d
 MAX_RESERVED	include/srv0mon.h	113;"	d
 MAX_SCAN_THREADS	fil/fil0fil.cc	/^static const size_t MAX_SCAN_THREADS = 8;$/;"	v	file:
 MAX_SECTOR_SIZE	os/os0file.cc	/^static const ulint MAX_SECTOR_SIZE = 4096;$/;"	v	file:
@@ -2053,7 +2054,7 @@ METADATA_CLEAN	include/dict0mem.h	/^  METADATA_CLEAN$/;"	e	enum:table_dirty_stat
 METADATA_COL_NO	include/dict0dict.h	/^  static constexpr unsigned METADATA_COL_NO = 2;$/;"	m	class:DDTableBuffer
 METADATA_DIRTY	include/dict0mem.h	/^  METADATA_DIRTY = 0,$/;"	e	enum:table_dirty_status
 METADATA_FIELD_NO	include/dict0dict.h	/^  static constexpr unsigned METADATA_FIELD_NO = METADATA_COL_NO + 2;$/;"	m	class:DDTableBuffer
-MF	fil/fil0fil.cc	8849;"	d	file:
+MF	fil/fil0fil.cc	8852;"	d	file:
 MICROSECS_IN_A_SECOND	os/os0event.cc	/^static const ulint MICROSECS_IN_A_SECOND = 1000000;$/;"	v	file:
 MIN_EXPECTED_TABLESPACE_SIZE	handler/ha_innodb.cc	/^static const ulint MIN_EXPECTED_TABLESPACE_SIZE = 5 * 1024 * 1024;$/;"	v	file:
 MIN_RECALC_INTERVAL	dict/dict0stats_bg.cc	50;"	d	file:
@@ -2134,8 +2135,8 @@ MONITOR_ADAPTIVE_HASH_ROW_UPDATED	include/srv0mon.h	/^  MONITOR_ADAPTIVE_HASH_RO
 MONITOR_ALL_COUNTER	include/srv0mon.h	/^  MONITOR_ALL_COUNTER,$/;"	e	enum:monitor_id_t
 MONITOR_ALTER_TABLE_LOG_FILES	include/srv0mon.h	/^  MONITOR_ALTER_TABLE_LOG_FILES,$/;"	e	enum:monitor_id_t
 MONITOR_ALTER_TABLE_SORT_FILES	include/srv0mon.h	/^  MONITOR_ALTER_TABLE_SORT_FILES,$/;"	e	enum:monitor_id_t
-MONITOR_ATOMIC_DEC	include/srv0mon.h	654;"	d
-MONITOR_ATOMIC_INC	include/srv0mon.h	639;"	d
+MONITOR_ATOMIC_DEC	include/srv0mon.h	660;"	d
+MONITOR_ATOMIC_INC	include/srv0mon.h	645;"	d
 MONITOR_BACKGROUND_DROP_TABLE	include/srv0mon.h	/^  MONITOR_BACKGROUND_DROP_TABLE,$/;"	e	enum:monitor_id_t
 MONITOR_BLOB_PAGE_READ	include/srv0mon.h	/^  MONITOR_BLOB_PAGE_READ,$/;"	e	enum:monitor_id_t
 MONITOR_BLOB_PAGE_WRITTEN	include/srv0mon.h	/^  MONITOR_BLOB_PAGE_WRITTEN,$/;"	e	enum:monitor_id_t
@@ -2144,24 +2145,24 @@ MONITOR_BUF_PAGE_READ	srv/srv0mon.cc	58;"	d	file:
 MONITOR_BUF_PAGE_WRITTEN	srv/srv0mon.cc	61;"	d	file:
 MONITOR_BUF_PAGE_WRITTEN_WAIT_STATS	srv/srv0mon.cc	83;"	d	file:
 MONITOR_BUF_PAGE_WRITTEN_WAIT_STATS_WRAP	srv/srv0mon.cc	79;"	d	file:
-MONITOR_CHECK_DEFINED	include/srv0mon.h	675;"	d
 MONITOR_CHECK_DEFINED	include/srv0mon.h	681;"	d
+MONITOR_CHECK_DEFINED	include/srv0mon.h	687;"	d
 MONITOR_CPU_N	include/srv0mon.h	/^  MONITOR_CPU_N,$/;"	e	enum:monitor_id_t
 MONITOR_CPU_STIME_ABS	include/srv0mon.h	/^  MONITOR_CPU_STIME_ABS,$/;"	e	enum:monitor_id_t
 MONITOR_CPU_STIME_PCT	include/srv0mon.h	/^  MONITOR_CPU_STIME_PCT,$/;"	e	enum:monitor_id_t
 MONITOR_CPU_UTIME_ABS	include/srv0mon.h	/^  MONITOR_CPU_UTIME_ABS,$/;"	e	enum:monitor_id_t
 MONITOR_CPU_UTIME_PCT	include/srv0mon.h	/^  MONITOR_CPU_UTIME_PCT,$/;"	e	enum:monitor_id_t
 MONITOR_DEADLOCK	include/srv0mon.h	/^  MONITOR_DEADLOCK,$/;"	e	enum:monitor_id_t
-MONITOR_DEC	include/srv0mon.h	666;"	d
-MONITOR_DEC	include/srv0mon.h	893;"	d
-MONITOR_DEC_NOCHECK	include/srv0mon.h	713;"	d
-MONITOR_DEC_VALUE	include/srv0mon.h	693;"	d
+MONITOR_DEC	include/srv0mon.h	672;"	d
+MONITOR_DEC	include/srv0mon.h	899;"	d
+MONITOR_DEC_NOCHECK	include/srv0mon.h	719;"	d
+MONITOR_DEC_VALUE	include/srv0mon.h	699;"	d
 MONITOR_DEFAULT_ON	include/srv0mon.h	/^  MONITOR_DEFAULT_ON = 32,     \/*!< Monitor will be turned on by default at$/;"	e	enum:monitor_type_t
 MONITOR_DEFAULT_START	include/srv0mon.h	/^  MONITOR_DEFAULT_START = 0,$/;"	e	enum:monitor_id_t
 MONITOR_DISPLAY_CURRENT	include/srv0mon.h	/^  MONITOR_DISPLAY_CURRENT = 8, \/*!< Display current value of the$/;"	e	enum:monitor_type_t
 MONITOR_DML_PURGE_DELAY	include/srv0mon.h	/^  MONITOR_DML_PURGE_DELAY,$/;"	e	enum:monitor_id_t
 MONITOR_EXISTING	include/srv0mon.h	/^  MONITOR_EXISTING = 2,        \/*!< The monitor carries information from$/;"	e	enum:monitor_type_t
-MONITOR_FIELD	include/srv0mon.h	570;"	d
+MONITOR_FIELD	include/srv0mon.h	576;"	d
 MONITOR_FLUSH_ADAPTIVE_AVG_PASS	include/srv0mon.h	/^  MONITOR_FLUSH_ADAPTIVE_AVG_PASS,$/;"	e	enum:monitor_id_t
 MONITOR_FLUSH_ADAPTIVE_AVG_TIME_EST	include/srv0mon.h	/^  MONITOR_FLUSH_ADAPTIVE_AVG_TIME_EST,$/;"	e	enum:monitor_id_t
 MONITOR_FLUSH_ADAPTIVE_AVG_TIME_SLOT	include/srv0mon.h	/^  MONITOR_FLUSH_ADAPTIVE_AVG_TIME_SLOT,$/;"	e	enum:monitor_id_t
@@ -2206,15 +2207,15 @@ MONITOR_ICP_ATTEMPTS	include/srv0mon.h	/^  MONITOR_ICP_ATTEMPTS,$/;"	e	enum:moni
 MONITOR_ICP_MATCH	include/srv0mon.h	/^  MONITOR_ICP_MATCH,$/;"	e	enum:monitor_id_t
 MONITOR_ICP_NO_MATCH	include/srv0mon.h	/^  MONITOR_ICP_NO_MATCH,$/;"	e	enum:monitor_id_t
 MONITOR_ICP_OUT_OF_RANGE	include/srv0mon.h	/^  MONITOR_ICP_OUT_OF_RANGE,$/;"	e	enum:monitor_id_t
-MONITOR_INC	include/srv0mon.h	628;"	d
-MONITOR_INC	include/srv0mon.h	892;"	d
+MONITOR_INC	include/srv0mon.h	634;"	d
+MONITOR_INC	include/srv0mon.h	898;"	d
 MONITOR_INC	page/page0zip.cc	68;"	d	file:
-MONITOR_INC_NOCHECK	include/srv0mon.h	705;"	d
-MONITOR_INC_TIME_IN_MICRO_SECS	include/srv0mon.h	738;"	d
-MONITOR_INC_VALUE	include/srv0mon.h	684;"	d
-MONITOR_INC_VALUE_CUMULATIVE	include/srv0mon.h	756;"	d
-MONITOR_INC_WAIT_STATS	include/srv0mon.h	905;"	d
-MONITOR_INC_WAIT_STATS_EX	include/srv0mon.h	896;"	d
+MONITOR_INC_NOCHECK	include/srv0mon.h	711;"	d
+MONITOR_INC_TIME_IN_MICRO_SECS	include/srv0mon.h	744;"	d
+MONITOR_INC_VALUE	include/srv0mon.h	690;"	d
+MONITOR_INC_VALUE_CUMULATIVE	include/srv0mon.h	762;"	d
+MONITOR_INC_WAIT_STATS	include/srv0mon.h	911;"	d
+MONITOR_INC_WAIT_STATS_EX	include/srv0mon.h	902;"	d
 MONITOR_INDEX_DISCARD	include/srv0mon.h	/^  MONITOR_INDEX_DISCARD,$/;"	e	enum:monitor_id_t
 MONITOR_INDEX_IBUF_LEAF_PAGE_READ	include/srv0mon.h	/^  MONITOR_INDEX_IBUF_LEAF_PAGE_READ,$/;"	e	enum:monitor_id_t
 MONITOR_INDEX_IBUF_LEAF_PAGE_WRITTEN	include/srv0mon.h	/^  MONITOR_INDEX_IBUF_LEAF_PAGE_WRITTEN,$/;"	e	enum:monitor_id_t
@@ -2229,12 +2230,12 @@ MONITOR_INDEX_NON_LEAF_PAGE_WRITTEN	include/srv0mon.h	/^  MONITOR_INDEX_NON_LEAF
 MONITOR_INDEX_REORG_ATTEMPTS	include/srv0mon.h	/^  MONITOR_INDEX_REORG_ATTEMPTS,$/;"	e	enum:monitor_id_t
 MONITOR_INDEX_REORG_SUCCESSFUL	include/srv0mon.h	/^  MONITOR_INDEX_REORG_SUCCESSFUL,$/;"	e	enum:monitor_id_t
 MONITOR_INDEX_SPLIT	include/srv0mon.h	/^  MONITOR_INDEX_SPLIT,$/;"	e	enum:monitor_id_t
-MONITOR_INIT	include/srv0mon.h	616;"	d
-MONITOR_INIT_ZERO_VALUE	include/srv0mon.h	607;"	d
+MONITOR_INIT	include/srv0mon.h	622;"	d
+MONITOR_INIT_ZERO_VALUE	include/srv0mon.h	613;"	d
 MONITOR_INODE_PAGE_READ	include/srv0mon.h	/^  MONITOR_INODE_PAGE_READ,$/;"	e	enum:monitor_id_t
 MONITOR_INODE_PAGE_WRITTEN	include/srv0mon.h	/^  MONITOR_INODE_PAGE_WRITTEN,$/;"	e	enum:monitor_id_t
-MONITOR_IS_ON	include/srv0mon.h	555;"	d
-MONITOR_LAST_VALUE	include/srv0mon.h	586;"	d
+MONITOR_IS_ON	include/srv0mon.h	561;"	d
+MONITOR_LAST_VALUE	include/srv0mon.h	592;"	d
 MONITOR_LATCHES	include/srv0mon.h	/^  MONITOR_LATCHES,$/;"	e	enum:monitor_id_t
 MONITOR_LOCKREC_WAIT	include/srv0mon.h	/^  MONITOR_LOCKREC_WAIT,$/;"	e	enum:monitor_id_t
 MONITOR_LOG_CHECKPOINTS	include/srv0mon.h	/^  MONITOR_LOG_CHECKPOINTS,$/;"	e	enum:monitor_id_t
@@ -2306,11 +2307,11 @@ MONITOR_LRU_UNZIP_SEARCH_SCANNED_PER_CALL	include/srv0mon.h	/^  MONITOR_LRU_UNZI
 MONITOR_MASTER_ACTIVE_LOOPS	include/srv0mon.h	/^  MONITOR_MASTER_ACTIVE_LOOPS,$/;"	e	enum:monitor_id_t
 MONITOR_MASTER_IDLE_LOOPS	include/srv0mon.h	/^  MONITOR_MASTER_IDLE_LOOPS,$/;"	e	enum:monitor_id_t
 MONITOR_MASTER_THREAD_SLEEP	include/srv0mon.h	/^  MONITOR_MASTER_THREAD_SLEEP,$/;"	e	enum:monitor_id_t
-MONITOR_MAX_MIN_NOT_INIT	include/srv0mon.h	611;"	d
-MONITOR_MAX_VALUE	include/srv0mon.h	574;"	d
-MONITOR_MAX_VALUE_START	include/srv0mon.h	580;"	d
-MONITOR_MIN_VALUE	include/srv0mon.h	576;"	d
-MONITOR_MIN_VALUE_START	include/srv0mon.h	583;"	d
+MONITOR_MAX_MIN_NOT_INIT	include/srv0mon.h	617;"	d
+MONITOR_MAX_VALUE	include/srv0mon.h	580;"	d
+MONITOR_MAX_VALUE_START	include/srv0mon.h	586;"	d
+MONITOR_MIN_VALUE	include/srv0mon.h	582;"	d
+MONITOR_MIN_VALUE_START	include/srv0mon.h	589;"	d
 MONITOR_MODULE	include/srv0mon.h	/^  MONITOR_MODULE = 1,          \/*!< This is a monitor module type,$/;"	e	enum:monitor_type_t
 MONITOR_MODULE_ADAPTIVE_HASH	include/srv0mon.h	/^  MONITOR_MODULE_ADAPTIVE_HASH,$/;"	e	enum:monitor_id_t
 MONITOR_MODULE_BUFFER	include/srv0mon.h	/^  MONITOR_MODULE_BUFFER,$/;"	e	enum:monitor_id_t
@@ -2333,7 +2334,7 @@ MONITOR_MODULE_SERVER	include/srv0mon.h	/^  MONITOR_MODULE_SERVER,$/;"	e	enum:mo
 MONITOR_MODULE_TRX	include/srv0mon.h	/^  MONITOR_MODULE_TRX,$/;"	e	enum:monitor_id_t
 MONITOR_NONE	include/srv0mon.h	/^  MONITOR_NONE = 0,            \/*!< No monitoring *\/$/;"	e	enum:monitor_type_t
 MONITOR_NO_AVERAGE	include/srv0mon.h	/^  MONITOR_NO_AVERAGE = 4,      \/*!< Set this status if we don't want to$/;"	e	enum:monitor_type_t
-MONITOR_NO_MATCH	include/srv0mon.h	504;"	d
+MONITOR_NO_MATCH	include/srv0mon.h	510;"	d
 MONITOR_NUM_RECLOCK	include/srv0mon.h	/^  MONITOR_NUM_RECLOCK,$/;"	e	enum:monitor_id_t
 MONITOR_NUM_RECLOCK_REQ	include/srv0mon.h	/^  MONITOR_NUM_RECLOCK_REQ,$/;"	e	enum:monitor_id_t
 MONITOR_NUM_TABLELOCK	include/srv0mon.h	/^  MONITOR_NUM_TABLELOCK,$/;"	e	enum:monitor_id_t
@@ -2341,12 +2342,12 @@ MONITOR_NUM_UNDO_SLOT_CACHED	include/srv0mon.h	/^  MONITOR_NUM_UNDO_SLOT_CACHED,
 MONITOR_NUM_UNDO_SLOT_USED	include/srv0mon.h	/^  MONITOR_NUM_UNDO_SLOT_USED,$/;"	e	enum:monitor_id_t
 MONITOR_N_DEL_ROW_PURGE	include/srv0mon.h	/^  MONITOR_N_DEL_ROW_PURGE,$/;"	e	enum:monitor_id_t
 MONITOR_N_UPD_EXIST_EXTERN	include/srv0mon.h	/^  MONITOR_N_UPD_EXIST_EXTERN,$/;"	e	enum:monitor_id_t
-MONITOR_OFF	include/srv0mon.h	550;"	d
+MONITOR_OFF	include/srv0mon.h	556;"	d
 MONITOR_OLVD_ROW_DELETED	include/srv0mon.h	/^  MONITOR_OLVD_ROW_DELETED,$/;"	e	enum:monitor_id_t
 MONITOR_OLVD_ROW_INSERTED	include/srv0mon.h	/^  MONITOR_OLVD_ROW_INSERTED,$/;"	e	enum:monitor_id_t
 MONITOR_OLVD_ROW_READ	include/srv0mon.h	/^  MONITOR_OLVD_ROW_READ,$/;"	e	enum:monitor_id_t
 MONITOR_OLVD_ROW_UPDTATED	include/srv0mon.h	/^  MONITOR_OLVD_ROW_UPDTATED,$/;"	e	enum:monitor_id_t
-MONITOR_ON	include/srv0mon.h	546;"	d
+MONITOR_ON	include/srv0mon.h	552;"	d
 MONITOR_ONLINE_CREATE_INDEX	include/srv0mon.h	/^  MONITOR_ONLINE_CREATE_INDEX,$/;"	e	enum:monitor_id_t
 MONITOR_ON_LOG_NO_WAITS_PAGE_WRITTEN	include/srv0mon.h	/^  MONITOR_ON_LOG_NO_WAITS_PAGE_WRITTEN,$/;"	e	enum:monitor_id_t
 MONITOR_ON_LOG_WAITS_PAGE_WRITTEN	include/srv0mon.h	/^  MONITOR_ON_LOG_WAITS_PAGE_WRITTEN,$/;"	e	enum:monitor_id_t
@@ -2422,9 +2423,15 @@ MONITOR_OVLD_RWLOCK_X_SPIN_WAITS	include/srv0mon.h	/^  MONITOR_OVLD_RWLOCK_X_SPI
 MONITOR_OVLD_SERVER_ACTIVITY	include/srv0mon.h	/^  MONITOR_OVLD_SERVER_ACTIVITY,$/;"	e	enum:monitor_id_t
 MONITOR_OVLD_SRV_DBLWR_PAGES_WRITTEN	include/srv0mon.h	/^  MONITOR_OVLD_SRV_DBLWR_PAGES_WRITTEN,$/;"	e	enum:monitor_id_t
 MONITOR_OVLD_SRV_DBLWR_WRITES	include/srv0mon.h	/^  MONITOR_OVLD_SRV_DBLWR_WRITES,$/;"	e	enum:monitor_id_t
-MONITOR_OVLD_SRV_NVDIMM_PAGES_READ	include/srv0mon.h	/^  MONITOR_OVLD_SRV_NVDIMM_PAGES_READ,$/;"	e	enum:monitor_id_t
-MONITOR_OVLD_SRV_NVDIMM_PAGES_STORED	include/srv0mon.h	/^  MONITOR_OVLD_SRV_NVDIMM_PAGES_STORED,$/;"	e	enum:monitor_id_t
-MONITOR_OVLD_SRV_NVDIMM_PAGES_WRITTEN	include/srv0mon.h	/^  MONITOR_OVLD_SRV_NVDIMM_PAGES_WRITTEN,$/;"	e	enum:monitor_id_t
+MONITOR_OVLD_SRV_NVDIMM_PAGES_READ_NO_UNDO	include/srv0mon.h	/^  MONITOR_OVLD_SRV_NVDIMM_PAGES_READ_NO_UNDO,$/;"	e	enum:monitor_id_t
+MONITOR_OVLD_SRV_NVDIMM_PAGES_READ_OL	include/srv0mon.h	/^  MONITOR_OVLD_SRV_NVDIMM_PAGES_READ_OL,$/;"	e	enum:monitor_id_t
+MONITOR_OVLD_SRV_NVDIMM_PAGES_READ_ST	include/srv0mon.h	/^  MONITOR_OVLD_SRV_NVDIMM_PAGES_READ_ST,$/;"	e	enum:monitor_id_t
+MONITOR_OVLD_SRV_NVDIMM_PAGES_STORED_NO_UNDO	include/srv0mon.h	/^  MONITOR_OVLD_SRV_NVDIMM_PAGES_STORED_NO_UNDO,$/;"	e	enum:monitor_id_t
+MONITOR_OVLD_SRV_NVDIMM_PAGES_STORED_OL	include/srv0mon.h	/^  MONITOR_OVLD_SRV_NVDIMM_PAGES_STORED_OL,$/;"	e	enum:monitor_id_t
+MONITOR_OVLD_SRV_NVDIMM_PAGES_STORED_ST	include/srv0mon.h	/^  MONITOR_OVLD_SRV_NVDIMM_PAGES_STORED_ST,$/;"	e	enum:monitor_id_t
+MONITOR_OVLD_SRV_NVDIMM_PAGES_WRITTEN_NO_UNDO	include/srv0mon.h	/^  MONITOR_OVLD_SRV_NVDIMM_PAGES_WRITTEN_NO_UNDO,$/;"	e	enum:monitor_id_t
+MONITOR_OVLD_SRV_NVDIMM_PAGES_WRITTEN_OL	include/srv0mon.h	/^  MONITOR_OVLD_SRV_NVDIMM_PAGES_WRITTEN_OL,$/;"	e	enum:monitor_id_t
+MONITOR_OVLD_SRV_NVDIMM_PAGES_WRITTEN_ST	include/srv0mon.h	/^  MONITOR_OVLD_SRV_NVDIMM_PAGES_WRITTEN_ST,$/;"	e	enum:monitor_id_t
 MONITOR_OVLD_SRV_PAGE_SIZE	include/srv0mon.h	/^  MONITOR_OVLD_SRV_PAGE_SIZE,$/;"	e	enum:monitor_id_t
 MONITOR_PAD_DECREMENTS	include/srv0mon.h	/^  MONITOR_PAD_DECREMENTS,$/;"	e	enum:monitor_id_t
 MONITOR_PAD_INCREMENTS	include/srv0mon.h	/^  MONITOR_PAD_INCREMENTS,$/;"	e	enum:monitor_id_t
@@ -2437,24 +2444,24 @@ MONITOR_PURGE_RESUME_COUNT	include/srv0mon.h	/^  MONITOR_PURGE_RESUME_COUNT,$/;"
 MONITOR_PURGE_STOP_COUNT	include/srv0mon.h	/^  MONITOR_PURGE_STOP_COUNT,$/;"	e	enum:monitor_id_t
 MONITOR_RECLOCK_CREATED	include/srv0mon.h	/^  MONITOR_RECLOCK_CREATED,$/;"	e	enum:monitor_id_t
 MONITOR_RECLOCK_REMOVED	include/srv0mon.h	/^  MONITOR_RECLOCK_REMOVED,$/;"	e	enum:monitor_id_t
-MONITOR_RESET_ALL	include/srv0mon.h	793;"	d
+MONITOR_RESET_ALL	include/srv0mon.h	799;"	d
 MONITOR_RESET_ALL_VALUE	include/srv0mon.h	/^  MONITOR_RESET_ALL_VALUE, \/*!< Reset all values *\/$/;"	e	enum:mon_option_t
 MONITOR_RESET_VALUE	include/srv0mon.h	/^  MONITOR_RESET_VALUE,     \/*!< Reset current values *\/$/;"	e	enum:mon_option_t
 MONITOR_RSEG_ARRAY_PAGE_READ	include/srv0mon.h	/^  MONITOR_RSEG_ARRAY_PAGE_READ,$/;"	e	enum:monitor_id_t
 MONITOR_RSEG_ARRAY_PAGE_WRITTEN	include/srv0mon.h	/^  MONITOR_RSEG_ARRAY_PAGE_WRITTEN,$/;"	e	enum:monitor_id_t
 MONITOR_RSEG_CUR_SIZE	include/srv0mon.h	/^  MONITOR_RSEG_CUR_SIZE,$/;"	e	enum:monitor_id_t
 MONITOR_RSEG_HISTORY_LEN	include/srv0mon.h	/^  MONITOR_RSEG_HISTORY_LEN,$/;"	e	enum:monitor_id_t
-MONITOR_RW_COUNTER	buf/buf0buf.cc	362;"	d	file:
-MONITOR_SAVE_LAST	include/srv0mon.h	821;"	d
-MONITOR_SAVE_START	include/srv0mon.h	812;"	d
-MONITOR_SET	include/srv0mon.h	722;"	d
-MONITOR_SET_DIFF	include/srv0mon.h	829;"	d
+MONITOR_RW_COUNTER	buf/buf0buf.cc	363;"	d	file:
+MONITOR_SAVE_LAST	include/srv0mon.h	827;"	d
+MONITOR_SAVE_START	include/srv0mon.h	818;"	d
+MONITOR_SET	include/srv0mon.h	728;"	d
+MONITOR_SET_DIFF	include/srv0mon.h	835;"	d
 MONITOR_SET_MEMBER	include/srv0mon.h	/^  MONITOR_SET_MEMBER = 128,    \/*!< Being part of a "monitor set" *\/$/;"	e	enum:monitor_type_t
-MONITOR_SET_OFF	include/srv0mon.h	601;"	d
+MONITOR_SET_OFF	include/srv0mon.h	607;"	d
 MONITOR_SET_OWNER	include/srv0mon.h	/^  MONITOR_SET_OWNER = 64,      \/*!< Owner of "monitor set", a set of$/;"	e	enum:monitor_type_t
-MONITOR_SET_SIMPLE	include/srv0mon.h	785;"	d
-MONITOR_SET_START	include/srv0mon.h	595;"	d
-MONITOR_SET_UPD_MAX_ONLY	include/srv0mon.h	774;"	d
+MONITOR_SET_SIMPLE	include/srv0mon.h	791;"	d
+MONITOR_SET_START	include/srv0mon.h	601;"	d
+MONITOR_SET_UPD_MAX_ONLY	include/srv0mon.h	780;"	d
 MONITOR_SRV_BACKGROUND_DROP_TABLE_MICROSECOND	include/srv0mon.h	/^  MONITOR_SRV_BACKGROUND_DROP_TABLE_MICROSECOND,$/;"	e	enum:monitor_id_t
 MONITOR_SRV_DICT_LRU_EVICT_COUNT	include/srv0mon.h	/^  MONITOR_SRV_DICT_LRU_EVICT_COUNT,$/;"	e	enum:monitor_id_t
 MONITOR_SRV_DICT_LRU_MICROSECOND	include/srv0mon.h	/^  MONITOR_SRV_DICT_LRU_MICROSECOND,$/;"	e	enum:monitor_id_t
@@ -2462,8 +2469,8 @@ MONITOR_SRV_IBUF_MERGE_MICROSECOND	include/srv0mon.h	/^  MONITOR_SRV_IBUF_MERGE_
 MONITOR_SRV_MEM_VALIDATE_MICROSECOND	include/srv0mon.h	/^  MONITOR_SRV_MEM_VALIDATE_MICROSECOND,$/;"	e	enum:monitor_id_t
 MONITOR_SRV_PURGE_MICROSECOND	include/srv0mon.h	/^  MONITOR_SRV_PURGE_MICROSECOND,$/;"	e	enum:monitor_id_t
 MONITOR_STARTED	include/srv0mon.h	/^  MONITOR_STARTED = 1, \/*!< Monitor has been turned on *\/$/;"	e	enum:monitor_running_status
-MONITOR_START_VALUE	include/srv0mon.h	588;"	d
-MONITOR_STATUS	include/srv0mon.h	593;"	d
+MONITOR_START_VALUE	include/srv0mon.h	594;"	d
+MONITOR_STATUS	include/srv0mon.h	599;"	d
 MONITOR_STOPPED	include/srv0mon.h	/^  MONITOR_STOPPED = 2  \/*!< Monitor has been turned off *\/$/;"	e	enum:monitor_running_status
 MONITOR_SYSTEM_PAGE_READ	include/srv0mon.h	/^  MONITOR_SYSTEM_PAGE_READ,$/;"	e	enum:monitor_id_t
 MONITOR_SYSTEM_PAGE_WRITTEN	include/srv0mon.h	/^  MONITOR_SYSTEM_PAGE_WRITTEN,$/;"	e	enum:monitor_id_t
@@ -2491,13 +2498,13 @@ MONITOR_TURN_OFF	include/srv0mon.h	/^  MONITOR_TURN_OFF,        \/*!< Turn off t
 MONITOR_TURN_ON	include/srv0mon.h	/^  MONITOR_TURN_ON = 1,     \/*!< Turn on the counter *\/$/;"	e	enum:mon_option_t
 MONITOR_UNDO_LOG_PAGE_READ	include/srv0mon.h	/^  MONITOR_UNDO_LOG_PAGE_READ,$/;"	e	enum:monitor_id_t
 MONITOR_UNDO_LOG_PAGE_WRITTEN	include/srv0mon.h	/^  MONITOR_UNDO_LOG_PAGE_WRITTEN,$/;"	e	enum:monitor_id_t
-MONITOR_VALUE	include/srv0mon.h	572;"	d
-MONITOR_VALUE_RESET	include/srv0mon.h	578;"	d
-MONITOR_VALUE_SINCE_START	include/srv0mon.h	590;"	d
+MONITOR_VALUE	include/srv0mon.h	578;"	d
+MONITOR_VALUE_RESET	include/srv0mon.h	584;"	d
+MONITOR_VALUE_SINCE_START	include/srv0mon.h	596;"	d
 MONITOR_WAIT_STATS	srv/srv0mon.cc	75;"	d	file:
 MONITOR_WAIT_STATS_EX	srv/srv0mon.cc	64;"	d	file:
 MONITOR_WAIT_STATS_SIMPLE_WRAP	srv/srv0mon.cc	72;"	d	file:
-MONITOR_WILDCARD_MATCH	include/srv0mon.h	501;"	d
+MONITOR_WILDCARD_MATCH	include/srv0mon.h	507;"	d
 MONITOR_XDES_PAGE_READ	include/srv0mon.h	/^  MONITOR_XDES_PAGE_READ,$/;"	e	enum:monitor_id_t
 MONITOR_XDES_PAGE_WRITTEN	include/srv0mon.h	/^  MONITOR_XDES_PAGE_WRITTEN,$/;"	e	enum:monitor_id_t
 MONITOR_ZBLOB2_PAGE_READ	include/srv0mon.h	/^  MONITOR_ZBLOB2_PAGE_READ,$/;"	e	enum:monitor_id_t
@@ -2633,22 +2640,23 @@ NONE	os/file.h	/^    NONE = 0,$/;"	e	enum:Compression::Type
 NORMAL	include/buf0buf.h	/^  NORMAL,$/;"	m	class:Page_fetch
 NORMAL	include/os0file.h	/^  NORMAL = 21,$/;"	m	class:Encryption::AIO_mode
 NOT_FOUND	include/ut0lock_free_hash.h	/^  static const int64_t NOT_FOUND = INT64_MAX;$/;"	m	class:ut_hash_interface_t
-NOT_STARTED	include/clone0monitor.h	/^  enum { NOT_STARTED = 0, ESTIMATE_WORK, COMPLETE_WORK } m_cur_phase;$/;"	e	enum:Clone_Monitor::__anon6
-NOT_STARTED	include/ut0stage.h	/^    NOT_STARTED = 0,$/;"	e	enum:ut_stage_alter_t::__anon9
-NOT_STARTED	include/ut0stage.h	/^    NOT_STARTED = 0,$/;"	e	enum:ut_stage_alter_ts::__anon10
-NO_COMPRESSION	include/os0file.h	/^    NO_COMPRESSION = 512$/;"	e	enum:Encryption::IORequest::__anon17
+NOT_STARTED	include/clone0monitor.h	/^  enum { NOT_STARTED = 0, ESTIMATE_WORK, COMPLETE_WORK } m_cur_phase;$/;"	e	enum:Clone_Monitor::__anon24
+NOT_STARTED	include/ut0stage.h	/^    NOT_STARTED = 0,$/;"	e	enum:ut_stage_alter_t::__anon26
+NOT_STARTED	include/ut0stage.h	/^    NOT_STARTED = 0,$/;"	e	enum:ut_stage_alter_ts::__anon27
+NO_COMPRESSION	include/os0file.h	/^    NO_COMPRESSION = 512$/;"	e	enum:Encryption::IORequest::__anon29
 NO_EXT	include/fil0fil.h	/^enum ib_file_suffix { NO_EXT = 0, IBD = 1, CFG = 2, CFP = 3, IBT = 4, IBU = 5 };$/;"	e	enum:ib_file_suffix
 NO_LATCH	include/buf0buf.h	/^  NO_LATCH,$/;"	m	class:Page_fetch
-NUMA_MEMPOLICY_INTERLEAVE_IN_SCOPE	buf/buf0buf.cc	118;"	d	file:
-NUMA_MEMPOLICY_INTERLEAVE_IN_SCOPE	buf/buf0buf.cc	120;"	d	file:
-NUM_BITS_ULINT	include/srv0mon.h	537;"	d
+NUMA_MEMPOLICY_INTERLEAVE_IN_SCOPE	buf/buf0buf.cc	119;"	d	file:
+NUMA_MEMPOLICY_INTERLEAVE_IN_SCOPE	buf/buf0buf.cc	121;"	d	file:
+NUM_BITS_ULINT	include/srv0mon.h	543;"	d
 NUM_MONITOR	include/srv0mon.h	/^  NUM_MONITOR$/;"	e	enum:monitor_id_t
 NUM_RETRIES_ON_PARTIAL_IO	os/os0file.cc	/^static const ulint NUM_RETRIES_ON_PARTIAL_IO = 10;$/;"	v	file:
 NVDIMM_DEBUG_PRINT	include/buf0nvdimm.h	10;"	d
+NVDIMM_MMAP_FILE_NAME	include/pmem_mmap_obj.h	21;"	d
 N_COLS	include/dict0dict.h	/^  static constexpr unsigned N_COLS = N_USER_COLS + DATA_N_SYS_COLS;$/;"	m	class:DDTableBuffer
 N_DIFF_REQUIRED	dict/dict0stats.cc	138;"	d	file:
 N_FIELDS	include/dict0dict.h	/^  static constexpr unsigned N_FIELDS = METADATA_FIELD_NO + 1;$/;"	m	class:DDTableBuffer
-N_PAGES_READ_LIMIT	btr/btr0cur.cc	4994;"	d	file:
+N_PAGES_READ_LIMIT	btr/btr0cur.cc	5050;"	d	file:
 N_ROWS_COL_NO	include/dict0stats.h	/^  static constexpr unsigned N_ROWS_COL_NO = 3;$/;"	m	class:TableStatsRecord
 N_SAMPLE_PAGES	dict/dict0stats.cc	130;"	d	file:
 N_USER_COLS	include/dict0dict.h	/^  static constexpr unsigned N_USER_COLS = METADATA_COL_NO + 1;$/;"	m	class:DDTableBuffer
@@ -2885,7 +2893,7 @@ PAGE_SAME_REC	include/page0types.h	140;"	d
 PAGE_SIZE_T_SIZE_BITS	include/page0size.h	/^  unsigned m_logical : PAGE_SIZE_T_SIZE_BITS;$/;"	m	class:page_size_t
 PAGE_SIZE_T_SIZE_BITS	include/page0size.h	/^  unsigned m_physical : PAGE_SIZE_T_SIZE_BITS;$/;"	m	class:page_size_t
 PAGE_SIZE_T_SIZE_BITS	include/page0size.h	46;"	d
-PAGE_TYPE	buf/buf0buf.cc	6655;"	d	file:
+PAGE_TYPE	buf/buf0buf.cc	6704;"	d	file:
 PAGE_ZIP_CLUST_LEAF_SLOT_SIZE	include/page0zip.h	69;"	d
 PAGE_ZIP_DIR_SLOT_DEL	include/page0zip.h	76;"	d
 PAGE_ZIP_DIR_SLOT_MASK	include/page0zip.h	72;"	d
@@ -3092,17 +3100,27 @@ PARTITION_IN_SHARED_TABLESPACE	handler/ha_innopart.h	/^static constexpr auto PAR
 PART_SEPARATOR	include/univ.i	/^constexpr char PART_SEPARATOR[PART_SEPARATOR_LEN + 1] = "#P#";$/;"	v
 PART_SEPARATOR	include/univ.i	/^constexpr char PART_SEPARATOR[PART_SEPARATOR_LEN + 1] = "#p#";$/;"	v
 PART_SEPARATOR_LEN	include/univ.i	/^constexpr size_t PART_SEPARATOR_LEN = 3;$/;"	v
-PCT_IO	include/srv0srv.h	515;"	d
+PCT_IO	include/srv0srv.h	537;"	d
 PCursor	row/row0pread.cc	/^  PCursor(btr_pcur_t *pcur, mtr_t *mtr) : m_mtr(mtr), m_pcur(pcur) {}$/;"	f	class:PCursor
 PCursor	row/row0pread.cc	/^class PCursor {$/;"	c	file:
 PEEK_IF_IN_POOL	include/buf0buf.h	/^  PEEK_IF_IN_POOL,$/;"	m	class:Page_fetch
 PFS_DATA_CHUNK_SIZE_POW2	include/clone0monitor.h	/^  static const int PFS_DATA_CHUNK_SIZE_POW2 = 20;$/;"	m	class:Clone_Monitor
-PFS_GROUP_BUFFER_SYNC	buf/buf0buf.cc	349;"	d	file:
-PFS_MAX_BUFFER_MUTEX_LOCK_REGISTER	buf/buf0buf.cc	355;"	d	file:
+PFS_GROUP_BUFFER_SYNC	buf/buf0buf.cc	350;"	d	file:
+PFS_MAX_BUFFER_MUTEX_LOCK_REGISTER	buf/buf0buf.cc	356;"	d	file:
 PFS_SKIP_BUFFER_MUTEX_RWLOCK	include/sync0sync.h	76;"	d
 PFS_SKIP_EVENT_MUTEX	include/sync0sync.h	79;"	d
 PFX	dict/dict0stats.cc	2443;"	d	file:
 PFX_LEN	dict/dict0stats.cc	2444;"	d	file:
+PMEMMMAP_ERROR_PRINT	include/pmem_mmap_obj.h	28;"	d
+PMEMMMAP_INFO_PRINT	include/pmem_mmap_obj.h	24;"	d
+PMEM_FILE_PATH	srv/srv0start.cc	/^char  PMEM_FILE_PATH [PMEM_MMAP_MAX_FILE_NAME_LENGTH];$/;"	v
+PMEM_MMAP_LOGFILE_CKPT_LSN	include/pmem_mmap_obj.h	/^constexpr uint32_t PMEM_MMAP_LOGFILE_CKPT_LSN = 1;$/;"	v
+PMEM_MMAP_LOGFILE_HEADER_SZ	include/pmem_mmap_obj.h	/^constexpr uint32_t PMEM_MMAP_LOGFILE_HEADER_SZ = PMEM_MMAP_RECOVERY_FLAG$/;"	v
+PMEM_MMAP_MAX_FILE_NAME_LENGTH	include/pmem_mmap_obj.h	22;"	d
+PMEM_MMAP_MTRLOG_BUF	include/pmem_mmap_obj.h	/^typedef struct __pmem_mmap_mtrlog_buf PMEM_MMAP_MTRLOG_BUF;$/;"	t	typeref:struct:__pmem_mmap_mtrlog_buf
+PMEM_MMAP_MTRLOG_HDR	include/pmem_mmap_obj.h	/^typedef struct __pmem_mmap_mtrlog_hdr PMEM_MMAP_MTRLOG_HDR;$/;"	t	typeref:struct:__pmem_mmap_mtrlog_hdr
+PMEM_MMAP_MTRLOG_HDR_SIZE	include/pmem_mmap_obj.h	77;"	d
+PMEM_MMAP_RECOVERY_FLAG	include/pmem_mmap_obj.h	/^constexpr uint32_t PMEM_MMAP_RECOVERY_FLAG = 0;$/;"	v
 PM_BIGGEST_TYPE	include/dict0mem.h	/^  PM_BIGGEST_TYPE = 3$/;"	e	enum:persistent_type_t
 PM_INDEX_CORRUPTED	include/dict0mem.h	/^  PM_INDEX_CORRUPTED = 1,$/;"	e	enum:persistent_type_t
 PM_SMALLEST_TYPE	include/dict0mem.h	/^  PM_SMALLEST_TYPE = 0,$/;"	e	enum:persistent_type_t
@@ -3118,7 +3136,7 @@ PRINT_USED_CELLS	ha/ha0ha.cc	459;"	d	file:
 PSI_KEY	handler/ha_innodb.cc	546;"	d	file:
 PSI_MUTEX_KEY	handler/ha_innodb.cc	548;"	d	file:
 PSI_RWLOCK_KEY	handler/ha_innodb.cc	551;"	d	file:
-PUNCH_HOLE	include/os0file.h	/^    PUNCH_HOLE = 256,$/;"	e	enum:Encryption::IORequest::__anon17
+PUNCH_HOLE	include/os0file.h	/^    PUNCH_HOLE = 256,$/;"	e	enum:Encryption::IORequest::__anon29
 PURGE_STATE_DISABLED	include/trx0purge.h	/^  PURGE_STATE_DISABLED \/*!< Purge was never started *\/$/;"	e	enum:purge_state_t
 PURGE_STATE_EXIT	include/trx0purge.h	/^  PURGE_STATE_EXIT,    \/*!< Purge has been shutdown *\/$/;"	e	enum:purge_state_t
 PURGE_STATE_INIT	include/trx0purge.h	/^  PURGE_STATE_INIT,    \/*!< Purge instance created *\/$/;"	e	enum:purge_state_t
@@ -3226,9 +3244,9 @@ QUIT_ON_FIRST_NON_BORING	dict/dict0stats.cc	/^  QUIT_ON_FIRST_NON_BORING, \/* qu
 RANKING_WORDS_INIT_LEN	fts/fts0que.cc	66;"	d	file:
 RANK_DOWNGRADE	fts/fts0que.cc	55;"	d	file:
 RANK_UPGRADE	fts/fts0que.cc	56;"	d	file:
-READ	include/os0file.h	/^    READ = 1,$/;"	e	enum:Encryption::IORequest::__anon17
+READ	include/os0file.h	/^    READ = 1,$/;"	e	enum:Encryption::IORequest::__anon29
 READ_COMMITTED	include/trx0trx.h	/^    READ_COMMITTED,$/;"	e	enum:trx_t::isolation_level_t
-READ_PK	include/ut0stage.h	/^    READ_PK = 1,$/;"	e	enum:ut_stage_alter_t::__anon9
+READ_PK	include/ut0stage.h	/^    READ_PK = 1,$/;"	e	enum:ut_stage_alter_t::__anon26
 READ_UNCOMMITTED	include/trx0trx.h	/^    READ_UNCOMMITTED,$/;"	e	enum:trx_t::isolation_level_t
 RECALC_POOL_INITIAL_SLOTS	dict/dict0stats_bg.cc	/^static const ulint RECALC_POOL_INITIAL_SLOTS = 128;$/;"	v	file:
 RECOVERY_CRASH	include/srv0start.h	49;"	d
@@ -3456,7 +3474,7 @@ SNAPSHOT_MAX_BLOCK_SIZE_POW2	include/clone0snapshot.h	/^const uint SNAPSHOT_MAX_
 SNAPSHOT_MEM_INITIAL_SIZE	clone/clone0snapshot.cc	/^const uint SNAPSHOT_MEM_INITIAL_SIZE = 16 * 1024;$/;"	v
 SNAPSHOT_STATE_CHANGE_SLEEP	include/clone0snapshot.h	/^const uint SNAPSHOT_STATE_CHANGE_SLEEP = 100 * 1000;$/;"	v
 SN_MAX	include/log0log.h	/^constexpr sn_t SN_MAX = (1ULL << 62) - 1;$/;"	v
-SORT	include/ut0stage.h	/^    SORT = 2,$/;"	e	enum:ut_stage_alter_t::__anon9
+SORT	include/ut0stage.h	/^    SORT = 2,$/;"	e	enum:ut_stage_alter_t::__anon26
 SPACE_ID	fil/fil0fil.cc	/^  SPACE_ID,$/;"	e	enum:dd_fil::__anon3	file:
 SPACE_ID_PF	include/univ.i	478;"	d	file:
 SPACE_ID_PFS	include/univ.i	479;"	d	file:
@@ -3471,37 +3489,37 @@ SPATIAL_UNKNOWN	include/dict0types.h	/^  SPATIAL_UNKNOWN = 0,$/;"	e	enum:spatial
 SPDIMS	include/univ.i	690;"	d	file:
 SPLEN	include/gis0geo.h	36;"	d
 SPTYPE	include/gis0geo.h	35;"	d
-SRV_AUTO_EXTEND_INCREMENT	include/srv0srv.h	232;"	d
-SRV_BUF_DUMP_FILENAME_DEFAULT	include/srv0srv.h	219;"	d
+SRV_AUTO_EXTEND_INCREMENT	include/srv0srv.h	250;"	d
+SRV_BUF_DUMP_FILENAME_DEFAULT	include/srv0srv.h	237;"	d
 SRV_CHECKSUM_ALGORITHM_CRC32	include/buf0types.h	/^  SRV_CHECKSUM_ALGORITHM_CRC32,         \/*!< Write crc32, allow crc32,$/;"	e	enum:srv_checksum_algorithm_t
 SRV_CHECKSUM_ALGORITHM_INNODB	include/buf0types.h	/^  SRV_CHECKSUM_ALGORITHM_INNODB,        \/*!< Write innodb, allow crc32,$/;"	e	enum:srv_checksum_algorithm_t
 SRV_CHECKSUM_ALGORITHM_NONE	include/buf0types.h	/^  SRV_CHECKSUM_ALGORITHM_NONE,          \/*!< Write none, allow crc32,$/;"	e	enum:srv_checksum_algorithm_t
 SRV_CHECKSUM_ALGORITHM_STRICT_CRC32	include/buf0types.h	/^  SRV_CHECKSUM_ALGORITHM_STRICT_CRC32,  \/*!< Write crc32, allow crc32$/;"	e	enum:srv_checksum_algorithm_t
 SRV_CHECKSUM_ALGORITHM_STRICT_INNODB	include/buf0types.h	/^  SRV_CHECKSUM_ALGORITHM_STRICT_INNODB, \/*!< Write innodb, allow$/;"	e	enum:srv_checksum_algorithm_t
 SRV_CHECKSUM_ALGORITHM_STRICT_NONE	include/buf0types.h	/^  SRV_CHECKSUM_ALGORITHM_STRICT_NONE    \/*!< Write none, allow none$/;"	e	enum:srv_checksum_algorithm_t
-SRV_FORCE_IGNORE_CORRUPT	include/srv0srv.h	/^  SRV_FORCE_IGNORE_CORRUPT = 1,   \/*!< let the server run even if it$/;"	e	enum:__anon18
-SRV_FORCE_NO_BACKGROUND	include/srv0srv.h	/^  SRV_FORCE_NO_BACKGROUND = 2,    \/*!< prevent the main thread from$/;"	e	enum:__anon18
-SRV_FORCE_NO_IBUF_MERGE	include/srv0srv.h	/^  SRV_FORCE_NO_IBUF_MERGE = 4,    \/*!< prevent also ibuf operations:$/;"	e	enum:__anon18
-SRV_FORCE_NO_LOG_REDO	include/srv0srv.h	/^  SRV_FORCE_NO_LOG_REDO = 6       \/*!< do not do the log roll-forward$/;"	e	enum:__anon18
-SRV_FORCE_NO_TRX_UNDO	include/srv0srv.h	/^  SRV_FORCE_NO_TRX_UNDO = 3,      \/*!< do not run trx rollback after$/;"	e	enum:__anon18
-SRV_FORCE_NO_UNDO_LOG_SCAN	include/srv0srv.h	/^  SRV_FORCE_NO_UNDO_LOG_SCAN = 5, \/*!< do not look at undo logs when$/;"	e	enum:__anon18
+SRV_FORCE_IGNORE_CORRUPT	include/srv0srv.h	/^  SRV_FORCE_IGNORE_CORRUPT = 1,   \/*!< let the server run even if it$/;"	e	enum:__anon21
+SRV_FORCE_NO_BACKGROUND	include/srv0srv.h	/^  SRV_FORCE_NO_BACKGROUND = 2,    \/*!< prevent the main thread from$/;"	e	enum:__anon21
+SRV_FORCE_NO_IBUF_MERGE	include/srv0srv.h	/^  SRV_FORCE_NO_IBUF_MERGE = 4,    \/*!< prevent also ibuf operations:$/;"	e	enum:__anon21
+SRV_FORCE_NO_LOG_REDO	include/srv0srv.h	/^  SRV_FORCE_NO_LOG_REDO = 6       \/*!< do not do the log roll-forward$/;"	e	enum:__anon21
+SRV_FORCE_NO_TRX_UNDO	include/srv0srv.h	/^  SRV_FORCE_NO_TRX_UNDO = 3,      \/*!< do not run trx rollback after$/;"	e	enum:__anon21
+SRV_FORCE_NO_UNDO_LOG_SCAN	include/srv0srv.h	/^  SRV_FORCE_NO_UNDO_LOG_SCAN = 5, \/*!< do not look at undo logs when$/;"	e	enum:__anon21
 SRV_MASTER	include/srv0srv.h	/^  SRV_MASTER  \/*!< the master thread, (whose type$/;"	e	enum:srv_thread_type
-SRV_MASTER_DICT_LRU_INTERVAL	srv/srv0srv.cc	612;"	d	file:
+SRV_MASTER_DICT_LRU_INTERVAL	srv/srv0srv.cc	616;"	d	file:
 SRV_MASTER_SLOT	srv/srv0srv.cc	/^static const ulint SRV_MASTER_SLOT = 0;$/;"	v	file:
-SRV_MAX_IO_CAPACITY_DUMMY_DEFAULT	include/srv0srv.h	509;"	d
-SRV_MAX_IO_CAPACITY_LIMIT	include/srv0srv.h	510;"	d
-SRV_MAX_N_IO_THREADS	include/srv0srv.h	602;"	d
-SRV_MAX_N_IO_THREADS	include/srv0srv.h	604;"	d
-SRV_MAX_N_PENDING_SYNC_IOS	srv/srv0start.cc	177;"	d	file:
+SRV_MAX_IO_CAPACITY_DUMMY_DEFAULT	include/srv0srv.h	531;"	d
+SRV_MAX_IO_CAPACITY_LIMIT	include/srv0srv.h	532;"	d
+SRV_MAX_N_IO_THREADS	include/srv0srv.h	624;"	d
+SRV_MAX_N_IO_THREADS	include/srv0srv.h	626;"	d
+SRV_MAX_N_PENDING_SYNC_IOS	srv/srv0start.cc	180;"	d	file:
 SRV_NEW_RAW	include/fsp0file.h	/^  SRV_NEW_RAW,$/;"	e	enum:device_t
 SRV_NONE	include/srv0srv.h	/^  SRV_NONE,   \/*!< None *\/$/;"	e	enum:srv_thread_type
 SRV_NOT_RAW	include/fsp0file.h	/^  SRV_NOT_RAW = 0,$/;"	e	enum:device_t
-SRV_N_LOG_FILES_MAX	include/srv0srv.h	320;"	d
+SRV_N_LOG_FILES_MAX	include/srv0srv.h	338;"	d
 SRV_N_PENDING_IOS_PER_THREAD	os/os0file.cc	217;"	d	file:
 SRV_OLD_RAW	include/fsp0file.h	/^  SRV_OLD_RAW$/;"	e	enum:device_t
 SRV_PURGE	include/srv0srv.h	/^  SRV_PURGE,  \/*!< Purge coordinator thread *\/$/;"	e	enum:srv_thread_type
 SRV_PURGE_SLOT	srv/srv0srv.cc	/^static const ulint SRV_PURGE_SLOT = 1;$/;"	v	file:
-SRV_SEMAPHORE_WAIT_EXTENSION	include/srv0srv.h	597;"	d
+SRV_SEMAPHORE_WAIT_EXTENSION	include/srv0srv.h	619;"	d
 SRV_SHUTDOWN_CLEANUP	include/srv0start.h	/^  SRV_SHUTDOWN_CLEANUP,     \/*!< Cleaning up in$/;"	e	enum:srv_shutdown_t
 SRV_SHUTDOWN_EXIT_THREADS	include/srv0start.h	/^  SRV_SHUTDOWN_EXIT_THREADS \/*!< Exit all threads *\/$/;"	e	enum:srv_shutdown_t
 SRV_SHUTDOWN_FLUSH_PHASE	include/srv0start.h	/^  SRV_SHUTDOWN_FLUSH_PHASE, \/*!< At this phase the master and the$/;"	e	enum:srv_shutdown_t
@@ -3822,22 +3840,22 @@ TRX_SYS_TRX_ID_STORE	include/trx0sys.h	261;"	d
 TRX_SYS_TRX_ID_WRITE_MARGIN	include/trx0sys.h	488;"	d
 TRX_UNDO_ACTIVE	include/trx0undo.h	318;"	d
 TRX_UNDO_CACHED	include/trx0undo.h	321;"	d
-TRX_UNDO_CMPL_INFO_MULT	include/trx0rec.h	300;"	d
+TRX_UNDO_CMPL_INFO_MULT	include/trx0rec.h	302;"	d
 TRX_UNDO_DEL_MARKS	include/trx0undo.h	467;"	d
-TRX_UNDO_DEL_MARK_REC	include/trx0rec.h	297;"	d
+TRX_UNDO_DEL_MARK_REC	include/trx0rec.h	299;"	d
 TRX_UNDO_DICT_TRANS	include/trx0undo.h	483;"	d
 TRX_UNDO_FSEG_HEADER	include/trx0undo.h	446;"	d
-TRX_UNDO_GET_OLD_V_VALUE	include/trx0rec.h	201;"	d
+TRX_UNDO_GET_OLD_V_VALUE	include/trx0rec.h	203;"	d
 TRX_UNDO_HISTORY_NODE	include/trx0undo.h	500;"	d
 TRX_UNDO_INSERT	include/trx0undo.h	311;"	d
-TRX_UNDO_INSERT_OP	include/trx0rec.h	319;"	d
-TRX_UNDO_INSERT_REC	include/trx0rec.h	289;"	d
+TRX_UNDO_INSERT_OP	include/trx0rec.h	321;"	d
+TRX_UNDO_INSERT_REC	include/trx0rec.h	291;"	d
 TRX_UNDO_LAST_LOG	include/trx0undo.h	442;"	d
 TRX_UNDO_LOG_OLD_HDR_SIZE	include/trx0undo.h	505;"	d
 TRX_UNDO_LOG_START	include/trx0undo.h	472;"	d
 TRX_UNDO_LOG_XA_HDR_SIZE	include/trx0undo.h	526;"	d
-TRX_UNDO_MODIFY_BLOB	include/trx0rec.h	304;"	d
-TRX_UNDO_MODIFY_OP	include/trx0rec.h	320;"	d
+TRX_UNDO_MODIFY_BLOB	include/trx0rec.h	306;"	d
+TRX_UNDO_MODIFY_OP	include/trx0rec.h	322;"	d
 TRX_UNDO_NEXT_LOG	include/trx0undo.h	494;"	d
 TRX_UNDO_PAGE_FREE	include/trx0undo.h	405;"	d
 TRX_UNDO_PAGE_HDR	include/trx0undo.h	392;"	d
@@ -3848,7 +3866,7 @@ TRX_UNDO_PAGE_REUSE_LIMIT	include/trx0undo.h	422;"	d
 TRX_UNDO_PAGE_START	include/trx0undo.h	399;"	d
 TRX_UNDO_PAGE_TYPE	include/trx0undo.h	396;"	d
 TRX_UNDO_PREPARED	include/trx0undo.h	327;"	d
-TRX_UNDO_PREV_IN_PURGE	include/trx0rec.h	197;"	d
+TRX_UNDO_PREV_IN_PURGE	include/trx0rec.h	199;"	d
 TRX_UNDO_PREV_LOG	include/trx0undo.h	497;"	d
 TRX_UNDO_SEG_HDR	include/trx0undo.h	436;"	d
 TRX_UNDO_SEG_HDR_SIZE	include/trx0undo.h	455;"	d
@@ -3859,9 +3877,9 @@ TRX_UNDO_TO_PURGE	include/trx0undo.h	323;"	d
 TRX_UNDO_TRX_ID	include/trx0undo.h	462;"	d
 TRX_UNDO_TRX_NO	include/trx0undo.h	463;"	d
 TRX_UNDO_UPDATE	include/trx0undo.h	312;"	d
-TRX_UNDO_UPD_DEL_REC	include/trx0rec.h	293;"	d
-TRX_UNDO_UPD_EXIST_REC	include/trx0rec.h	290;"	d
-TRX_UNDO_UPD_EXTERN	include/trx0rec.h	312;"	d
+TRX_UNDO_UPD_DEL_REC	include/trx0rec.h	295;"	d
+TRX_UNDO_UPD_EXIST_REC	include/trx0rec.h	292;"	d
+TRX_UNDO_UPD_EXTERN	include/trx0rec.h	314;"	d
 TRX_UNDO_XA_BQUAL_LEN	include/trx0undo.h	522;"	d
 TRX_UNDO_XA_FORMAT	include/trx0undo.h	518;"	d
 TRX_UNDO_XA_TRID_LEN	include/trx0undo.h	520;"	d
@@ -4143,7 +4161,7 @@ UNIV_ZIP_SIZE_MAX	include/univ.i	339;"	d	file:
 UNIV_ZIP_SIZE_MIN	include/univ.i	336;"	d	file:
 UNIV_ZIP_SIZE_SHIFT_MAX	include/univ.i	312;"	d	file:
 UNIV_ZIP_SIZE_SHIFT_MIN	include/univ.i	304;"	d	file:
-UNSET	include/os0file.h	/^    UNSET = 0,$/;"	e	enum:Encryption::IORequest::__anon17
+UNSET	include/os0file.h	/^    UNSET = 0,$/;"	e	enum:Encryption::IORequest::__anon29
 UNUSED	include/ut0lock_free_hash.h	/^  static const uint64_t UNUSED = UINT64_MAX;$/;"	m	class:ut_lock_free_hash_t
 UPD_NODE_INSERT_CLUSTERED	include/row0upd.h	713;"	d
 UPD_NODE_MAGIC_N	include/row0upd.h	701;"	d
@@ -4239,9 +4257,9 @@ WAIT_FOR_READ	buf/buf0buf.cc	/^static const int WAIT_FOR_READ = 100;$/;"	v	file:
 WAIT_FOR_WRITE	buf/buf0buf.cc	/^static const int WAIT_FOR_WRITE = 100;$/;"	v	file:
 WIN_ASYNC_IO	include/os0file.h	84;"	d
 WIN_TO_UNIX_DELTA_USEC	ut/ut0ut.cc	68;"	d	file:
-WORK_COMPLETE	include/ut0stage.h	/^    WORK_COMPLETE = 2,$/;"	e	enum:ut_stage_alter_ts::__anon10
-WORK_ESTIMATE	include/ut0stage.h	/^    WORK_ESTIMATE = 1,$/;"	e	enum:ut_stage_alter_ts::__anon10
-WRITE	include/os0file.h	/^    WRITE = 2,$/;"	e	enum:Encryption::IORequest::__anon17
+WORK_COMPLETE	include/ut0stage.h	/^    WORK_COMPLETE = 2,$/;"	e	enum:ut_stage_alter_ts::__anon27
+WORK_ESTIMATE	include/ut0stage.h	/^    WORK_ESTIMATE = 1,$/;"	e	enum:ut_stage_alter_ts::__anon27
+WRITE	include/os0file.h	/^    WRITE = 2,$/;"	e	enum:Encryption::IORequest::__anon29
 WaitMutex	sync/sync0arr.cc	/^typedef SyncArrayMutex::MutexType WaitMutex;$/;"	t	file:
 Wait_stats	include/ut0ut.h	/^  explicit Wait_stats(uint64_t wait_loops = 0) : wait_loops(wait_loops) {}$/;"	f	struct:Wait_stats
 Wait_stats	include/ut0ut.h	/^struct Wait_stats {$/;"	s
@@ -4672,12 +4690,15 @@ _IB_TO_STR	include/univ.i	50;"	d	file:
 _Noreturn	pars/pars0grm.cc	309;"	d	file:
 _Noreturn	pars/pars0grm.cc	311;"	d	file:
 _WIN32_WINNT	include/os0numa.h	58;"	d
+__PMEMMMAPOBJ_H_	include/pmem_mmap_obj.h	2;"	d
 __STDC_LIMIT_MACROS	fts/fts0blex.cc	78;"	d	file:
 __STDC_LIMIT_MACROS	fts/fts0tlex.cc	77;"	d	file:
 __STDC_LIMIT_MACROS	include/fts0blex.h	81;"	d
 __STDC_LIMIT_MACROS	include/fts0tlex.h	80;"	d
 __STDC_LIMIT_MACROS	include/srv0mon.h	41;"	d
 __STDC_LIMIT_MACROS	pars/lexyy.cc	42;"	d	file:
+__pmem_mmap_mtrlog_buf	include/pmem_mmap_obj.h	/^struct __pmem_mmap_mtrlog_buf {$/;"	s
+__pmem_mmap_mtrlog_hdr	include/pmem_mmap_obj.h	/^struct __pmem_mmap_mtrlog_hdr {$/;"	s
 _gis0geo_h	include/gis0geo.h	30;"	d
 _mm_crc32_u64	ut/crc32.cc	/^ALWAYS_INLINE uint64_t _mm_crc32_u64(uint64_t __C, uint64_t __V) {$/;"	f
 _mm_crc32_u8	ut/crc32.cc	/^ALWAYS_INLINE uint32_t _mm_crc32_u8(uint32_t __C, uint32_t __V) {$/;"	f
@@ -4902,12 +4923,12 @@ array_size	handler/ha_innodb.h	/^  ulint array_size; \/*!< array size of index_m
 asc	include/pars0pars.h	/^  ibool asc;           \/*!< TRUE if ascending, FALSE if descending *\/$/;"	m	struct:order_node_t
 asc	include/row0sel.h	/^  ibool asc;                 \/*!< TRUE if the rows should be fetched$/;"	m	struct:sel_node_t
 asc	include/row0sel.h	/^  ibool asc;           \/*!< TRUE if cursor traveling upwards *\/$/;"	m	struct:plan_t
-assert_block_ahi_empty	include/buf0buf.h	1439;"	d
-assert_block_ahi_empty	include/buf0buf.h	1450;"	d
-assert_block_ahi_empty_on_init	include/buf0buf.h	1441;"	d
-assert_block_ahi_empty_on_init	include/buf0buf.h	1451;"	d
-assert_block_ahi_valid	include/buf0buf.h	1446;"	d
+assert_block_ahi_empty	include/buf0buf.h	1445;"	d
+assert_block_ahi_empty	include/buf0buf.h	1456;"	d
+assert_block_ahi_empty_on_init	include/buf0buf.h	1447;"	d
+assert_block_ahi_empty_on_init	include/buf0buf.h	1457;"	d
 assert_block_ahi_valid	include/buf0buf.h	1452;"	d
+assert_block_ahi_valid	include/buf0buf.h	1458;"	d
 assert_empty_local_prefix	lob/lob0lob.cc	/^bool zReader::assert_empty_local_prefix() {$/;"	f	class:lob::zReader
 assert_equal	include/dict0mem.h	/^  bool assert_equal(const dtype_t *type) const {$/;"	f	struct:dict_col_t
 assert_read_uncommitted	lob/lob0lob.cc	/^bool ReadContext::assert_read_uncommitted() const {$/;"	f	class:lob::ReadContext
@@ -4930,7 +4951,7 @@ attach	clone/clone0snapshot.cc	/^bool Clone_Snapshot::attach(Clone_Handle_Type h
 attach	include/arch0arch.h	/^  uint attach(lsn_t start_lsn, ib_uint64_t start_pos, bool is_durable) {$/;"	f	class:Arch_Group
 attach	include/clone0clone.h	/^  void attach() { ++m_ref_count; }$/;"	f	class:Clone_Handle
 attach_snapshot	clone/clone0clone.cc	/^int Clone_Sys::attach_snapshot(Clone_Handle_Type hdl_type,$/;"	f	class:Clone_Sys
-attr	include/api0api.h	/^  ib_col_attr_t attr; \/*!< Column attributes *\/$/;"	m	struct:__anon28
+attr	include/api0api.h	/^  ib_col_attr_t attr; \/*!< Column attributes *\/$/;"	m	struct:__anon15
 auto_commit	include/trx0trx.h	/^  bool auto_commit;      \/*!< true if it is an autocommit *\/$/;"	m	struct:trx_t
 auto_event_keys	ut/ut0new.cc	/^PSI_memory_key auto_event_keys[n_auto];$/;"	v
 auto_event_names	include/ut0new.h	/^static constexpr const char *auto_event_names[] = {$/;"	v
@@ -4950,8 +4971,8 @@ autoinc_persisted_mutex	include/dict0mem.h	/^  ib_mutex_t *autoinc_persisted_mut
 autoinc_persisted_mutex_key	sync/sync0sync.cc	/^mysql_pfs_key_t autoinc_persisted_mutex_key;$/;"	v
 autoinc_trx	include/dict0mem.h	/^  const trx_t *autoinc_trx;$/;"	m	struct:dict_table_t
 aux_index_id	include/row0ftsort.h	/^  ulint aux_index_id; \/*!< Auxiliary index id *\/$/;"	m	struct:fts_psort_insert
-aux_name	include/fts0fts.h	/^  std::vector<char *> aux_name;$/;"	m	struct:__anon30
-aux_name_vec_t	include/fts0fts.h	/^} aux_name_vec_t;$/;"	t	typeref:struct:__anon30
+aux_name	include/fts0fts.h	/^  std::vector<char *> aux_name;$/;"	m	struct:__anon20
+aux_name_vec_t	include/fts0fts.h	/^} aux_name_vec_t;$/;"	t	typeref:struct:__anon20
 b_event	include/buf0dblwr.h	/^  os_event_t b_event;         \/*!< event where threads wait for a$/;"	m	struct:buf_dblwr_t
 b_reserved	include/buf0dblwr.h	/^  ulint b_reserved;           \/*!< number of slots currently reserved$/;"	m	struct:buf_dblwr_t
 back	include/dyn0buf.h	/^  block_t *back() { return (UT_LIST_GET_LAST(m_list)); }$/;"	f	class:dyn_buf_t
@@ -5413,12 +5434,12 @@ buf_block_hash_get	include/buf0buf.h	1063;"	d
 buf_block_hash_get_locked	include/buf0buf.ic	/^buf_block_t *buf_block_hash_get_locked(buf_pool_t *buf_pool,$/;"	f
 buf_block_hash_get_s_locked	include/buf0buf.h	1059;"	d
 buf_block_hash_get_x_locked	include/buf0buf.h	1061;"	d
-buf_block_hash_lock_held_s	include/buf0buf.h	2045;"	d
-buf_block_hash_lock_held_s	include/buf0buf.h	2057;"	d
-buf_block_hash_lock_held_s_or_x	include/buf0buf.h	2051;"	d
-buf_block_hash_lock_held_s_or_x	include/buf0buf.h	2059;"	d
-buf_block_hash_lock_held_x	include/buf0buf.h	2048;"	d
-buf_block_hash_lock_held_x	include/buf0buf.h	2058;"	d
+buf_block_hash_lock_held_s	include/buf0buf.h	2051;"	d
+buf_block_hash_lock_held_s	include/buf0buf.h	2063;"	d
+buf_block_hash_lock_held_s_or_x	include/buf0buf.h	2057;"	d
+buf_block_hash_lock_held_s_or_x	include/buf0buf.h	2065;"	d
+buf_block_hash_lock_held_x	include/buf0buf.h	2054;"	d
+buf_block_hash_lock_held_x	include/buf0buf.h	2064;"	d
 buf_block_init	buf/buf0buf.cc	/^static void buf_block_init($/;"	f	file:
 buf_block_init_low	buf/buf0buf.cc	/^void buf_block_init_low(buf_block_t *block) \/*!< in: block to init *\/$/;"	f
 buf_block_is_uncompressed	buf/buf0buf.cc	/^static ibool buf_block_is_uncompressed($/;"	f	file:
@@ -5429,7 +5450,7 @@ buf_block_set_file_page	include/buf0buf.ic	/^void buf_block_set_file_page(buf_bl
 buf_block_set_io_fix	include/buf0buf.ic	/^void buf_block_set_io_fix(buf_block_t *block,     \/*!< in\/out: control block *\/$/;"	f
 buf_block_set_next_page_no	lob/lob0impl.cc	/^static void buf_block_set_next_page_no(buf_block_t *block,$/;"	f	namespace:lob
 buf_block_set_state	include/buf0buf.ic	/^void buf_block_set_state($/;"	f
-buf_block_state_valid	include/buf0buf.h	1517;"	d
+buf_block_state_valid	include/buf0buf.h	1523;"	d
 buf_block_t	include/buf0buf.h	/^struct buf_block_t {$/;"	s	class:Cache_hint
 buf_block_try_discard_uncompressed	buf/buf0buf.cc	/^static void buf_block_try_discard_uncompressed(const page_id_t &page_id) {$/;"	f	file:
 buf_block_unfix	include/buf0buf.ic	/^ulint buf_block_unfix(buf_block_t *block) {$/;"	f
@@ -5524,13 +5545,16 @@ buf_flush_init_for_writing	buf/buf0flu.cc	/^void buf_flush_init_for_writing(cons
 buf_flush_insert_in_flush_rbt	buf/buf0flu.cc	/^static buf_page_t *buf_flush_insert_in_flush_rbt($/;"	f	file:
 buf_flush_insert_into_flush_list	buf/buf0flu.cc	/^void buf_flush_insert_into_flush_list($/;"	f
 buf_flush_insert_sorted_into_flush_list	buf/buf0flu.cc	/^void buf_flush_insert_sorted_into_flush_list($/;"	f
-buf_flush_list_mutex_enter	include/buf0buf.h	1994;"	d
-buf_flush_list_mutex_exit	include/buf0buf.h	1999;"	d
-buf_flush_list_mutex_own	include/buf0buf.h	1991;"	d
+buf_flush_list_mutex_enter	include/buf0buf.h	2000;"	d
+buf_flush_list_mutex_exit	include/buf0buf.h	2005;"	d
+buf_flush_list_mutex_own	include/buf0buf.h	1997;"	d
 buf_flush_list_order_validate	buf/buf0flu.cc	/^static inline bool buf_flush_list_order_validate(lsn_t earlier_added_lsn,$/;"	f	file:
 buf_flush_lists	buf/buf0flu.cc	/^bool buf_flush_lists(ulint min_n, lsn_t lsn_limit, ulint *n_processed) {$/;"	f
 buf_flush_lsn_scan_factor	buf/buf0flu.cc	/^static ulint buf_flush_lsn_scan_factor = 3;$/;"	v	file:
 buf_flush_note_modification	include/buf0flu.ic	/^void buf_flush_note_modification($/;"	f
+buf_flush_nvdimm_LRU_list_batch	buf/buf0flu.cc	/^static ulint buf_flush_nvdimm_LRU_list_batch(buf_pool_t *buf_pool, ulint max) {$/;"	f	file:
+buf_flush_nvdimm_event	buf/buf0flu.cc	/^os_event_t buf_flush_nvdimm_event;$/;"	v
+buf_flush_nvdimm_page_cleaner_thread	buf/buf0flu.cc	/^static void buf_flush_nvdimm_page_cleaner_thread() {$/;"	f	file:
 buf_flush_or_remove_page	buf/buf0lru.cc	/^static MY_ATTRIBUTE((warn_unused_result)) bool buf_flush_or_remove_page($/;"	f
 buf_flush_or_remove_pages	buf/buf0lru.cc	/^    buf_flush_or_remove_pages(buf_pool_t *buf_pool, space_id_t id,$/;"	f
 buf_flush_page	buf/buf0flu.cc	/^ibool buf_flush_page(buf_pool_t *buf_pool, buf_page_t *bpage,$/;"	f
@@ -5621,15 +5645,15 @@ buf_page_hash_get_locked	include/buf0buf.ic	/^buf_page_t *buf_page_hash_get_lock
 buf_page_hash_get_low	include/buf0buf.ic	/^buf_page_t *buf_page_hash_get_low(buf_pool_t *buf_pool,$/;"	f
 buf_page_hash_get_s_locked	include/buf0buf.h	1050;"	d
 buf_page_hash_get_x_locked	include/buf0buf.h	1052;"	d
-buf_page_hash_lock_get	include/buf0buf.h	2020;"	d
-buf_page_hash_lock_held_s	include/buf0buf.h	2033;"	d
-buf_page_hash_lock_held_s	include/buf0buf.h	2054;"	d
-buf_page_hash_lock_held_s_or_x	include/buf0buf.h	2041;"	d
-buf_page_hash_lock_held_s_or_x	include/buf0buf.h	2056;"	d
-buf_page_hash_lock_held_x	include/buf0buf.h	2037;"	d
-buf_page_hash_lock_held_x	include/buf0buf.h	2055;"	d
-buf_page_hash_lock_s_confirm	include/buf0buf.h	2024;"	d
-buf_page_hash_lock_x_confirm	include/buf0buf.h	2027;"	d
+buf_page_hash_lock_get	include/buf0buf.h	2026;"	d
+buf_page_hash_lock_held_s	include/buf0buf.h	2039;"	d
+buf_page_hash_lock_held_s	include/buf0buf.h	2060;"	d
+buf_page_hash_lock_held_s_or_x	include/buf0buf.h	2047;"	d
+buf_page_hash_lock_held_s_or_x	include/buf0buf.h	2062;"	d
+buf_page_hash_lock_held_x	include/buf0buf.h	2043;"	d
+buf_page_hash_lock_held_x	include/buf0buf.h	2061;"	d
+buf_page_hash_lock_s_confirm	include/buf0buf.h	2030;"	d
+buf_page_hash_lock_x_confirm	include/buf0buf.h	2033;"	d
 buf_page_in_file	include/buf0buf.ic	/^ibool buf_page_in_file($/;"	f
 buf_page_init	buf/buf0buf.cc	/^static void buf_page_init(buf_pool_t *buf_pool, const page_id_t &page_id,$/;"	f	file:
 buf_page_init_for_read	buf/buf0buf.cc	/^buf_page_t *buf_page_init_for_read(dberr_t *err, ulint mode,$/;"	f
@@ -5643,9 +5667,9 @@ buf_page_lsn_check	buf/checksum.cc	/^inline void buf_page_lsn_check(bool check_l
 buf_page_make_young	buf/buf0buf.cc	/^void buf_page_make_young(buf_page_t *bpage) {$/;"	f
 buf_page_make_young_if_needed	buf/buf0buf.cc	/^static void buf_page_make_young_if_needed(buf_page_t *bpage) {$/;"	f	file:
 buf_page_monitor	buf/buf0buf.cc	/^static void buf_page_monitor($/;"	f	file:
-buf_page_mutex_enter	include/buf0buf.h	2008;"	d
-buf_page_mutex_exit	include/buf0buf.h	2014;"	d
-buf_page_mutex_own	include/buf0buf.h	2005;"	d
+buf_page_mutex_enter	include/buf0buf.h	2014;"	d
+buf_page_mutex_exit	include/buf0buf.h	2020;"	d
+buf_page_mutex_own	include/buf0buf.h	2011;"	d
 buf_page_optimistic_get	buf/buf0buf.cc	/^bool buf_page_optimistic_get(ulint rw_latch, buf_block_t *block,$/;"	f
 buf_page_peek	include/buf0buf.ic	/^ibool buf_page_peek(const page_id_t &page_id) {$/;"	f
 buf_page_peek_if_too_old	include/buf0buf.ic	/^ibool buf_page_peek_if_too_old(const buf_page_t *bpage) {$/;"	f
@@ -5753,6 +5777,7 @@ buf_stat_per_index_t	include/buf0stats.h	/^  buf_stat_per_index_t() {$/;"	f	clas
 buf_stat_per_index_t	include/buf0stats.h	/^class buf_stat_per_index_t {$/;"	c
 buf_stats_aggregate_pool_info	buf/buf0buf.cc	/^static void buf_stats_aggregate_pool_info($/;"	f	file:
 buf_stats_get_pool_info	buf/buf0buf.cc	/^void buf_stats_get_pool_info($/;"	f
+buf_total_fix_count	include/buf0buf.h	/^  uint32_t buf_total_fix_count;$/;"	m	class:Cache_hint::buf_page_t
 buf_unzip_LRU_add_block	buf/buf0lru.cc	/^void buf_unzip_LRU_add_block(buf_block_t *block, ibool old) {$/;"	f
 buf_unzip_LRU_remove_block_if_needed	buf/buf0lru.cc	/^static void buf_unzip_LRU_remove_block_if_needed(buf_page_t *bpage) {$/;"	f	file:
 buf_validate	buf/buf0buf.cc	/^ibool buf_validate(void) {$/;"	f
@@ -5772,7 +5797,7 @@ build_template_field	handler/ha_innodb.cc	/^static mysql_row_templ_t *build_temp
 build_template_needs_field	handler/ha_innodb.cc	/^static const Field *build_template_needs_field($/;"	f	file:
 build_template_needs_field_in_icp	handler/ha_innodb.cc	/^inline bool build_template_needs_field_in_icp($/;"	f
 byte	include/univ.i	402;"	d	file:
-bytes	include/buf0buf.h	/^    byte bytes[FIL_PAGE_DATA];$/;"	m	union:Cache_hint::buf_buddy_free_t::__anon11
+bytes	include/buf0buf.h	/^    byte bytes[FIL_PAGE_DATA];$/;"	m	union:Cache_hint::buf_buddy_free_t::__anon17
 bytes	row/row0log.cc	/^  ulint bytes;            \/*!< current position within block *\/$/;"	m	struct:row_log_buf_t	file:
 bytes_left	include/arch0arch.h	/^  ib_uint64_t bytes_left() const {$/;"	f	class:Arch_File_Ctx
 bytes_to_ignore_before_checkpoint	include/log0recv.h	/^  ulint bytes_to_ignore_before_checkpoint;$/;"	m	struct:recv_sys_t
@@ -5832,7 +5857,7 @@ change_phase	include/ut0stage.h	/^inline void ut_stage_alter_t::change_phase(con
 change_state	clone/clone0clone.cc	/^int Clone_Task_Manager::change_state(Clone_Task *task,$/;"	f	class:Clone_Task_Manager
 change_state	clone/clone0snapshot.cc	/^int Clone_Snapshot::change_state(Clone_Desc_State *state_desc,$/;"	f	class:Clone_Snapshot
 charset	fts/fts0que.cc	/^  CHARSET_INFO *charset;$/;"	m	struct:fts_phrase_t	file:
-charset	include/api0api.h	/^  ib_charset_t *charset; \/*!< Column charset *\/$/;"	m	struct:__anon28
+charset	include/api0api.h	/^  ib_charset_t *charset; \/*!< Column charset *\/$/;"	m	struct:__anon15
 charset	include/fts0ast.h	/^  CHARSET_INFO *charset; \/*!< charset used for$/;"	m	struct:fts_ast_state_t
 charset	include/fts0fts.h	/^  CHARSET_INFO *charset;     \/*!< charset info if it is for FTS$/;"	m	struct:fts_table_t
 charset	include/fts0types.h	/^  CHARSET_INFO *charset;     \/*!< charset for stopword *\/$/;"	m	struct:fts_stopword_t
@@ -5913,7 +5938,8 @@ clear_do_not_wake	include/os0file.h	/^  void clear_do_not_wake() { m_type &= ~DO
 clear_encrypted	include/os0file.h	/^  void clear_encrypted() {$/;"	f	class:Encryption::IORequest
 clear_ins_upd_nodes	handler/ha_innopart.cc	/^void ha_innopart::clear_ins_upd_nodes() {$/;"	f	class:ha_innopart
 clear_punch_hole	include/os0file.h	/^  void clear_punch_hole() { m_type &= ~PUNCH_HOLE; }$/;"	f	class:Encryption::IORequest
-client_type	include/api0api.h	/^  ib_u16_t client_type; \/*!< 16 bits of data relevant only to$/;"	m	struct:__anon28
+clflush	include/pmem_mmap_obj.h	/^static inline void clflush(volatile char* __p) {   $/;"	f
+client_type	include/api0api.h	/^  ib_u16_t client_type; \/*!< 16 bits of data relevant only to$/;"	m	struct:__anon15
 cline	include/sync0rw.h	/^  unsigned cline : 13;$/;"	m	struct:rw_lock_t
 clone	data/data0data.cc	/^dfield_t *dfield_t::clone(mem_heap_t *heap) {$/;"	f	class:dfield_t
 clone	handler/ha_innodb.cc	/^handler *ha_innobase::clone(const char *name,   \/*!< in: table name *\/$/;"	f	class:ha_innobase
@@ -6036,6 +6062,7 @@ commit_inplace_alter_table_impl	handler/handler0alter.cc	/^bool ha_innobase::com
 commit_lsn	include/trx0trx.h	/^  lsn_t commit_lsn; \/*!< lsn at the time of the commit *\/$/;"	m	struct:trx_t
 commit_node_state	include/trx0trx.h	/^enum commit_node_state {$/;"	g
 commit_node_t	include/trx0trx.h	/^struct commit_node_t {$/;"	s
+commit_nvm	mtr/mtr0mtr.cc	/^void mtr_t::commit_nvm() {$/;"	f	class:mtr_t
 commit_specify_mtr	include/btr0pcur.h	/^inline void btr_pcur_t::commit_specify_mtr(mtr_t *mtr) {$/;"	f	class:btr_pcur_t
 commit_threads	handler/ha_innodb.cc	/^static ulong commit_threads = 0;$/;"	v	file:
 commit_try_norebuild	handler/handler0alter.cc	/^inline MY_ATTRIBUTE((warn_unused_result)) bool commit_try_norebuild($/;"	f
@@ -6209,6 +6236,7 @@ ctx_array	handler/handler0alter.cc	/^  inplace_alter_handler_ctx **ctx_array;$/;
 cur_end	include/que0que.h	/^  ulint cur_end;             \/*!< QUE_CUR_NOT_DEFINED, QUE_CUR_START,$/;"	m	struct:que_fork_t
 cur_node	fts/fts0que.cc	/^  fts_ast_node_t *cur_node; \/*!< Current tree node *\/$/;"	m	struct:fts_query_t	file:
 cur_node	include/fts0ast.h	/^  fts_ast_node_t *cur_node; \/*!< Current node into which$/;"	m	struct:fts_ast_state_t
+cur_offset	include/pmem_mmap_obj.h	/^	size_t cur_offset;$/;"	m	struct:__pmem_mmap_mtrlog_buf
 cur_on_row	include/que0que.h	/^  ibool cur_on_row;          \/*!< TRUE if cursor is on a row, i.e.,$/;"	m	struct:que_fork_t
 cur_page	include/lob0ins.h	/^  page_t *cur_page() const { return (buf_block_get_frame(m_cur_blob_block)); }$/;"	f	struct:lob::BaseInserter
 cur_pos	include/que0que.h	/^  ulint cur_pos;             \/*!< if there are n rows in the result$/;"	m	struct:que_fork_t
@@ -6239,6 +6267,7 @@ data	include/ha0storage.ic	/^  const void *data;        \/*!< pointer to data *\
 data	include/lock0prdt.h	/^  void *data; \/* Predicate data *\/$/;"	m	struct:lock_prdt
 data	include/log0recv.h	/^  recv_data_t *data;$/;"	m	struct:recv_t
 data	include/page0types.h	/^  page_zip_t *data; \/*!< compressed page data *\/$/;"	m	struct:page_zip_des_t
+data	include/pmem_mmap_obj.h	/^	char* data;$/;"	m	struct:__pmem_mmap_mtrlog_buf
 data	include/read0types.h	/^    const trx_id_t *data() const { return (m_ptr); }$/;"	f	class:ReadView::ids_t
 data	include/read0types.h	/^    trx_id_t *data() { return (m_ptr); }$/;"	f	class:ReadView::ids_t
 data	include/row0sel.h	/^  byte *data; \/*!< data, or NULL; if not NULL, this field$/;"	m	struct:sel_buf_t
@@ -7327,6 +7356,7 @@ exec	handler/ha_innodb.cc	/^int innobase_truncate<Table>::exec() {$/;"	f	class:i
 execute	mtr/mtr0mtr.cc	/^void mtr_t::Command::execute() {$/;"	f	class:mtr_t::Command
 execute	os/os0file.cc	/^ssize_t SyncFileIO::execute(Slot *slot) {$/;"	f	class:SyncFileIO
 execute	os/os0file.cc	/^ssize_t SyncFileIO::execute(const IORequest &request) {$/;"	f	class:SyncFileIO
+execute_nvm	mtr/mtr0mtr.cc	/^void mtr_t::Command::execute_nvm() {$/;"	f	class:mtr_t::Command
 exists	include/lob0undo.h	/^  bool exists() const {$/;"	f	struct:lob::undo_seq_t
 exit	fts/fts0blex.cc	498;"	d	file:
 exit	fts/fts0tlex.cc	494;"	d	file:
@@ -7363,8 +7393,8 @@ f_str	include/fts0fts.h	/^  byte *f_str;    \/*!< string, not necessary terminat
 failed	clone/clone0api.cc	/^  bool failed() const { return (m_num_errors.load() != 0); }$/;"	f	class:__anon1::Fixup_tables	file:
 failed	handler/ha_innodb.cc	/^  bool failed() const { return (m_n_errors.load() != 0); }$/;"	f	class:Validate_files	file:
 failure	include/dict0mem.h	/^  ulint failure;   \/*!< failed compression ops during$/;"	m	struct:zip_pad_info_t
-fast	include/ut0counter.h	/^  enum { fast = 0 };$/;"	e	enum:single_indexer_t::__anon13
-fast	include/ut0counter.h	/^  enum { fast = 1 };$/;"	e	enum:counter_indexer_t::__anon12
+fast	include/ut0counter.h	/^  enum { fast = 0 };$/;"	e	enum:single_indexer_t::__anon19
+fast	include/ut0counter.h	/^  enum { fast = 1 };$/;"	e	enum:counter_indexer_t::__anon18
 fatal	include/ut0ut.h	/^  explicit fatal(int err) : logger(ERROR_LEVEL) {$/;"	f	class:ib::fatal
 fatal	include/ut0ut.h	/^  explicit fatal(int err, Args &&... args) : logger(ERROR_LEVEL, err) {$/;"	f	class:ib::fatal
 fatal	include/ut0ut.h	/^  fatal() : logger(ERROR_LEVEL) { m_oss << "[FATAL] "; }$/;"	f	class:ib::fatal
@@ -7699,6 +7729,7 @@ flst_validate	fut/fut0lst.cc	/^ibool flst_validate($/;"	f
 flst_write_addr	include/fut0lst.ic	/^void flst_write_addr(fil_faddr_t *faddr, \/*!< in: pointer to file faddress *\/$/;"	f
 flush	arch/arch0page.cc	/^dberr_t Arch_Block::flush(Arch_Group *file_group, Arch_Blk_Flush_Type type) {$/;"	f	class:Arch_Block
 flush	buf/buf0flu.cc	/^void FlushObserver::flush() {$/;"	f	class:FlushObserver
+flush_cache	include/pmem_mmap_obj.h	/^static inline void flush_cache(void *ptr, size_t size){$/;"	f
 flush_counter	include/fil0fil.h	/^  int64_t flush_counter;$/;"	m	struct:fil_node_t
 flush_end	include/log0recv.h	/^  os_event_t flush_end;$/;"	m	struct:recv_sys_t
 flush_every	log/log0test.cc	/^int Log_test::flush_every() const { return (m_flush_every); }$/;"	f	class:Log_test
@@ -8502,6 +8533,8 @@ fut0lst_h	include/fut0lst.h	34;"	d
 fut_get_ptr	include/fut0fut.ic	/^byte *fut_get_ptr(space_id_t space, const page_size_t &page_size,$/;"	f
 g_engine	handler/p_s.cc	/^static const char *g_engine = "INNODB";$/;"	v	file:
 g_engine_length	handler/p_s.cc	/^static const size_t g_engine_length = 6;$/;"	v	file:
+gb_pm_mmap	pmem/pmem0mmap.cc	/^char* gb_pm_mmap;$/;"	v
+gb_pm_mmap_fd	pmem/pmem0mmap.cc	/^int gb_pm_mmap_fd;$/;"	v
 general_fetch	handler/ha_innodb.cc	/^int ha_innobase::general_fetch($/;"	f	class:ha_innobase
 general_space_name	include/fil0fil.h	/^static constexpr char general_space_name[] = "innodb_general";$/;"	v
 generic_indexer_t	include/ut0counter.h	/^struct generic_indexer_t {$/;"	s
@@ -9089,13 +9122,13 @@ ib_cb_t	include/api0api.h	/^typedef void (*ib_cb_t)(void);$/;"	t
 ib_cfg_bk_commit_interval	api/api0api.cc	/^ib_ulint_t ib_cfg_bk_commit_interval() {$/;"	f
 ib_cfg_get_cfg	api/api0api.cc	/^int ib_cfg_get_cfg() {$/;"	f
 ib_cfg_trx_level	api/api0api.cc	/^ib_trx_level_t ib_cfg_trx_level() {$/;"	f
-ib_cfg_type_t	include/api0api.h	/^} ib_cfg_type_t;$/;"	t	typeref:enum:__anon20
+ib_cfg_type_t	include/api0api.h	/^} ib_cfg_type_t;$/;"	t	typeref:enum:__anon7
 ib_charset_t	include/api0api.h	/^typedef ib_opaque_t ib_charset_t;$/;"	t
 ib_client_cmp_t	include/api0api.h	/^typedef int (*ib_client_cmp_t)(const ib_col_meta_t *col_meta,$/;"	t
 ib_clust_read_tuple_create	api/api0api.cc	/^ib_tpl_t ib_clust_read_tuple_create($/;"	f
 ib_clust_search_tuple_create	api/api0api.cc	/^ib_tpl_t ib_clust_search_tuple_create($/;"	f
 ib_col_attr	api/api0api.cc	/^  ib_col_attr_t ib_col_attr; \/*!< Column attributes *\/$/;"	m	struct:ib_col_t	file:
-ib_col_attr_t	include/api0api.h	/^} ib_col_attr_t;$/;"	t	typeref:enum:__anon23
+ib_col_attr_t	include/api0api.h	/^} ib_col_attr_t;$/;"	t	typeref:enum:__anon10
 ib_col_copy_value	api/api0api.cc	/^ib_ulint_t ib_col_copy_value($/;"	f
 ib_col_copy_value_low	api/api0api.cc	/^ib_ulint_t ib_col_copy_value_low($/;"	f
 ib_col_get_attr	api/api0api.cc	/^ib_col_attr_t ib_col_get_attr(ulint prtype) \/*!< in: column definition *\/$/;"	f
@@ -9106,11 +9139,11 @@ ib_col_get_meta_low	api/api0api.cc	/^ib_ulint_t ib_col_get_meta_low($/;"	f
 ib_col_get_name	api/api0api.cc	/^const char *ib_col_get_name($/;"	f
 ib_col_get_value	api/api0api.cc	/^const void *ib_col_get_value(ib_tpl_t ib_tpl, \/*!< in: tuple instance *\/$/;"	f
 ib_col_is_capped	api/api0api.cc	/^ib_err_t ib_col_is_capped(const dtype_t *dtype) \/*!< in: column type *\/$/;"	f
-ib_col_meta_t	include/api0api.h	/^} ib_col_meta_t;$/;"	t	typeref:struct:__anon28
+ib_col_meta_t	include/api0api.h	/^} ib_col_meta_t;$/;"	t	typeref:struct:__anon15
 ib_col_set_value	api/api0api.cc	/^ib_err_t ib_col_set_value(ib_tpl_t ib_tpl,    \/*!< in: tuple instance *\/$/;"	f
 ib_col_t	api/api0api.cc	/^struct ib_col_t {$/;"	s	file:
 ib_col_type	api/api0api.cc	/^  ib_col_type_t ib_col_type; \/*!< Main type of the column *\/$/;"	m	struct:ib_col_t	file:
-ib_col_type_t	include/api0api.h	/^} ib_col_type_t;$/;"	t	typeref:enum:__anon21
+ib_col_type_t	include/api0api.h	/^} ib_col_type_t;$/;"	t	typeref:enum:__anon8
 ib_compare_t	include/ut0vec.h	/^typedef int (*ib_compare_t)(const void *, const void *);$/;"	t
 ib_counter_t	include/ut0counter.h	/^  ib_counter_t() { memset(m_counter, 0x0, sizeof(m_counter)); }$/;"	f	class:ib_counter_t
 ib_counter_t	include/ut0counter.h	/^class ib_counter_t {$/;"	c
@@ -9169,14 +9202,14 @@ ib_i8_t	include/api0api.h	/^typedef int8_t ib_i8_t;$/;"	t
 ib_id_t	include/univ.i	/^typedef ib_uint64_t ib_id_t;$/;"	t	file:
 ib_id_u64_t	include/api0api.h	/^typedef ib_u64_t ib_id_u64_t;$/;"	t
 ib_index_def_t	api/api0api.cc	/^struct ib_index_def_t {$/;"	s	file:
-ib_index_type_t	include/api0api.h	/^} ib_index_type_t;$/;"	t	typeref:enum:__anon25
+ib_index_type_t	include/api0api.h	/^} ib_index_type_t;$/;"	t	typeref:enum:__anon12
 ib_insert_query_graph_create	api/api0api.cc	/^static void ib_insert_query_graph_create($/;"	f	file:
 ib_insert_row_with_lock_retry	api/api0api.cc	/^ib_err_t ib_insert_row_with_lock_retry($/;"	f
 ib_is_virtual_table	api/api0api.cc	/^ib_bool_t ib_is_virtual_table(ib_crsr_t crsr) {$/;"	f
 ib_key_col_t	api/api0api.cc	/^struct ib_key_col_t {$/;"	s	file:
 ib_key_tuple_new	api/api0api.cc	/^static ib_tpl_t ib_key_tuple_new($/;"	f	file:
 ib_key_tuple_new_low	api/api0api.cc	/^static ib_tpl_t ib_key_tuple_new_low($/;"	f	file:
-ib_lck_mode_t	include/api0api.h	/^} ib_lck_mode_t;$/;"	t	typeref:enum:__anon24
+ib_lck_mode_t	include/api0api.h	/^} ib_lck_mode_t;$/;"	t	typeref:enum:__anon11
 ib_like_t	include/data0type.h	/^enum ib_like_t {$/;"	g
 ib_list_add_after	ut/ut0list.cc	/^static ib_list_node_t *ib_list_add_after($/;"	f	file:
 ib_list_add_last	ut/ut0list.cc	/^ib_list_node_t *ib_list_add_last($/;"	f
@@ -9192,7 +9225,7 @@ ib_list_t	include/ut0list.h	/^struct ib_list_t {$/;"	s
 ib_log_level_t	include/ha_prototypes.h	/^enum ib_log_level_t {$/;"	g
 ib_logfile_basename	include/log0log.h	/^constexpr const char *const ib_logfile_basename = "ib_logfile";$/;"	v
 ib_lookup_table_by_name	api/api0api.cc	/^static dict_table_t *ib_lookup_table_by_name($/;"	f	file:
-ib_match_mode_t	include/api0api.h	/^} ib_match_mode_t;$/;"	t	typeref:enum:__anon27
+ib_match_mode_t	include/api0api.h	/^} ib_match_mode_t;$/;"	t	typeref:enum:__anon14
 ib_mdl_enabled	api/api0api.cc	/^bool ib_mdl_enabled = FALSE;$/;"	v
 ib_mem_alloc_t	include/ut0vec.h	/^typedef void *(*ib_mem_alloc_t)($/;"	t
 ib_mem_free_t	include/ut0vec.h	/^typedef void (*ib_mem_free_t)($/;"	t
@@ -9247,12 +9280,12 @@ ib_sec_search_tuple_create	api/api0api.cc	/^ib_tpl_t ib_sec_search_tuple_create(
 ib_senderrf	handler/ha_innodb.cc	/^void ib_senderrf(THD *thd,             \/*!< in\/out: session *\/$/;"	f
 ib_sequence_t	handler/handler0alter.cc	/^ib_sequence_t::ib_sequence_t(THD *thd, ulonglong start_value,$/;"	f	class:ib_sequence_t
 ib_sequence_t	include/handler0alter.h	/^struct ib_sequence_t {$/;"	s
-ib_srch_mode_t	include/api0api.h	/^} ib_srch_mode_t;$/;"	t	typeref:enum:__anon26
+ib_srch_mode_t	include/api0api.h	/^} ib_srch_mode_t;$/;"	t	typeref:enum:__anon13
 ib_table_def_t	api/api0api.cc	/^struct ib_table_def_t {$/;"	s	file:
 ib_table_get_id	api/api0api.cc	/^ib_err_t ib_table_get_id(const char *table_name, \/*!< in: table to find *\/$/;"	f
 ib_table_get_id_low	api/api0api.cc	/^static ib_err_t ib_table_get_id_low($/;"	f	file:
 ib_tbl_fmt	api/api0api.cc	/^  ib_tbl_fmt_t ib_tbl_fmt; \/*!< Row format *\/$/;"	m	struct:ib_table_def_t	file:
-ib_tbl_fmt_t	include/api0api.h	/^} ib_tbl_fmt_t;$/;"	t	typeref:enum:__anon22
+ib_tbl_fmt_t	include/api0api.h	/^} ib_tbl_fmt_t;$/;"	t	typeref:enum:__anon9
 ib_time_t	include/ut0ut.h	/^typedef time_t ib_time_t;$/;"	t
 ib_to_lower_case	api/api0api.cc	/^static void ib_to_lower_case(char *ptr) \/*!< string to convert to lower case *\/$/;"	f	file:
 ib_tpl_t	include/api0api.h	/^typedef struct ib_tuple_t *ib_tpl_t;$/;"	t	typeref:struct:ib_tuple_t
@@ -9260,7 +9293,7 @@ ib_trx_begin	api/api0api.cc	/^ib_trx_t ib_trx_begin($/;"	f
 ib_trx_commit	api/api0api.cc	/^ib_err_t ib_trx_commit(ib_trx_t ib_trx) \/*!< in: trx handle *\/$/;"	f
 ib_trx_get_start_time	api/api0api.cc	/^ib_u64_t ib_trx_get_start_time(ib_trx_t ib_trx) \/*!< in: transaction *\/$/;"	f
 ib_trx_level_setting	api/api0api.cc	/^ulong ib_trx_level_setting = IB_TRX_READ_UNCOMMITTED;$/;"	v
-ib_trx_level_t	include/api0api.h	/^} ib_trx_level_t;$/;"	t	typeref:enum:__anon29
+ib_trx_level_t	include/api0api.h	/^} ib_trx_level_t;$/;"	t	typeref:enum:__anon16
 ib_trx_lock_table_with_retry	api/api0misc.cc	/^dberr_t ib_trx_lock_table_with_retry($/;"	f
 ib_trx_read_only	api/api0api.cc	/^ib_u32_t ib_trx_read_only(ib_trx_t ib_trx) \/*!< in: trx handle *\/$/;"	f
 ib_trx_release	api/api0api.cc	/^ib_err_t ib_trx_release(ib_trx_t ib_trx) \/*!< in: trx handle *\/$/;"	f
@@ -9421,7 +9454,7 @@ ibuf_mtr_commit	include/ibuf0ibuf.ic	/^void ibuf_mtr_commit(mtr_t *mtr) \/*!< in
 ibuf_mtr_start	include/ibuf0ibuf.ic	/^void ibuf_mtr_start(mtr_t *mtr) \/*!< out: mini-transaction *\/$/;"	f
 ibuf_mutex	ibuf/ibuf0ibuf.cc	/^static ib_mutex_t ibuf_mutex;$/;"	v	file:
 ibuf_mutex_key	sync/sync0sync.cc	/^mysql_pfs_key_t ibuf_mutex_key;$/;"	v
-ibuf_op_t	include/ibuf0ibuf.h	/^} ibuf_op_t;$/;"	t	typeref:enum:__anon19
+ibuf_op_t	include/ibuf0ibuf.h	/^} ibuf_op_t;$/;"	t	typeref:enum:__anon30
 ibuf_page	include/ibuf0ibuf.h	238;"	d
 ibuf_page	include/ibuf0ibuf.h	249;"	d
 ibuf_page_low	ibuf/ibuf0ibuf.cc	/^ibool ibuf_page_low(const page_id_t &page_id, const page_size_t &page_size,$/;"	f
@@ -10050,9 +10083,15 @@ innodb_monitor_valid_byname	handler/ha_innodb.cc	/^static int innodb_monitor_val
 innodb_monitor_validate	handler/ha_innodb.cc	/^static int innodb_monitor_validate($/;"	f	file:
 innodb_monitor_validate_wildcard_name	handler/ha_innodb.cc	/^static ibool innodb_monitor_validate_wildcard_name($/;"	f	file:
 innodb_num_open_files	include/srv0srv.h	/^  ulint innodb_num_open_files;            \/*!< fil_n_file_opened *\/$/;"	m	struct:export_var_t
-innodb_nvdimm_pages_read	include/srv0srv.h	/^  ulint innodb_nvdimm_pages_read;         \/*!< srv_nvdimm_pages_read *\/$/;"	m	struct:export_var_t
-innodb_nvdimm_pages_stored	include/srv0srv.h	/^  ulint innodb_nvdimm_pages_stored;       \/*!< srv_nvdimm_pages_stored *\/$/;"	m	struct:export_var_t
-innodb_nvdimm_pages_written	include/srv0srv.h	/^  ulint innodb_nvdimm_pages_written;      \/*!< srv_nvdimm_pages_written *\/$/;"	m	struct:export_var_t
+innodb_nvdimm_pages_read_no_undo	include/srv0srv.h	/^  ulint innodb_nvdimm_pages_read_no_undo;    \/*!< srv_nvdimm_pages_read_no_undo *\/$/;"	m	struct:export_var_t
+innodb_nvdimm_pages_read_ol	include/srv0srv.h	/^  ulint innodb_nvdimm_pages_read_ol;         \/*!< srv_nvdimm_pages_read_ol *\/$/;"	m	struct:export_var_t
+innodb_nvdimm_pages_read_st	include/srv0srv.h	/^  ulint innodb_nvdimm_pages_read_st;         \/*!< srv_nvdimm_pages_read_st *\/$/;"	m	struct:export_var_t
+innodb_nvdimm_pages_stored_no_undo	include/srv0srv.h	/^  ulint innodb_nvdimm_pages_stored_no_undo;  \/*!< srv_nvdimm_pages_stored_no_undo *\/$/;"	m	struct:export_var_t
+innodb_nvdimm_pages_stored_ol	include/srv0srv.h	/^  ulint innodb_nvdimm_pages_stored_ol;       \/*!< srv_nvdimm_pages_stored_ol *\/$/;"	m	struct:export_var_t
+innodb_nvdimm_pages_stored_st	include/srv0srv.h	/^  ulint innodb_nvdimm_pages_stored_st;       \/*!< srv_nvdimm_pages_stored_st *\/$/;"	m	struct:export_var_t
+innodb_nvdimm_pages_written_no_undo	include/srv0srv.h	/^  ulint innodb_nvdimm_pages_written_no_undo; \/*!< srv_nvdimm_pages_written_no_undo *\/$/;"	m	struct:export_var_t
+innodb_nvdimm_pages_written_ol	include/srv0srv.h	/^  ulint innodb_nvdimm_pages_written_ol;      \/*!< srv_nvdimm_pages_written_ol *\/$/;"	m	struct:export_var_t
+innodb_nvdimm_pages_written_st	include/srv0srv.h	/^  ulint innodb_nvdimm_pages_written_st;      \/*!< srv_nvdimm_pages_written_st *\/$/;"	m	struct:export_var_t
 innodb_old_blocks_pct_update	handler/ha_innodb.cc	/^static void innodb_old_blocks_pct_update($/;"	f	file:
 innodb_optimize_fulltext_only	handler/ha_innodb.cc	/^static bool innodb_optimize_fulltext_only = FALSE;$/;"	v	file:
 innodb_os_log_fsyncs	include/srv0srv.h	/^  ulint innodb_os_log_fsyncs;                  \/*!< fil_n_log_flushes *\/$/;"	m	struct:export_var_t
@@ -10480,6 +10519,7 @@ len	include/fut0lst.h	/^  ulint len;$/;"	m	struct:flst_bnode_t
 len	include/log0recv.h	/^  ulint len;$/;"	m	struct:recv_sys_t
 len	include/log0recv.h	/^  ulint len;$/;"	m	struct:recv_t
 len	include/mem0mem.h	/^  ulint len;        \/*!< physical length of this block in bytes *\/$/;"	m	struct:mem_block_info_t
+len	include/pmem_mmap_obj.h	/^	unsigned long int len;$/;"	m	struct:__pmem_mmap_mtrlog_hdr
 len	include/row0ext.h	/^  ulint len[1]; \/*!< prefix lengths; 0 if not cached *\/$/;"	m	struct:row_ext_t
 len	include/row0sel.h	/^  ulint len;  \/*!< data length or UNIV_SQL_NULL *\/$/;"	m	struct:sel_buf_t
 length	include/lob0lob.h	/^  ulint length() const { return (m_stream.total_out); }$/;"	f	struct:lob::zReader
@@ -11071,6 +11111,7 @@ lower_index	include/fts0types.h	/^  ulint lower_index;    \/*!< the start index 
 lru_hp	include/buf0buf.h	/^  LRUHp lru_hp;$/;"	m	struct:Cache_hint::buf_pool_t
 lru_len	include/buf0buf.h	/^  ulint lru_len;                     \/*!< Length of buf_pool->LRU *\/$/;"	m	struct:Cache_hint::buf_pool_info_t
 lru_scan_itr	include/buf0buf.h	/^  LRUItr lru_scan_itr;$/;"	m	struct:Cache_hint::buf_pool_t
+lsn	include/pmem_mmap_obj.h	/^	unsigned long int lsn;$/;"	m	struct:__pmem_mmap_mtrlog_hdr
 lsn_avg_rate	buf/buf0flu.cc	/^static lsn_t lsn_avg_rate = 0;$/;"	v	file:
 lsn_ctr_1_t	include/srv0srv.h	/^  typedef ib_counter_t<lsn_t, 1, single_indexer_t> lsn_ctr_1_t;$/;"	t	struct:srv_stats_t
 lsn_limit	buf/buf0flu.cc	/^  lsn_t lsn_limit;          \/*!< upper limit of LSN to be$/;"	m	struct:page_cleaner_t	file:
@@ -11221,9 +11262,9 @@ m_cur	row/row0import.cc	/^  page_cur_t m_cur;$/;"	m	class:RecIterator	file:
 m_cur_blob_block	include/lob0ins.h	/^  buf_block_t *m_cur_blob_block;$/;"	m	struct:lob::BaseInserter
 m_cur_blob_page_no	include/lob0ins.h	/^  page_no_t m_cur_blob_page_no;$/;"	m	struct:lob::BaseInserter
 m_cur_block	include/lob0lob.h	/^  buf_block_t *m_cur_block;$/;"	m	struct:lob::Reader
-m_cur_phase	include/clone0monitor.h	/^  enum { NOT_STARTED = 0, ESTIMATE_WORK, COMPLETE_WORK } m_cur_phase;$/;"	m	class:Clone_Monitor	typeref:enum:Clone_Monitor::__anon6
-m_cur_phase	include/ut0stage.h	/^  } m_cur_phase;$/;"	m	class:ut_stage_alter_t	typeref:enum:ut_stage_alter_t::__anon9
-m_cur_phase	include/ut0stage.h	/^  } m_cur_phase;$/;"	m	class:ut_stage_alter_ts	typeref:enum:ut_stage_alter_ts::__anon10
+m_cur_phase	include/clone0monitor.h	/^  enum { NOT_STARTED = 0, ESTIMATE_WORK, COMPLETE_WORK } m_cur_phase;$/;"	m	class:Clone_Monitor	typeref:enum:Clone_Monitor::__anon24
+m_cur_phase	include/ut0stage.h	/^  } m_cur_phase;$/;"	m	class:ut_stage_alter_t	typeref:enum:ut_stage_alter_t::__anon26
+m_cur_phase	include/ut0stage.h	/^  } m_cur_phase;$/;"	m	class:ut_stage_alter_ts	typeref:enum:ut_stage_alter_ts::__anon27
 m_cur_rec	include/btr0bulk.h	/^  rec_t *m_cur_rec;$/;"	m	class:PageBulk
 m_current_buffer	include/clone0clone.h	/^  byte *m_current_buffer;$/;"	m	struct:Clone_Task
 m_current_file_des	include/clone0clone.h	/^  pfs_os_file_t m_current_file_des;$/;"	m	struct:Clone_Task
@@ -11518,6 +11559,7 @@ m_latch	include/trx0purge.h	/^  rw_lock_t *m_latch;$/;"	m	class:undo::Tablespace
 m_latch	include/trx0types.h	/^  rw_lock_t *m_latch;$/;"	m	class:Rsegs
 m_latch	sync/sync0debug.cc	/^  const latch_t *m_latch;$/;"	m	struct:Latched	file:
 m_latches	include/sync0types.h	/^  latches_t m_latches;$/;"	m	struct:sync_allowed_latches
+m_left_to_write	mtr/mtr0mtr.cc	/^	ulint m_left_to_write;$/;"	m	struct:mtr_nvm_write_log_t	file:
 m_left_to_write	mtr/mtr0mtr.cc	/^  ulint m_left_to_write;$/;"	m	struct:mtr_write_log_t	file:
 m_len	include/lob0lob.h	/^  ulint m_len;$/;"	m	struct:lob::ReadContext
 m_len	ut/ut.h	/^  ulint m_len;$/;"	m	struct:PrintBuffer
@@ -11558,6 +11600,7 @@ m_low_limit_id	include/read0types.h	/^  trx_id_t m_low_limit_id;$/;"	m	class:Rea
 m_low_limit_no	include/read0types.h	/^  trx_id_t m_low_limit_no;$/;"	m	class:ReadView
 m_lowest_offset	os/os0file.cc	/^  os_offset_t m_lowest_offset;$/;"	m	class:SimulatedAIOHandler	file:
 m_lsn	mtr/mtr0mtr.cc	/^  lsn_t m_lsn;$/;"	m	struct:mtr_write_log_t	file:
+m_lsn	mtr/mtr0mtr.cc	/^  ulint m_lsn;$/;"	m	struct:mtr_nvm_write_log_t	file:
 m_made_dirty	include/mtr0mtr.h	/^    bool m_made_dirty;$/;"	m	struct:mtr_t::Impl
 m_magic_n	include/dyn0buf.h	/^    ulint m_magic_n;$/;"	m	class:dyn_buf_t::block_t
 m_magic_n	include/mtr0mtr.h	/^    ulint m_magic_n;$/;"	m	struct:mtr_t::Impl
@@ -12424,6 +12467,7 @@ mem_resize	include/ut0vec.h	/^  ib_mem_resize_t mem_resize; \/* For resizing mem
 mem_size	include/buf0buf.ic	/^  size_t mem_size() const { return (mem_pfx.m_size); }$/;"	f	struct:buf_chunk_t
 mem_strdup	include/mem0mem.ic	/^char *mem_strdup(const char *str) \/*!< in: string to be copied *\/$/;"	f
 mem_strdupl	include/mem0mem.ic	/^char *mem_strdupl(const char *str, \/*!< in: string to be copied *\/$/;"	f
+memcpy_persist	include/pmem_mmap_obj.h	/^static inline void memcpy_persist$/;"	f
 memo_contains	mtr/mtr0mtr.cc	/^bool mtr_t::memo_contains(mtr_buf_t *memo, const void *object, ulint type) {$/;"	f	class:mtr_t
 memo_contains_flagged	mtr/mtr0mtr.cc	/^bool mtr_t::memo_contains_flagged(const void *ptr, ulint flags) const {$/;"	f	class:mtr_t
 memo_contains_page_flagged	mtr/mtr0mtr.cc	/^buf_block_t *mtr_t::memo_contains_page_flagged(const byte *ptr,$/;"	f	class:mtr_t
@@ -12447,6 +12491,7 @@ meta_t	os/file.h	/^  struct meta_t {$/;"	s	struct:Compression
 metadata_applier	srv/srv0start.cc	/^  metadata_applier() {}$/;"	f	struct:metadata_applier
 metadata_applier	srv/srv0start.cc	/^struct metadata_applier {$/;"	s	file:
 metadata_recover	include/log0recv.h	/^  MetadataRecover *metadata_recover;$/;"	m	struct:recv_sys_t
+mfence	include/pmem_mmap_obj.h	/^static inline void mfence() {   $/;"	f
 min_active_id	include/trx0sys.h	/^  std::atomic<trx_id_t> min_active_id;$/;"	m	struct:trx_sys_t
 min_doc_id	include/fts0types.h	/^  doc_id_t min_doc_id;  \/*!< The smallest doc id added to the$/;"	m	struct:fts_sync_t
 min_pos	fts/fts0que.cc	/^  pos_vector_t min_pos; \/*!< the minimum position (in bytes)$/;"	m	struct:fts_proximity_t	file:
@@ -12531,6 +12576,7 @@ move_version_base_node	lob/lob0index.cc	/^void index_entry_t::move_version_base_
 move_version_base_node	lob/zlob0index.cc	/^void z_index_entry_t::move_version_base_node(z_index_entry_t &entry) {$/;"	f	class:lob::z_index_entry_t
 moved	fil/fil0fil.cc	/^  void moved(dd::Object_id object_id, space_id_t space_id,$/;"	f	class:Fil_system
 moved	include/gis0type.h	/^  bool moved;     \/*!< whether lock are moved too *\/$/;"	m	struct:rtr_rec_move
+moved_to_nvdimm	include/buf0buf.h	/^  bool moved_to_nvdimm; \/*!< TRUE if the page needs to$/;"	m	class:Cache_hint::buf_page_t
 mpmc_bq	include/ut0mpmcbq.h	/^  explicit mpmc_bq(size_t n_elems)$/;"	f	class:mpmc_bq
 mpmc_bq	include/ut0mpmcbq.h	/^class mpmc_bq {$/;"	c
 mrec_buf_t	include/row0merge.h	/^typedef byte mrec_buf_t[UNIV_PAGE_SIZE_MAX];$/;"	t
@@ -12542,44 +12588,46 @@ mtr0log_h	include/mtr0log.h	34;"	d
 mtr0mtr_h	include/mtr0mtr.h	35;"	d
 mtr0types_h	include/mtr0types.h	34;"	d
 mtr_add_page	buf/buf0buf.cc	/^void Buf_fetch<T>::mtr_add_page(buf_block_t *block) {$/;"	f	class:Buf_fetch
-mtr_block_dirtied	include/mtr0mtr.h	154;"	d
-mtr_block_sx_latch_at_savepoint	include/mtr0mtr.h	145;"	d
-mtr_block_x_latch_at_savepoint	include/mtr0mtr.h	148;"	d
+mtr_block_dirtied	include/mtr0mtr.h	159;"	d
+mtr_block_sx_latch_at_savepoint	include/mtr0mtr.h	150;"	d
+mtr_block_x_latch_at_savepoint	include/mtr0mtr.h	153;"	d
 mtr_buf_copy_t	include/dyn0buf.h	/^struct mtr_buf_copy_t {$/;"	s
 mtr_buf_t	include/dyn0buf.h	/^typedef dyn_buf_t<DYN_ARRAY_DATA_SIZE> mtr_buf_t;$/;"	t
 mtr_commit	include/mtr0mtr.h	59;"	d
-mtr_get_flush_observer	include/mtr0mtr.h	80;"	d
-mtr_get_log	include/mtr0mtr.h	120;"	d
-mtr_get_log_mode	include/mtr0mtr.h	72;"	d
-mtr_is_block_fix	include/mtr0mtr.h	97;"	d
-mtr_is_page_fix	include/mtr0mtr.h	102;"	d
+mtr_commit_nvm	include/mtr0mtr.h	63;"	d
+mtr_get_flush_observer	include/mtr0mtr.h	85;"	d
+mtr_get_log	include/mtr0mtr.h	125;"	d
+mtr_get_log_mode	include/mtr0mtr.h	77;"	d
+mtr_is_block_fix	include/mtr0mtr.h	102;"	d
+mtr_is_page_fix	include/mtr0mtr.h	107;"	d
 mtr_log_t	include/mtr0types.h	/^enum mtr_log_t {$/;"	g
-mtr_memo_contains	include/mtr0mtr.h	107;"	d
-mtr_memo_contains_flagged	include/mtr0mtr.h	137;"	d
-mtr_memo_contains_page	include/mtr0mtr.h	111;"	d
-mtr_memo_contains_page_flagged	include/mtr0mtr.h	139;"	d
-mtr_memo_push	include/mtr0mtr.h	123;"	d
-mtr_memo_release	include/mtr0mtr.h	91;"	d
+mtr_memo_contains	include/mtr0mtr.h	112;"	d
+mtr_memo_contains_flagged	include/mtr0mtr.h	142;"	d
+mtr_memo_contains_page	include/mtr0mtr.h	116;"	d
+mtr_memo_contains_page_flagged	include/mtr0mtr.h	144;"	d
+mtr_memo_push	include/mtr0mtr.h	128;"	d
+mtr_memo_release	include/mtr0mtr.h	96;"	d
 mtr_memo_slot_t	include/mtr0mtr.h	/^struct mtr_memo_slot_t {$/;"	s
 mtr_memo_type_t	include/mtr0types.h	/^enum mtr_memo_type_t {$/;"	g
-mtr_print	include/mtr0mtr.h	116;"	d
-mtr_read_ulint	include/mtr0mtr.h	87;"	d
-mtr_release_block_at_savepoint	include/mtr0mtr.h	142;"	d
-mtr_release_s_latch_at_savepoint	include/mtr0mtr.h	67;"	d
-mtr_s_lock	include/mtr0mtr.h	126;"	d
-mtr_set_flush_observer	include/mtr0mtr.h	83;"	d
-mtr_set_log_mode	include/mtr0mtr.h	76;"	d
-mtr_set_savepoint	include/mtr0mtr.h	63;"	d
+mtr_nvm_write_log_t	mtr/mtr0mtr.cc	/^struct mtr_nvm_write_log_t {$/;"	s	file:
+mtr_print	include/mtr0mtr.h	121;"	d
+mtr_read_ulint	include/mtr0mtr.h	92;"	d
+mtr_release_block_at_savepoint	include/mtr0mtr.h	147;"	d
+mtr_release_s_latch_at_savepoint	include/mtr0mtr.h	72;"	d
+mtr_s_lock	include/mtr0mtr.h	131;"	d
+mtr_set_flush_observer	include/mtr0mtr.h	88;"	d
+mtr_set_log_mode	include/mtr0mtr.h	81;"	d
+mtr_set_savepoint	include/mtr0mtr.h	68;"	d
 mtr_start	include/mtr0mtr.h	50;"	d
 mtr_start_ro	include/mtr0mtr.h	56;"	d
 mtr_start_sync	include/mtr0mtr.h	53;"	d
 mtr_state_t	include/mtr0types.h	/^enum mtr_state_t {$/;"	g
-mtr_sx_lock	include/mtr0mtr.h	135;"	d
+mtr_sx_lock	include/mtr0mtr.h	140;"	d
 mtr_t	include/mtr0mtr.h	/^  mtr_t() { m_impl.m_state = MTR_STATE_INIT; }$/;"	f	struct:mtr_t
 mtr_t	include/mtr0mtr.h	/^struct mtr_t {$/;"	s
 mtr_write_log_t	mtr/mtr0mtr.cc	/^struct mtr_write_log_t {$/;"	s	file:
-mtr_x_lock	include/mtr0mtr.h	129;"	d
-mtr_x_lock_space	include/mtr0mtr.h	132;"	d
+mtr_x_lock	include/mtr0mtr.h	134;"	d
+mtr_x_lock_space	include/mtr0mtr.h	137;"	d
 mtuple_t	include/row0merge.h	/^struct mtuple_t {$/;"	s
 mtype	include/data0type.h	/^  unsigned mtype : 8;   \/*!< main data type *\/$/;"	m	struct:dtype_t
 mtype	include/dict0mem.h	/^  unsigned mtype : 8;   \/*!< main data type *\/$/;"	m	struct:dict_col_t
@@ -12661,7 +12709,7 @@ mutex_validate	include/ut0mutex.h	159;"	d
 mutex_validate	include/ut0mutex.h	52;"	d
 mutex_validate	log/log0recv.cc	117;"	d	file:
 mutex_validate	log/log0recv.cc	122;"	d	file:
-mutexes	include/hash0hash.h	/^    ib_mutex_t *mutexes; \/* NULL, or an array of mutexes$/;"	m	union:hash_table_t::__anon7
+mutexes	include/hash0hash.h	/^    ib_mutex_t *mutexes; \/* NULL, or an array of mutexes$/;"	m	union:hash_table_t::__anon25
 mvcc	include/trx0sys.h	/^  MVCC *mvcc;                   \/*!< Multi version concurrency control$/;"	m	struct:trx_sys_t
 my_error_innodb	handler/handler0alter.cc	/^static UNIV_COLD void my_error_innodb($/;"	f	file:
 my_gcolumn_templatecallback_t	handler/ha_innodb.h	/^typedef void (*my_gcolumn_templatecallback_t)(const TABLE *, void *);$/;"	t
@@ -12875,6 +12923,7 @@ need_copy	handler/handler0alter.cc	/^  static inline bool need_copy(const Alter_
 need_page_lock	include/gis0type.h	/^  bool need_page_lock;$/;"	m	struct:rtr_info
 need_prdt_lock	include/gis0type.h	/^  bool need_prdt_lock;$/;"	m	struct:rtr_info
 need_rebuild	handler/handler0alter.cc	/^  bool need_rebuild() const { return (old_table != new_table); }$/;"	f	struct:ha_innobase_inplace_ctx
+need_recv	include/pmem_mmap_obj.h	/^	bool need_recv;$/;"	m	struct:__pmem_mmap_mtrlog_hdr
 need_rename	handler/handler0alter.cc	/^  bool need_rename() const { return (m_conflict); }$/;"	f	class:alter_part_add	file:
 need_to_access_clustered	include/row0mysql.h	/^  unsigned need_to_access_clustered : 1;   \/*!< if we are fetching$/;"	m	struct:row_prebuilt_t
 needs_truncation	include/trx0purge.h	/^  bool needs_truncation() {$/;"	f	struct:undo::Tablespace
@@ -12896,6 +12945,7 @@ next	include/ha0ha.h	/^  ha_node_t *next; \/*!< next chain node or NULL if none 
 next	include/ha0storage.ic	/^  ha_storage_node_t *next; \/*!< next node in hash chain *\/$/;"	m	struct:ha_storage_node_t	file:
 next	include/lob0index.h	/^  buf_block_t *next() {$/;"	f	struct:lob::index_entry_t
 next	include/log0recv.h	/^  recv_data_t *next;$/;"	m	struct:recv_data_t
+next	include/pmem_mmap_obj.h	/^	size_t next;$/;"	m	struct:__pmem_mmap_mtrlog_hdr
 next	include/ut0list.h	/^  ib_list_node_t *next; \/*!< next node *\/$/;"	m	struct:ib_list_node_t
 next	include/ut0lst.h	/^  Type *next; \/*!< pointer to next node,$/;"	m	struct:ut_list_node
 next	lock/lock0lock.cc	/^  ulint next() { return (++m_index); }$/;"	f	class:TrxLockIterator
@@ -12973,9 +13023,16 @@ nvdimm_buf_pool_create	buf/buf0buf.cc	/^static void nvdimm_buf_pool_create(buf_p
 nvdimm_buf_pool_free	buf/buf0buf.cc	/^static void nvdimm_buf_pool_free() {$/;"	f	file:
 nvdimm_buf_pool_init	buf/buf0buf.cc	/^dberr_t nvdimm_buf_pool_init(ulint total_size, ulint n_instances) {$/;"	f
 nvdimm_buf_pool_ptr	buf/buf0buf.cc	/^buf_pool_t *nvdimm_buf_pool_ptr;$/;"	v
-nvdimm_pages_read	include/srv0srv.h	/^  ulint_ctr_1_t nvdimm_pages_read;$/;"	m	struct:srv_stats_t
-nvdimm_pages_stored	include/srv0srv.h	/^  ulint_ctr_1_t nvdimm_pages_stored;$/;"	m	struct:srv_stats_t
-nvdimm_pages_written	include/srv0srv.h	/^  ulint_ctr_1_t nvdimm_pages_written;$/;"	m	struct:srv_stats_t
+nvdimm_pages_read_no_undo	include/srv0srv.h	/^  ulint_ctr_1_t nvdimm_pages_read_no_undo;$/;"	m	struct:srv_stats_t
+nvdimm_pages_read_ol	include/srv0srv.h	/^  ulint_ctr_1_t nvdimm_pages_read_ol;$/;"	m	struct:srv_stats_t
+nvdimm_pages_read_st	include/srv0srv.h	/^  ulint_ctr_1_t nvdimm_pages_read_st;$/;"	m	struct:srv_stats_t
+nvdimm_pages_stored_no_undo	include/srv0srv.h	/^  ulint_ctr_1_t nvdimm_pages_stored_no_undo;$/;"	m	struct:srv_stats_t
+nvdimm_pages_stored_ol	include/srv0srv.h	/^  ulint_ctr_1_t nvdimm_pages_stored_ol;$/;"	m	struct:srv_stats_t
+nvdimm_pages_stored_st	include/srv0srv.h	/^  ulint_ctr_1_t nvdimm_pages_stored_st;$/;"	m	struct:srv_stats_t
+nvdimm_pages_written_no_undo	include/srv0srv.h	/^  ulint_ctr_1_t nvdimm_pages_written_no_undo;$/;"	m	struct:srv_stats_t
+nvdimm_pages_written_ol	include/srv0srv.h	/^  ulint_ctr_1_t nvdimm_pages_written_ol;$/;"	m	struct:srv_stats_t
+nvdimm_pages_written_st	include/srv0srv.h	/^  ulint_ctr_1_t nvdimm_pages_written_st;$/;"	m	struct:srv_stats_t
+nvdimm_pc_threshold	buf/buf0buf.cc	/^ulint nvdimm_pc_threshold;$/;"	v
 object	include/mtr0mtr.h	/^  void *object;$/;"	m	struct:mtr_memo_slot_t
 offset	include/lob0lob.h	/^  ulint offset() const { return (mach_read_from_4(m_ref + BTR_EXTERN_OFFSET)); }$/;"	f	struct:lob::ref_t
 offset	include/row0merge.h	/^  ulint offset;      \/*!< file offset (end of file) *\/$/;"	m	struct:merge_file_t
@@ -13080,6 +13137,7 @@ operator ()	include/ut0ut.h	/^  bool operator()(const char *a, const char *b) co
 operator ()	lock/lock0lock.cc	/^  bool operator()(const Locks::value_type &lhs,$/;"	f	struct:CATS_Lock_priority
 operator ()	lock/lock0lock.cc	/^  ut_list_node<lock_t> &operator()(lock_t &elem) {$/;"	f	struct:TableLockGetNode
 operator ()	lock/lock0lock.cc	/^  void operator()(trx_t *trx) {$/;"	f	struct:PrintNotStarted
+operator ()	mtr/mtr0mtr.cc	/^	bool operator()(const mtr_buf_t::block_t *block) {$/;"	f	struct:mtr_nvm_write_log_t
 operator ()	mtr/mtr0mtr.cc	/^  bool operator()(const mtr_buf_t::block_t *block) {$/;"	f	struct:mtr_write_log_t
 operator ()	mtr/mtr0mtr.cc	/^  bool operator()(const mtr_memo_slot_t *slot) const {$/;"	f	struct:Debug_check
 operator ()	mtr/mtr0mtr.cc	/^  bool operator()(const mtr_memo_slot_t *slot) const {$/;"	f	struct:FlaggedCheck
@@ -13666,7 +13724,7 @@ page_create_zip	page/page0page.cc	/^page_t *page_create_zip(buf_block_t *block, 
 page_cur	include/btr0cur.h	/^  page_cur_t page_cur;               \/*!< page cursor *\/$/;"	m	struct:btr_cur_t
 page_cur_delete_rec	page/page0cur.cc	/^void page_cur_delete_rec($/;"	f
 page_cur_delete_rec_write_log	page/page0cur.cc	/^void page_cur_delete_rec_write_log($/;"	f
-page_cur_delete_rec_write_log	page/page0cur.cc	2287;"	d	file:
+page_cur_delete_rec_write_log	page/page0cur.cc	2309;"	d	file:
 page_cur_direct_insert_rec_low	page/page0cur.cc	/^rec_t *page_cur_direct_insert_rec_low(rec_t *current_rec, dict_index_t *index,$/;"	f
 page_cur_get_block	include/page0cur.h	66;"	d
 page_cur_get_block	include/page0cur.ic	/^buf_block_t *page_cur_get_block(page_cur_t *cur) \/*!< in: page cursor *\/$/;"	f
@@ -13731,6 +13789,7 @@ page_dir_t	include/page0page.h	/^typedef page_dir_slot_t page_dir_t;$/;"	t
 page_find_rec_last_not_deleted	page/page0page.cc	/^const rec_t *page_find_rec_last_not_deleted(const page_t *page) {$/;"	f
 page_find_rec_with_heap_no	page/page0page.cc	/^const rec_t *page_find_rec_with_heap_no($/;"	f
 page_flush_coordinator_thread_key	buf/buf0flu.cc	/^mysql_pfs_key_t page_flush_coordinator_thread_key;$/;"	v
+page_flush_nvdimm_thread_key	buf/buf0flu.cc	/^mysql_pfs_key_t page_flush_nvdimm_thread_key;$/;"	v
 page_flush_thread_key	buf/buf0flu.cc	/^mysql_pfs_key_t page_flush_thread_key;$/;"	v
 page_get_data_size	include/page0page.ic	/^ulint page_get_data_size(const page_t *page) \/*!< in: index page *\/$/;"	f
 page_get_free_space_of_empty	include/page0page.ic	/^ulint page_get_free_space_of_empty($/;"	f
@@ -14115,6 +14174,7 @@ payload	include/zlob0first.h	/^  ulint payload() {$/;"	f	struct:lob::z_first_pag
 pc_flush_slot	buf/buf0flu.cc	/^static ulint pc_flush_slot(void) {$/;"	f	file:
 pc_request	buf/buf0flu.cc	/^static void pc_request(ulint min_n, lsn_t lsn_limit) {$/;"	f	file:
 pc_sleep_if_needed	buf/buf0flu.cc	/^static ulint pc_sleep_if_needed(ulint next_loop_time, int64_t sig_count) {$/;"	f	file:
+pc_sleep_nvdimm_cleaner_if_needed	buf/buf0flu.cc	/^static ulint pc_sleep_nvdimm_cleaner_if_needed(ulint next_loop_time, int64_t sig_count) {$/;"	f	file:
 pc_wait_finished	buf/buf0flu.cc	/^static bool pc_wait_finished(ulint *n_flushed_lru, ulint *n_flushed_list) {$/;"	f	file:
 pcur	include/row0mysql.h	/^  btr_pcur_t *pcur;       \/*!< persistent cursor used in selects$/;"	m	struct:row_prebuilt_t
 pcur	include/row0purge.h	/^  btr_pcur_t pcur;$/;"	m	struct:purge_node_t
@@ -14177,6 +14237,10 @@ plist_node_t	include/lob0impl.h	/^  plist_node_t(byte *frame, byte *node, mtr_t 
 plist_node_t	include/lob0impl.h	/^  plist_node_t(mtr_t *mtr, byte *frame)$/;"	f	class:lob::plist_node_t
 plist_node_t	include/lob0impl.h	/^class plist_node_t {$/;"	c	namespace:lob
 plugin_author	handler/i_s.h	/^const char plugin_author[] = "Oracle Corporation";$/;"	v
+pm_mmap_create	pmem/pmem0mmap.cc	/^char* pm_mmap_create(const char* path, const uint64_t pool_size) {$/;"	f
+pm_mmap_free	pmem/pmem0mmap.cc	/^void pm_mmap_free(const uint64_t pool_size) {$/;"	f
+pm_mmap_mtrlogbuf_alloc	pmem/pmem0mmap.cc	/^int pm_mmap_mtrlogbuf_alloc(const size_t size) {$/;"	f
+pm_mmap_mtrlogbuf_write	pmem/pmem0mmap.cc	/^ssize_t pm_mmap_mtrlogbuf_write( $/;"	f
 pointer	include/mem0mem.h	/^  typedef T *pointer;$/;"	t	class:mem_heap_allocator
 pointer	include/ut0new.h	/^  typedef T *pointer;$/;"	t	class:ut_allocator
 poll	os/os0file.cc	/^dberr_t LinuxAIOHandler::poll(fil_node_t **m1, void **m2, IORequest *request) {$/;"	f	class:LinuxAIOHandler
@@ -14246,6 +14310,7 @@ prepare_or_commit_for_old	handler/handler0alter.cc	/^int alter_parts::prepare_or
 prepare_to_free_file	fil/fil0fil.cc	/^void Fil_shard::prepare_to_free_file(fil_node_t *file) {$/;"	f	class:Fil_shard
 prepare_write	handler/handler0alter.cc	/^  void prepare_write(row_prebuilt_t *prebuilt, uint new_part_id) const {$/;"	f	class:Altered_partitions
 prepare_write	mtr/mtr0mtr.cc	/^ulint mtr_t::Command::prepare_write() {$/;"	f	class:mtr_t::Command
+prev	include/pmem_mmap_obj.h	/^	size_t prev;$/;"	m	struct:__pmem_mmap_mtrlog_hdr
 prev	include/ut0list.h	/^  ib_list_node_t *prev; \/*!< previous node *\/$/;"	m	struct:ib_list_node_t
 prev	include/ut0lst.h	/^  Type *prev; \/*!< pointer to the previous$/;"	m	struct:ut_list_node
 prev_node	include/que0que.h	/^  que_node_t *prev_node;   \/*!< pointer to the node from which$/;"	m	struct:que_thr_t
@@ -14941,6 +15006,7 @@ resume_encryption_cond_mutex_key	handler/ha_innodb.cc	/^mysql_pfs_key_t resume_e
 resurrected_trx_tables	trx/trx0trx.cc	/^static trx_table_map resurrected_trx_tables;$/;"	v	file:
 return_node_t	include/pars0pars.h	/^struct return_node_t {$/;"	s
 return_step	eval/eval0proc.cc	/^que_thr_t *return_step(que_thr_t *thr) \/*!< in: query thread *\/$/;"	f
+reusable_offset	include/pmem_mmap_obj.h	/^	size_t reusable_offset;$/;"	m	struct:__pmem_mmap_mtrlog_buf
 reverse	include/ut0lst.h	/^  void reverse() {$/;"	f	struct:ut_list_base
 reverse	include/ut0lst.h	/^  void reverse() {$/;"	f	struct:ut_list_node
 rewind	lock/lock0lock.cc	/^  void rewind() { m_index = 0; }$/;"	f	class:TrxLockIterator
@@ -15685,7 +15751,7 @@ rw_lock_x_unlock_gen	include/sync0rw.h	232;"	d
 rw_lock_x_unlock_gen	include/sync0rw.h	302;"	d
 rw_lock_x_unlock_gen	include/sync0rw.h	304;"	d
 rw_lock_x_unlock_inline	include/sync0rw.h	79;"	d
-rw_locks	include/hash0hash.h	/^    rw_lock_t *rw_locks; \/* NULL, or an array of rw_lcoks$/;"	m	union:hash_table_t::__anon7
+rw_locks	include/hash0hash.h	/^    rw_lock_t *rw_locks; \/* NULL, or an array of rw_lcoks$/;"	m	union:hash_table_t::__anon25
 rw_max_trx_id	include/trx0sys.h	/^  trx_id_t rw_max_trx_id; \/*!< Max trx id of read-write$/;"	m	struct:trx_sys_t
 rw_perm	include/os0file.h	/^  bool rw_perm;                \/*!< true if can be opened$/;"	m	struct:Encryption::AIO_mode::os_file_stat_t
 rw_s_os_wait_count	include/sync0rw.h	/^  uint64_counter_t rw_s_os_wait_count;$/;"	m	struct:rw_lock_stats_t
@@ -16165,7 +16231,7 @@ simulated_put_read_threads_to_sleep	os/os0file.cc	/^void AIO::simulated_put_read
 single_indexer_t	include/ut0counter.h	/^struct single_indexer_t {$/;"	s
 single_page	buf/buf0buf.cc	/^buf_block_t *Buf_fetch<T>::single_page() {$/;"	f	class:Buf_fetch
 single_scan_itr	include/buf0buf.h	/^  LRUItr single_scan_itr;$/;"	m	struct:Cache_hint::buf_pool_t
-size	include/buf0buf.h	/^    ulint size; \/*!< size of the block *\/$/;"	m	union:Cache_hint::buf_buddy_free_t::__anon11
+size	include/buf0buf.h	/^    ulint size; \/*!< size of the block *\/$/;"	m	union:Cache_hint::buf_buddy_free_t::__anon17
 size	include/buf0buf.h	/^  page_size_t size;$/;"	m	class:Cache_hint::buf_page_t
 size	include/buf0buf.ic	/^  ulint size;           \/*!< size of frames[] and blocks[] *\/$/;"	m	struct:buf_chunk_t	file:
 size	include/clone0desc.h	/^  size_t size() const { return (m_size * 4); }$/;"	f	class:Chnunk_Bitmap
@@ -16175,6 +16241,7 @@ size	include/fil0fil.h	/^  page_no_t size;$/;"	m	struct:fil_space_t
 size	include/fsp0file.h	/^  page_no_t size() const { return (m_size); }$/;"	f	class:Datafile
 size	include/ibuf0ibuf.ic	/^  ulint size;          \/*!< current size of the ibuf index$/;"	m	struct:ibuf_t	file:
 size	include/os0file.h	/^  os_offset_t size;            \/*!< file size in bytes *\/$/;"	m	struct:Encryption::AIO_mode::os_file_stat_t
+size	include/pmem_mmap_obj.h	/^	size_t size;$/;"	m	struct:__pmem_mmap_mtrlog_buf
 size	include/read0types.h	/^    ulint size() const { return (m_size); }$/;"	f	class:ReadView::ids_t
 size	include/trx0purge.h	/^  ulint size() { return (m_spaces.size()); }$/;"	f	class:undo::Tablespaces
 size	include/trx0types.h	/^  ulint size() const { return (m_rsegs.size()); }$/;"	f	class:TrxUndoRsegs
@@ -16278,7 +16345,7 @@ srv0srv_h	include/srv0srv.h	49;"	d
 srv0start_h	include/srv0start.h	34;"	d
 srv0tmp_h	include/srv0tmp.h	28;"	d
 srv_LRU_scan_depth	srv/srv0srv.cc	/^ulong srv_LRU_scan_depth = 1024;$/;"	v
-srv_active_wake_master_thread	include/srv0srv.h	840;"	d
+srv_active_wake_master_thread	include/srv0srv.h	865;"	d
 srv_active_wake_master_thread_low	srv/srv0srv.cc	/^void srv_active_wake_master_thread_low() {$/;"	f
 srv_adaptive_flushing	srv/srv0srv.cc	/^bool srv_adaptive_flushing = TRUE;$/;"	v
 srv_adaptive_flushing_lwm	srv/srv0srv.cc	/^ulong srv_adaptive_flushing_lwm = 10;$/;"	v
@@ -16369,8 +16436,8 @@ srv_get_task_queue_length	srv/srv0srv.cc	/^ulint srv_get_task_queue_length(void)
 srv_ibuf_disable_background_merge	ibuf/ibuf0ibuf.cc	/^bool srv_ibuf_disable_background_merge;$/;"	v
 srv_inc_activity_count	srv/srv0srv.cc	/^void srv_inc_activity_count(void) { srv_sys->activity_count.inc(); }$/;"	f
 srv_init	srv/srv0srv.cc	/^static void srv_init(void) {$/;"	f	file:
-srv_init_abort	srv/srv0start.cc	1732;"	d	file:
-srv_init_abort	srv/srv0start.cc	1735;"	d	file:
+srv_init_abort	srv/srv0start.cc	1738;"	d	file:
+srv_init_abort	srv/srv0start.cc	1741;"	d	file:
 srv_init_abort_low	srv/srv0start.cc	/^static dberr_t srv_init_abort_low(bool create_new_db,$/;"	f	file:
 srv_innodb_monitor_mutex	srv/srv0srv.cc	/^static ib_mutex_t srv_innodb_monitor_mutex;$/;"	v	file:
 srv_innodb_monitor_mutex_key	sync/sync0sync.cc	/^mysql_pfs_key_t srv_innodb_monitor_mutex_key;$/;"	v
@@ -16480,6 +16547,8 @@ srv_n_write_io_threads	srv/srv0srv.cc	/^ulong srv_n_write_io_threads;$/;"	v
 srv_numa_interleave	srv/srv0srv.cc	/^bool srv_numa_interleave = FALSE;$/;"	v
 srv_nvdimm_buf_pool_instances	srv/srv0srv.cc	/^ulong srv_nvdimm_buf_pool_instances = 1;$/;"	v
 srv_nvdimm_buf_pool_size	srv/srv0srv.cc	/^ulint srv_nvdimm_buf_pool_size = ULINT_MAX;$/;"	v
+srv_nvdimm_home_dir	srv/srv0srv.cc	/^char* srv_nvdimm_home_dir = NULL;$/;"	v
+srv_nvdimm_pc_threshold_pct	srv/srv0srv.cc	/^ulong srv_nvdimm_pc_threshold_pct = 5;$/;"	v
 srv_online_max_size	srv/srv0srv.cc	/^unsigned long long srv_online_max_size;$/;"	v
 srv_open_tmp_tablespace	srv/srv0start.cc	/^static dberr_t srv_open_tmp_tablespace(bool create_new_db,$/;"	f	file:
 srv_page_size	srv/srv0srv.cc	/^ulong srv_page_size = UNIV_PAGE_SIZE_DEF;$/;"	v
@@ -16566,10 +16635,10 @@ srv_suspend_thread_low	srv/srv0srv.cc	/^static int64_t srv_suspend_thread_low($/
 srv_sync_array_size	sync/sync0arr.cc	/^ulong srv_sync_array_size = 1;$/;"	v
 srv_sync_debug	sync/sync0debug.cc	/^bool srv_sync_debug;$/;"	v
 srv_sys	srv/srv0srv.cc	/^static srv_sys_t *srv_sys = NULL;$/;"	v	file:
-srv_sys_mutex_enter	srv/srv0srv.cc	615;"	d	file:
-srv_sys_mutex_exit	srv/srv0srv.cc	624;"	d	file:
+srv_sys_mutex_enter	srv/srv0srv.cc	619;"	d	file:
+srv_sys_mutex_exit	srv/srv0srv.cc	628;"	d	file:
 srv_sys_mutex_key	sync/sync0sync.cc	/^mysql_pfs_key_t srv_sys_mutex_key;$/;"	v
-srv_sys_mutex_own	srv/srv0srv.cc	621;"	d	file:
+srv_sys_mutex_own	srv/srv0srv.cc	625;"	d	file:
 srv_sys_space	fsp/fsp0sysspace.cc	/^SysTablespace srv_sys_space;$/;"	v
 srv_sys_t	srv/srv0srv.cc	/^struct srv_sys_t {$/;"	s	file:
 srv_sys_tablespaces_open	srv/srv0start.cc	/^bool srv_sys_tablespaces_open = false;$/;"	v
@@ -16621,7 +16690,7 @@ srv_win_flush_t	include/srv0srv.h	/^enum srv_win_flush_t {$/;"	g
 srv_worker_thread	srv/srv0srv.cc	/^void srv_worker_thread() {$/;"	f
 srv_worker_thread_key	srv/srv0start.cc	/^mysql_pfs_key_t srv_worker_thread_key;$/;"	v
 ssize	include/page0types.h	/^  unsigned ssize : PAGE_ZIP_SSIZE_BITS;$/;"	m	struct:page_zip_des_t
-stamp	include/buf0buf.h	/^  } stamp;$/;"	m	struct:Cache_hint::buf_buddy_free_t	typeref:union:Cache_hint::buf_buddy_free_t::__anon11
+stamp	include/buf0buf.h	/^  } stamp;$/;"	m	struct:Cache_hint::buf_buddy_free_t	typeref:union:Cache_hint::buf_buddy_free_t::__anon17
 start	arch/arch0log.cc	/^int Arch_Log_Sys::start(Arch_Group *&group, lsn_t &start_lsn, byte *header,$/;"	f	class:Arch_Log_Sys
 start	arch/arch0log.cc	/^int Log_Arch_Client_Ctx::start(byte *header, uint len) {$/;"	f	class:Log_Arch_Client_Ctx
 start	arch/arch0page.cc	/^int Arch_Page_Sys::start(Arch_Group **group, lsn_t *start_lsn,$/;"	f	class:Arch_Page_Sys
@@ -16825,7 +16894,7 @@ sync_latch_get_name	sync/sync0debug.cc	/^const char *sync_latch_get_name(latch_l
 sync_latch_get_pfs_key	include/sync0types.h	/^inline mysql_pfs_key_t sync_latch_get_pfs_key(latch_id_t id) {$/;"	f
 sync_latch_meta_destroy	sync/sync0debug.cc	/^static void sync_latch_meta_destroy() {$/;"	f	file:
 sync_mutex_to_string	sync/sync0sync.cc	/^std::string sync_mutex_to_string(latch_id_t id, const std::string &created) {$/;"	f
-sync_obj	include/hash0hash.h	/^  } sync_obj;$/;"	m	struct:hash_table_t	typeref:union:hash_table_t::__anon7
+sync_obj	include/hash0hash.h	/^  } sync_obj;$/;"	m	struct:hash_table_t	typeref:union:hash_table_t::__anon25
 sync_object_t	sync/sync0arr.cc	/^union sync_object_t {$/;"	u	file:
 sync_point	log/log0test.cc	/^void Log_test::sync_point(const std::string &sync_point_name) {$/;"	f	class:Log_test
 sync_print	sync/sync0sync.cc	/^void sync_print(FILE *file) {$/;"	f
@@ -17409,8 +17478,8 @@ trx_undo_mem_free	trx/trx0undo.cc	/^void trx_undo_mem_free(trx_undo_t *undo) \/*
 trx_undo_mem_init	trx/trx0undo.cc	/^static trx_undo_t *trx_undo_mem_init($/;"	f	file:
 trx_undo_mem_init_for_reuse	trx/trx0undo.cc	/^static void trx_undo_mem_init_for_reuse($/;"	f	file:
 trx_undo_mutex_key	sync/sync0sync.cc	/^mysql_pfs_key_t trx_undo_mutex_key;$/;"	v
-trx_undo_page_fetch_ext	trx/trx0rec.cc	685;"	d	file:
-trx_undo_page_fetch_ext	trx/trx0rec.cc	697;"	d	file:
+trx_undo_page_fetch_ext	trx/trx0rec.cc	698;"	d	file:
+trx_undo_page_fetch_ext	trx/trx0rec.cc	710;"	d	file:
 trx_undo_page_fetch_ext_func	trx/trx0rec.cc	/^static byte *trx_undo_page_fetch_ext_func(trx_t *trx, dict_index_t *index,$/;"	f	file:
 trx_undo_page_get	include/trx0undo.ic	/^page_t *trx_undo_page_get(const page_id_t &page_id,$/;"	f
 trx_undo_page_get_end	include/trx0undo.ic	/^ulint trx_undo_page_get_end($/;"	f
@@ -17425,8 +17494,8 @@ trx_undo_page_init_log	trx/trx0undo.cc	/^void trx_undo_page_init_log(page_t *und
 trx_undo_page_init_log	trx/trx0undo.cc	334;"	d	file:
 trx_undo_page_report_insert	trx/trx0rec.cc	/^static ulint trx_undo_page_report_insert($/;"	f	file:
 trx_undo_page_report_modify	trx/trx0rec.cc	/^static ulint trx_undo_page_report_modify($/;"	f	file:
-trx_undo_page_report_modify_ext	trx/trx0rec.cc	690;"	d	file:
-trx_undo_page_report_modify_ext	trx/trx0rec.cc	702;"	d	file:
+trx_undo_page_report_modify_ext	trx/trx0rec.cc	703;"	d	file:
+trx_undo_page_report_modify_ext	trx/trx0rec.cc	715;"	d	file:
 trx_undo_page_report_modify_ext_func	trx/trx0rec.cc	/^static byte *trx_undo_page_report_modify_ext_func($/;"	f	file:
 trx_undo_page_set_next_prev_and_add	trx/trx0rec.cc	/^static ulint trx_undo_page_set_next_prev_and_add($/;"	f	file:
 trx_undo_parse_add_undo_rec	trx/trx0rec.cc	/^byte *trx_undo_parse_add_undo_rec(byte *ptr,     \/*!< in: buffer *\/$/;"	f
@@ -17502,7 +17571,7 @@ tuple_list	include/data0data.h	/^  UT_LIST_NODE_T(dtuple_t) tuple_list;$/;"	m	st
 tuples	include/row0merge.h	/^  mtuple_t *tuples;     \/*!< array of data tuples *\/$/;"	m	struct:row_merge_buf_t
 type	api/api0api.cc	/^  ib_tuple_type_t type; \/*!< Tuple discriminitor. *\/$/;"	m	struct:ib_tuple_t	file:
 type	fts/fts0opt.cc	/^  fts_msg_type_t type; \/*!< Message type *\/$/;"	m	struct:fts_msg_t	file:
-type	include/api0api.h	/^  ib_col_type_t type; \/*!< Type of the column *\/$/;"	m	struct:__anon28
+type	include/api0api.h	/^  ib_col_type_t type; \/*!< Type of the column *\/$/;"	m	struct:__anon15
 type	include/data0data.h	/^  dtype_t type; \/*!< type of data *\/$/;"	m	struct:dfield_t
 type	include/dict0mem.h	/^  unsigned type : 6;        \/*!< 0 or DICT_FOREIGN_ON_DELETE_CASCADE$/;"	m	struct:dict_foreign_t
 type	include/dict0mem.h	/^  unsigned type : DICT_IT_BITS;$/;"	m	struct:dict_index_t
@@ -17523,7 +17592,7 @@ type	trx/trx0undo.cc	/^    ulint type,            \/*!< in: type of the segment:
 type_cmpl_t	include/trx0rec.h	/^  type_cmpl_t() : m_flag(0) {}$/;"	f	struct:type_cmpl_t
 type_cmpl_t	include/trx0rec.h	/^struct type_cmpl_t {$/;"	s
 type_info	include/trx0rec.h	/^  ulint type_info() {$/;"	f	struct:type_cmpl_t
-type_len	include/api0api.h	/^  ib_u32_t type_len; \/*!< Length of type *\/$/;"	m	struct:__anon28
+type_len	include/api0api.h	/^  ib_u32_t type_len; \/*!< Length of type *\/$/;"	m	struct:__anon15
 type_mode	include/lock0priv.h	/^  uint32_t type_mode;$/;"	m	struct:lock_t
 type_mode_string	include/lock0priv.h	/^inline std::string lock_t::type_mode_string() const {$/;"	f	class:lock_t
 type_str	handler/i_s.cc	/^  const char *type_str; \/*!< String explain the page$/;"	m	struct:buf_page_desc_t	file:

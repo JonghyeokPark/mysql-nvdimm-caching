@@ -108,13 +108,29 @@ ssize_t pm_mmap_mtrlogbuf_write(
 
 #ifdef UNIV_LOG_HEADER
   // log << header << persist(log) << payload << persist(log)
-  // write header
-  memcpy_persist(pdata+offset, mmap_mtr_hdr, (size_t)PMEM_MMAP_MTRLOG_HDR_SIZE);
+  // (jhpark) : header version brought from 
+  //            [Persistent Memory I/O Primitives](https://arxiv.org/pdf/1904.01614.pdf)
+  
+  // write header + payload
+  volatile int org_offset = offset;
+  memcpy(pdata+offset, mmap_mtr_hdr, (size_t)PMEM_MMAP_MTRLOG_HDR_SIZE);
   offset += PMEM_MMAP_MTRLOG_HDR_SIZE;
-  // write data
-  memcpy_persist(pdata+offset, (void*)buf, (size_t)n);
-  mmap_mtrlogbuf->cur_offset = offset + n;
-  flush_cache(&mmap_mtrlogbuf->cur_offset, sizeof(mmap_mtrlogbuf->cur_offset));
+  memcpy(pdata+offset, buf, (size_t)n);
+  // persistent barrier
+  flush_cache(pdata+org_offset, (size_t)(PMEM_MMAP_MTRLOG_HDR_SIZE+n));
+  // record log size
+  mmap_mtrlogbuf->size = (size_t)(PMEM_MMAP_MTRLOG_HDR_SIZE+n);
+  // persistent barrier 
+  flush_cache(&mmap_mtrlogbuf->size, sizeof(mmap_mtrlogbuf->size)); 
+  
+  // (jhpark) : original header version
+  // write header
+  //memcpy_persist(pdata+offset, mmap_mtr_hdr, (size_t)PMEM_MMAP_MTRLOG_HDR_SIZE);
+  //offset += PMEM_MMAP_MTRLOG_HDR_SIZE;
+  // write payload
+  //memcpy_persist(pdata+offset, (void*)buf, (size_t)n);
+  //mmap_mtrlogbuf->cur_offset = offset + n;
+  //flush_cache(&mmap_mtrlogbuf->cur_offset, sizeof(mmap_mtrlogbuf->cur_offset));
 #elif UNIV_LOG_ZERO
   // log << header << cnt << payload << persist(log)
   volatile int org_offset = offset;
@@ -127,7 +143,6 @@ ssize_t pm_mmap_mtrlogbuf_write(
   // persistent barrier
   flush_cache(pdata+org_offset, (size_t)(PMEM_MMAP_MTRLOG_HDR_SIZE+sizeof(cnt)+n));
   mmap_mtrlogbuf->cur_offset = offset + n;
-
   // persistent barrier (for now, just ignore)
   //flush_cache(&mmap_mtrlogbuf->cur_offset, sizeof(mmap_mtrlogbuf->cur_offset));
 #endif
