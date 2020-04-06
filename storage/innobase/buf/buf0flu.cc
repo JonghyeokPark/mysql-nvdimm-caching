@@ -77,6 +77,10 @@ static const int buf_flush_page_cleaner_priority = -20;
 static ulint buf_lru_flush_page_count = 0;
 #endif /* !UNIV_HOTBACKUP */
 
+#ifdef UNIV_DYNAMIC_NVDIMM_CACHE
+#include "dynamic0nvdimm.h"
+#endif
+
 /** Flag indicating if the page_cleaner is in active state. This flag
 is set to TRUE by the page_cleaner thread when it is spawned and is set
 back to FALSE at shutdown by the page_cleaner as well. Therefore no
@@ -1427,7 +1431,12 @@ ibool buf_flush_page(buf_pool_t *buf_pool, buf_page_t *bpage,
 
 #ifdef UNIV_NVDIMM_CACHE
     /* Separate Order-Line leaf page from the other pages. */
+    
+#ifdef UNIV_DYNAMIC_NVDIMM_CACHE
+    if (check_nvdimm_caching_page(bpage->id.space())
+#else
     if (bpage->id.space() == 17 /* Order-Line tablespace */
+#endif
         && bpage->buf_fix_count == 0 /* Not fixed */) {
       const byte *frame = 
         bpage->zip.data != NULL ? bpage->zip.data : ((buf_block_t *)bpage)->frame;
@@ -1850,7 +1859,13 @@ static ulint buf_flush_nvdimm_LRU_list_batch(buf_pool_t *buf_pool, ulint max) {
       buf_page_t *prev = UT_LIST_GET_PREV(LRU, bpage);
       buf_pool->lru_hp.set(prev);
 
+#ifdef UNIV_DYNAMIC_NVDIMM_CACHE
+      if (check_nvdimm_caching_page(bpage->id.space())) {
+        continue;
+      }
+#else
       if (bpage->id.space() != 17)  continue;
+#endif
       //if (bpage->id.space() != 17 && bpage->id.space() != 19)  continue;
       
       BPageMutex *block_mutex = buf_page_get_mutex(bpage);

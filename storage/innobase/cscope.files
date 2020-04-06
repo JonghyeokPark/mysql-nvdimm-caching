@@ -176,6 +176,7 @@
 ./read/read0read.cc
 ./api/api0misc.cc
 ./api/api0api.cc
+./pmem/dynamic0nvdimm.cc
 ./pmem/pmem0mmap.cc
 ./ut/ut0rbt.cc
 ./ut/ut0new.cc
@@ -353,6 +354,7 @@
 ./include/srv0mon.h
 ./include/fts0plugin.h
 ./include/dict0priv.h
+./include/dynamic0nvdimm.h
 ./include/hash0hash.h
 ./include/ut0sort.h
 ./include/sync0sync.h

@@ -1128,6 +1128,8 @@ dict_table_t *dict_table_open_on_name(
     dict_table_try_drop_aborted_and_mutex_exit(table, try_drop);
   }
 
+  std::cerr << "finished!?\n";
+
   DBUG_RETURN(table);
 }
 #endif /* !UNIV_HOTBACKUP */

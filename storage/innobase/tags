@@ -15,6 +15,7 @@ AIO	os/os0file.cc	/^class AIO {$/;"	c	file:
 AIOHandler	os/os0file.cc	/^class AIOHandler {$/;"	c	file:
 AIO_mode	include/os0file.h	/^enum class AIO_mode : size_t {$/;"	c	struct:Encryption
 ALTER_ENCRYPT_TABLESPACE_LOG	include/log0ddl.h	/^  ALTER_ENCRYPT_TABLESPACE_LOG,$/;"	m	class:Log_Type
+ALWAYS_ASSERT	include/dynamic0nvdimm.h	15;"	d
 APPEND_UNSIGNED	include/data0type.ic	331;"	d	file:
 ARCH_ARCH_INCLUDE	include/arch0arch.h	33;"	d
 ARCH_BLK_PAGE_ID_SIZE	arch/arch0page.cc	/^const uint ARCH_BLK_PAGE_ID_SIZE = 8;$/;"	v
@@ -213,14 +214,14 @@ BUF_FLUSH_LIST	include/buf0types.h	/^  BUF_FLUSH_LIST,        \/*!< flush via th
 BUF_FLUSH_LRU	include/buf0types.h	/^  BUF_FLUSH_LRU = 0,     \/*!< flush via the LRU list *\/$/;"	e	enum:buf_flush_t
 BUF_FLUSH_N_TYPES	include/buf0types.h	/^  BUF_FLUSH_N_TYPES      \/*!< index of last element + 1  *\/$/;"	e	enum:buf_flush_t
 BUF_FLUSH_SINGLE_PAGE	include/buf0types.h	/^  BUF_FLUSH_SINGLE_PAGE, \/*!< flush via the LRU list$/;"	e	enum:buf_flush_t
-BUF_FLUSH_VALIDATE_SKIP	buf/buf0flu.cc	255;"	d	file:
+BUF_FLUSH_VALIDATE_SKIP	buf/buf0flu.cc	259;"	d	file:
 BUF_IO_NONE	include/buf0types.h	/^  BUF_IO_NONE = 0, \/**< no pending I\/O *\/$/;"	e	enum:buf_io_fix
 BUF_IO_PIN	include/buf0types.h	/^  BUF_IO_PIN       \/**< disallow relocation of$/;"	e	enum:buf_io_fix
 BUF_IO_READ	include/buf0types.h	/^  BUF_IO_READ,     \/**< read pending *\/$/;"	e	enum:buf_io_fix
 BUF_IO_WRITE	include/buf0types.h	/^  BUF_IO_WRITE,    \/**< write pending *\/$/;"	e	enum:buf_io_fix
 BUF_LRU_DROP_SEARCH_SIZE	buf/buf0lru.cc	/^static const ulint BUF_LRU_DROP_SEARCH_SIZE = 1024;$/;"	v	file:
 BUF_LRU_IO_TO_UNZIP_FACTOR	buf/buf0lru.cc	/^static const ulint BUF_LRU_IO_TO_UNZIP_FACTOR = 50;$/;"	v	file:
-BUF_LRU_MIN_LEN	buf/buf0flu.cc	219;"	d	file:
+BUF_LRU_MIN_LEN	buf/buf0flu.cc	223;"	d	file:
 BUF_LRU_NON_OLD_MIN_LEN	buf/buf0lru.cc	70;"	d	file:
 BUF_LRU_OLD_MIN_LEN	include/buf0lru.h	57;"	d
 BUF_LRU_OLD_RATIO_DIV	include/buf0lru.h	216;"	d
@@ -234,12 +235,12 @@ BUF_NO_CHECKSUM_MAGIC	include/buf0types.h	42;"	d
 BUF_PAGE_PRINT_NO_CRASH	include/buf0buf.h	/^  BUF_PAGE_PRINT_NO_CRASH = 1,$/;"	e	enum:Cache_hint::buf_page_print_flags
 BUF_PAGE_PRINT_NO_FULL	include/buf0buf.h	/^  BUF_PAGE_PRINT_NO_FULL = 2$/;"	e	enum:Cache_hint::buf_page_print_flags
 BUF_PAGE_READ_MAX_RETRIES	buf/buf0buf.cc	/^static const ulint BUF_PAGE_READ_MAX_RETRIES = 100;$/;"	v	file:
-BUF_PAGE_STATE_BITS	include/buf0buf.h	1166;"	d
+BUF_PAGE_STATE_BITS	include/buf0buf.h	1170;"	d
 BUF_POOL_SIZE_THRESHOLD	include/srv0start.h	67;"	d
-BUF_POOL_WATCH_SIZE	include/buf0buf.h	108;"	d
-BUF_POOL_ZIP_FOLD	include/buf0buf.h	1530;"	d
-BUF_POOL_ZIP_FOLD_BPAGE	include/buf0buf.h	1531;"	d
-BUF_POOL_ZIP_FOLD_PTR	include/buf0buf.h	1529;"	d
+BUF_POOL_WATCH_SIZE	include/buf0buf.h	112;"	d
+BUF_POOL_ZIP_FOLD	include/buf0buf.h	1534;"	d
+BUF_POOL_ZIP_FOLD_BPAGE	include/buf0buf.h	1535;"	d
+BUF_POOL_ZIP_FOLD_PTR	include/buf0buf.h	1533;"	d
 BUF_READ_AHEAD_AREA	include/buf0rea.h	138;"	d
 BUF_READ_AHEAD_PAGES	buf/buf0buf.cc	/^static const ulint BUF_READ_AHEAD_PAGES = 64;$/;"	v	file:
 BUF_READ_AHEAD_PEND_LIMIT	buf/buf0rea.cc	60;"	d	file:
@@ -1556,7 +1557,7 @@ INITIAL	fts/fts0tlex.cc	499;"	d	file:
 INITIAL	include/fts0blex.h	268;"	d
 INITIAL	include/fts0tlex.h	267;"	d
 INITIAL	pars/lexyy.cc	958;"	d	file:
-INIT_LOG_FILE0	srv/srv0start.cc	329;"	d	file:
+INIT_LOG_FILE0	srv/srv0start.cc	333;"	d	file:
 INIT_SCANNING	handler/p_s.cc	/^  INIT_SCANNING,$/;"	e	enum:scan_pass	file:
 INIT_SIZE	srv/srv0tmp.cc	/^const uint32_t INIT_SIZE = 10;$/;"	m	namespace:ibt	file:
 INNOBASE_ALTER_DATA	handler/handler0alter.cc	/^static const Alter_inplace_info::HA_ALTER_FLAGS INNOBASE_ALTER_DATA =$/;"	v	file:
@@ -2011,7 +2012,7 @@ MAX_PAGES_TO_CHECK	fil/fil0fil.cc	/^static const size_t MAX_PAGES_TO_CHECK = 3;$
 MAX_PAGE_HASH_LOCKS	include/buf0buf.h	/^constexpr ulint MAX_PAGE_HASH_LOCKS = 1024;$/;"	m	class:Cache_hint
 MAX_PARTIAL_UPDATE_LIMIT	include/lob0util.h	/^const uint32_t MAX_PARTIAL_UPDATE_LIMIT = 1000;$/;"	m	namespace:lob
 MAX_PROXIMITY_ITEM	fts/fts0que.cc	59;"	d	file:
-MAX_PURGE_THREADS	include/srv0srv.h	540;"	d
+MAX_PURGE_THREADS	include/srv0srv.h	547;"	d
 MAX_RESERVED	include/srv0mon.h	113;"	d
 MAX_SCAN_THREADS	fil/fil0fil.cc	/^static const size_t MAX_SCAN_THREADS = 8;$/;"	v	file:
 MAX_SECTOR_SIZE	os/os0file.cc	/^static const ulint MAX_SECTOR_SIZE = 4096;$/;"	v	file:
@@ -2893,7 +2894,7 @@ PAGE_SAME_REC	include/page0types.h	140;"	d
 PAGE_SIZE_T_SIZE_BITS	include/page0size.h	/^  unsigned m_logical : PAGE_SIZE_T_SIZE_BITS;$/;"	m	class:page_size_t
 PAGE_SIZE_T_SIZE_BITS	include/page0size.h	/^  unsigned m_physical : PAGE_SIZE_T_SIZE_BITS;$/;"	m	class:page_size_t
 PAGE_SIZE_T_SIZE_BITS	include/page0size.h	46;"	d
-PAGE_TYPE	buf/buf0buf.cc	6704;"	d	file:
+PAGE_TYPE	buf/buf0buf.cc	6711;"	d	file:
 PAGE_ZIP_CLUST_LEAF_SLOT_SIZE	include/page0zip.h	69;"	d
 PAGE_ZIP_DIR_SLOT_DEL	include/page0zip.h	76;"	d
 PAGE_ZIP_DIR_SLOT_MASK	include/page0zip.h	72;"	d
@@ -3100,7 +3101,7 @@ PARTITION_IN_SHARED_TABLESPACE	handler/ha_innopart.h	/^static constexpr auto PAR
 PART_SEPARATOR	include/univ.i	/^constexpr char PART_SEPARATOR[PART_SEPARATOR_LEN + 1] = "#P#";$/;"	v
 PART_SEPARATOR	include/univ.i	/^constexpr char PART_SEPARATOR[PART_SEPARATOR_LEN + 1] = "#p#";$/;"	v
 PART_SEPARATOR_LEN	include/univ.i	/^constexpr size_t PART_SEPARATOR_LEN = 3;$/;"	v
-PCT_IO	include/srv0srv.h	537;"	d
+PCT_IO	include/srv0srv.h	544;"	d
 PCursor	row/row0pread.cc	/^  PCursor(btr_pcur_t *pcur, mtr_t *mtr) : m_mtr(mtr), m_pcur(pcur) {}$/;"	f	class:PCursor
 PCursor	row/row0pread.cc	/^class PCursor {$/;"	c	file:
 PEEK_IF_IN_POOL	include/buf0buf.h	/^  PEEK_IF_IN_POOL,$/;"	m	class:Page_fetch
@@ -3504,13 +3505,13 @@ SRV_FORCE_NO_LOG_REDO	include/srv0srv.h	/^  SRV_FORCE_NO_LOG_REDO = 6       \/*!
 SRV_FORCE_NO_TRX_UNDO	include/srv0srv.h	/^  SRV_FORCE_NO_TRX_UNDO = 3,      \/*!< do not run trx rollback after$/;"	e	enum:__anon21
 SRV_FORCE_NO_UNDO_LOG_SCAN	include/srv0srv.h	/^  SRV_FORCE_NO_UNDO_LOG_SCAN = 5, \/*!< do not look at undo logs when$/;"	e	enum:__anon21
 SRV_MASTER	include/srv0srv.h	/^  SRV_MASTER  \/*!< the master thread, (whose type$/;"	e	enum:srv_thread_type
-SRV_MASTER_DICT_LRU_INTERVAL	srv/srv0srv.cc	616;"	d	file:
+SRV_MASTER_DICT_LRU_INTERVAL	srv/srv0srv.cc	623;"	d	file:
 SRV_MASTER_SLOT	srv/srv0srv.cc	/^static const ulint SRV_MASTER_SLOT = 0;$/;"	v	file:
-SRV_MAX_IO_CAPACITY_DUMMY_DEFAULT	include/srv0srv.h	531;"	d
-SRV_MAX_IO_CAPACITY_LIMIT	include/srv0srv.h	532;"	d
-SRV_MAX_N_IO_THREADS	include/srv0srv.h	624;"	d
-SRV_MAX_N_IO_THREADS	include/srv0srv.h	626;"	d
-SRV_MAX_N_PENDING_SYNC_IOS	srv/srv0start.cc	180;"	d	file:
+SRV_MAX_IO_CAPACITY_DUMMY_DEFAULT	include/srv0srv.h	538;"	d
+SRV_MAX_IO_CAPACITY_LIMIT	include/srv0srv.h	539;"	d
+SRV_MAX_N_IO_THREADS	include/srv0srv.h	631;"	d
+SRV_MAX_N_IO_THREADS	include/srv0srv.h	633;"	d
+SRV_MAX_N_PENDING_SYNC_IOS	srv/srv0start.cc	184;"	d	file:
 SRV_NEW_RAW	include/fsp0file.h	/^  SRV_NEW_RAW,$/;"	e	enum:device_t
 SRV_NONE	include/srv0srv.h	/^  SRV_NONE,   \/*!< None *\/$/;"	e	enum:srv_thread_type
 SRV_NOT_RAW	include/fsp0file.h	/^  SRV_NOT_RAW = 0,$/;"	e	enum:device_t
@@ -3519,7 +3520,7 @@ SRV_N_PENDING_IOS_PER_THREAD	os/os0file.cc	217;"	d	file:
 SRV_OLD_RAW	include/fsp0file.h	/^  SRV_OLD_RAW$/;"	e	enum:device_t
 SRV_PURGE	include/srv0srv.h	/^  SRV_PURGE,  \/*!< Purge coordinator thread *\/$/;"	e	enum:srv_thread_type
 SRV_PURGE_SLOT	srv/srv0srv.cc	/^static const ulint SRV_PURGE_SLOT = 1;$/;"	v	file:
-SRV_SEMAPHORE_WAIT_EXTENSION	include/srv0srv.h	619;"	d
+SRV_SEMAPHORE_WAIT_EXTENSION	include/srv0srv.h	626;"	d
 SRV_SHUTDOWN_CLEANUP	include/srv0start.h	/^  SRV_SHUTDOWN_CLEANUP,     \/*!< Cleaning up in$/;"	e	enum:srv_shutdown_t
 SRV_SHUTDOWN_EXIT_THREADS	include/srv0start.h	/^  SRV_SHUTDOWN_EXIT_THREADS \/*!< Exit all threads *\/$/;"	e	enum:srv_shutdown_t
 SRV_SHUTDOWN_FLUSH_PHASE	include/srv0start.h	/^  SRV_SHUTDOWN_FLUSH_PHASE, \/*!< At this phase the master and the$/;"	e	enum:srv_shutdown_t
@@ -4923,12 +4924,12 @@ array_size	handler/ha_innodb.h	/^  ulint array_size; \/*!< array size of index_m
 asc	include/pars0pars.h	/^  ibool asc;           \/*!< TRUE if ascending, FALSE if descending *\/$/;"	m	struct:order_node_t
 asc	include/row0sel.h	/^  ibool asc;                 \/*!< TRUE if the rows should be fetched$/;"	m	struct:sel_node_t
 asc	include/row0sel.h	/^  ibool asc;           \/*!< TRUE if cursor traveling upwards *\/$/;"	m	struct:plan_t
-assert_block_ahi_empty	include/buf0buf.h	1445;"	d
-assert_block_ahi_empty	include/buf0buf.h	1456;"	d
-assert_block_ahi_empty_on_init	include/buf0buf.h	1447;"	d
-assert_block_ahi_empty_on_init	include/buf0buf.h	1457;"	d
-assert_block_ahi_valid	include/buf0buf.h	1452;"	d
-assert_block_ahi_valid	include/buf0buf.h	1458;"	d
+assert_block_ahi_empty	include/buf0buf.h	1449;"	d
+assert_block_ahi_empty	include/buf0buf.h	1460;"	d
+assert_block_ahi_empty_on_init	include/buf0buf.h	1451;"	d
+assert_block_ahi_empty_on_init	include/buf0buf.h	1461;"	d
+assert_block_ahi_valid	include/buf0buf.h	1456;"	d
+assert_block_ahi_valid	include/buf0buf.h	1462;"	d
 assert_empty_local_prefix	lob/lob0lob.cc	/^bool zReader::assert_empty_local_prefix() {$/;"	f	class:lob::zReader
 assert_equal	include/dict0mem.h	/^  bool assert_equal(const dtype_t *type) const {$/;"	f	struct:dict_col_t
 assert_read_uncommitted	lob/lob0lob.cc	/^bool ReadContext::assert_read_uncommitted() const {$/;"	f	class:lob::ReadContext
@@ -5410,47 +5411,47 @@ buf_block	include/mem0mem.h	/^  void *buf_block;$/;"	m	struct:mem_block_info_t
 buf_block_alloc	buf/buf0buf.cc	/^buf_block_t *buf_block_alloc($/;"	f
 buf_block_arr	include/buf0dblwr.h	/^  buf_page_t **buf_block_arr; \/*!< array to store pointers to$/;"	m	struct:buf_dblwr_t
 buf_block_buf_fix_dec	include/buf0buf.ic	/^void buf_block_buf_fix_dec($/;"	f
-buf_block_buf_fix_inc	include/buf0buf.h	631;"	d
-buf_block_buf_fix_inc	include/buf0buf.h	637;"	d
+buf_block_buf_fix_inc	include/buf0buf.h	635;"	d
+buf_block_buf_fix_inc	include/buf0buf.h	641;"	d
 buf_block_buf_fix_inc_func	include/buf0buf.ic	/^void buf_block_buf_fix_inc_func($/;"	f
-buf_block_dbg_add_level	include/buf0buf.h	758;"	d
+buf_block_dbg_add_level	include/buf0buf.h	762;"	d
 buf_block_dbg_add_level	include/buf0buf.ic	/^void buf_block_dbg_add_level($/;"	f
 buf_block_debug_latch_key	sync/sync0sync.cc	/^mysql_pfs_key_t buf_block_debug_latch_key;$/;"	v
 buf_block_fix	include/buf0buf.ic	/^ulint buf_block_fix(buf_block_t *block) {$/;"	f
 buf_block_fix	include/buf0buf.ic	/^ulint buf_block_fix(buf_page_t *bpage) {$/;"	f
 buf_block_free	include/buf0buf.ic	/^void buf_block_free(buf_block_t *block) \/*!< in, own: block to be freed *\/$/;"	f
 buf_block_from_ahi	buf/buf0buf.cc	/^buf_block_t *buf_block_from_ahi(const byte *ptr) {$/;"	f
-buf_block_get_frame	include/buf0buf.h	912;"	d
-buf_block_get_frame	include/buf0buf.h	915;"	d
+buf_block_get_frame	include/buf0buf.h	916;"	d
+buf_block_get_frame	include/buf0buf.h	919;"	d
 buf_block_get_frame	include/buf0buf.ic	/^buf_frame_t *buf_block_get_frame($/;"	f
 buf_block_get_freed_page_clock	include/buf0buf.ic	/^ulint buf_block_get_freed_page_clock(const buf_block_t *block) \/*!< in: block *\/$/;"	f
 buf_block_get_io_fix	include/buf0buf.ic	/^enum buf_io_fix buf_block_get_io_fix($/;"	f
 buf_block_get_io_fix_unlocked	include/buf0buf.ic	/^enum buf_io_fix buf_block_get_io_fix_unlocked(const buf_block_t *block) {$/;"	f
 buf_block_get_lock_hash_val	include/buf0buf.ic	/^ulint buf_block_get_lock_hash_val(const buf_block_t *block) \/*!< in: block *\/$/;"	f
 buf_block_get_modify_clock	include/buf0buf.ic	/^ib_uint64_t buf_block_get_modify_clock(const buf_block_t *block) {$/;"	f
-buf_block_get_page_zip	include/buf0buf.h	919;"	d
+buf_block_get_page_zip	include/buf0buf.h	923;"	d
 buf_block_get_state	include/buf0buf.ic	/^enum buf_page_state buf_block_get_state($/;"	f
-buf_block_hash_get	include/buf0buf.h	1063;"	d
+buf_block_hash_get	include/buf0buf.h	1067;"	d
 buf_block_hash_get_locked	include/buf0buf.ic	/^buf_block_t *buf_block_hash_get_locked(buf_pool_t *buf_pool,$/;"	f
-buf_block_hash_get_s_locked	include/buf0buf.h	1059;"	d
-buf_block_hash_get_x_locked	include/buf0buf.h	1061;"	d
-buf_block_hash_lock_held_s	include/buf0buf.h	2051;"	d
-buf_block_hash_lock_held_s	include/buf0buf.h	2063;"	d
-buf_block_hash_lock_held_s_or_x	include/buf0buf.h	2057;"	d
-buf_block_hash_lock_held_s_or_x	include/buf0buf.h	2065;"	d
-buf_block_hash_lock_held_x	include/buf0buf.h	2054;"	d
-buf_block_hash_lock_held_x	include/buf0buf.h	2064;"	d
+buf_block_hash_get_s_locked	include/buf0buf.h	1063;"	d
+buf_block_hash_get_x_locked	include/buf0buf.h	1065;"	d
+buf_block_hash_lock_held_s	include/buf0buf.h	2055;"	d
+buf_block_hash_lock_held_s	include/buf0buf.h	2067;"	d
+buf_block_hash_lock_held_s_or_x	include/buf0buf.h	2061;"	d
+buf_block_hash_lock_held_s_or_x	include/buf0buf.h	2069;"	d
+buf_block_hash_lock_held_x	include/buf0buf.h	2058;"	d
+buf_block_hash_lock_held_x	include/buf0buf.h	2068;"	d
 buf_block_init	buf/buf0buf.cc	/^static void buf_block_init($/;"	f	file:
 buf_block_init_low	buf/buf0buf.cc	/^void buf_block_init_low(buf_block_t *block) \/*!< in: block to init *\/$/;"	f
 buf_block_is_uncompressed	buf/buf0buf.cc	/^static ibool buf_block_is_uncompressed($/;"	f	file:
 buf_block_lock_key	sync/sync0sync.cc	/^mysql_pfs_key_t buf_block_lock_key;$/;"	v
-buf_block_modify_clock_inc	include/buf0buf.h	640;"	d
+buf_block_modify_clock_inc	include/buf0buf.h	644;"	d
 buf_block_modify_clock_inc	include/buf0buf.ic	/^void buf_block_modify_clock_inc(buf_block_t *block) {$/;"	f
 buf_block_set_file_page	include/buf0buf.ic	/^void buf_block_set_file_page(buf_block_t *block, const page_id_t &page_id) {$/;"	f
 buf_block_set_io_fix	include/buf0buf.ic	/^void buf_block_set_io_fix(buf_block_t *block,     \/*!< in\/out: control block *\/$/;"	f
 buf_block_set_next_page_no	lob/lob0impl.cc	/^static void buf_block_set_next_page_no(buf_block_t *block,$/;"	f	namespace:lob
 buf_block_set_state	include/buf0buf.ic	/^void buf_block_set_state($/;"	f
-buf_block_state_valid	include/buf0buf.h	1523;"	d
+buf_block_state_valid	include/buf0buf.h	1527;"	d
 buf_block_t	include/buf0buf.h	/^struct buf_block_t {$/;"	s	class:Cache_hint
 buf_block_try_discard_uncompressed	buf/buf0buf.cc	/^static void buf_block_try_discard_uncompressed(const page_id_t &page_id) {$/;"	f	file:
 buf_block_unfix	include/buf0buf.ic	/^ulint buf_block_unfix(buf_block_t *block) {$/;"	f
@@ -5545,9 +5546,9 @@ buf_flush_init_for_writing	buf/buf0flu.cc	/^void buf_flush_init_for_writing(cons
 buf_flush_insert_in_flush_rbt	buf/buf0flu.cc	/^static buf_page_t *buf_flush_insert_in_flush_rbt($/;"	f	file:
 buf_flush_insert_into_flush_list	buf/buf0flu.cc	/^void buf_flush_insert_into_flush_list($/;"	f
 buf_flush_insert_sorted_into_flush_list	buf/buf0flu.cc	/^void buf_flush_insert_sorted_into_flush_list($/;"	f
-buf_flush_list_mutex_enter	include/buf0buf.h	2000;"	d
-buf_flush_list_mutex_exit	include/buf0buf.h	2005;"	d
-buf_flush_list_mutex_own	include/buf0buf.h	1997;"	d
+buf_flush_list_mutex_enter	include/buf0buf.h	2004;"	d
+buf_flush_list_mutex_exit	include/buf0buf.h	2009;"	d
+buf_flush_list_mutex_own	include/buf0buf.h	2001;"	d
 buf_flush_list_order_validate	buf/buf0flu.cc	/^static inline bool buf_flush_list_order_validate(lsn_t earlier_added_lsn,$/;"	f	file:
 buf_flush_lists	buf/buf0flu.cc	/^bool buf_flush_lists(ulint min_n, lsn_t lsn_limit, ulint *n_processed) {$/;"	f
 buf_flush_lsn_scan_factor	buf/buf0flu.cc	/^static ulint buf_flush_lsn_scan_factor = 3;$/;"	v	file:
@@ -5626,8 +5627,8 @@ buf_page_cleaner_is_active	buf/buf0flu.cc	/^bool buf_page_cleaner_is_active = fa
 buf_page_create	buf/buf0buf.cc	/^buf_block_t *buf_page_create(const page_id_t &page_id,$/;"	f
 buf_page_desc_t	handler/i_s.cc	/^struct buf_page_desc_t {$/;"	s	file:
 buf_page_free_descriptor	include/buf0buf.ic	/^void buf_page_free_descriptor($/;"	f
-buf_page_get	include/buf0buf.h	376;"	d
-buf_page_get_also_watch	include/buf0buf.h	1056;"	d
+buf_page_get	include/buf0buf.h	380;"	d
+buf_page_get_also_watch	include/buf0buf.h	1060;"	d
 buf_page_get_block	include/buf0buf.ic	/^buf_block_t *buf_page_get_block(buf_page_t *bpage) {$/;"	f
 buf_page_get_flush_type	include/buf0buf.ic	/^buf_flush_t buf_page_get_flush_type($/;"	f
 buf_page_get_freed_page_clock	include/buf0buf.ic	/^ulint buf_page_get_freed_page_clock(const buf_page_t *bpage) \/*!< in: block *\/$/;"	f
@@ -5638,22 +5639,22 @@ buf_page_get_known_nowait	buf/buf0buf.cc	/^bool buf_page_get_known_nowait(ulint 
 buf_page_get_mutex	include/buf0buf.ic	/^BPageMutex *buf_page_get_mutex($/;"	f
 buf_page_get_newest_modification	include/buf0buf.ic	/^lsn_t buf_page_get_newest_modification($/;"	f
 buf_page_get_state	include/buf0buf.ic	/^enum buf_page_state buf_page_get_state($/;"	f
-buf_page_get_with_no_latch	include/buf0buf.h	384;"	d
+buf_page_get_with_no_latch	include/buf0buf.h	388;"	d
 buf_page_get_zip	buf/buf0buf.cc	/^buf_page_t *buf_page_get_zip(const page_id_t &page_id,$/;"	f
-buf_page_hash_get	include/buf0buf.h	1054;"	d
+buf_page_hash_get	include/buf0buf.h	1058;"	d
 buf_page_hash_get_locked	include/buf0buf.ic	/^buf_page_t *buf_page_hash_get_locked(buf_pool_t *buf_pool,$/;"	f
 buf_page_hash_get_low	include/buf0buf.ic	/^buf_page_t *buf_page_hash_get_low(buf_pool_t *buf_pool,$/;"	f
-buf_page_hash_get_s_locked	include/buf0buf.h	1050;"	d
-buf_page_hash_get_x_locked	include/buf0buf.h	1052;"	d
-buf_page_hash_lock_get	include/buf0buf.h	2026;"	d
-buf_page_hash_lock_held_s	include/buf0buf.h	2039;"	d
-buf_page_hash_lock_held_s	include/buf0buf.h	2060;"	d
-buf_page_hash_lock_held_s_or_x	include/buf0buf.h	2047;"	d
-buf_page_hash_lock_held_s_or_x	include/buf0buf.h	2062;"	d
-buf_page_hash_lock_held_x	include/buf0buf.h	2043;"	d
-buf_page_hash_lock_held_x	include/buf0buf.h	2061;"	d
-buf_page_hash_lock_s_confirm	include/buf0buf.h	2030;"	d
-buf_page_hash_lock_x_confirm	include/buf0buf.h	2033;"	d
+buf_page_hash_get_s_locked	include/buf0buf.h	1054;"	d
+buf_page_hash_get_x_locked	include/buf0buf.h	1056;"	d
+buf_page_hash_lock_get	include/buf0buf.h	2030;"	d
+buf_page_hash_lock_held_s	include/buf0buf.h	2043;"	d
+buf_page_hash_lock_held_s	include/buf0buf.h	2064;"	d
+buf_page_hash_lock_held_s_or_x	include/buf0buf.h	2051;"	d
+buf_page_hash_lock_held_s_or_x	include/buf0buf.h	2066;"	d
+buf_page_hash_lock_held_x	include/buf0buf.h	2047;"	d
+buf_page_hash_lock_held_x	include/buf0buf.h	2065;"	d
+buf_page_hash_lock_s_confirm	include/buf0buf.h	2034;"	d
+buf_page_hash_lock_x_confirm	include/buf0buf.h	2037;"	d
 buf_page_in_file	include/buf0buf.ic	/^ibool buf_page_in_file($/;"	f
 buf_page_init	buf/buf0buf.cc	/^static void buf_page_init(buf_pool_t *buf_pool, const page_id_t &page_id,$/;"	f	file:
 buf_page_init_for_read	buf/buf0buf.cc	/^buf_page_t *buf_page_init_for_read(dberr_t *err, ulint mode,$/;"	f
@@ -5667,9 +5668,9 @@ buf_page_lsn_check	buf/checksum.cc	/^inline void buf_page_lsn_check(bool check_l
 buf_page_make_young	buf/buf0buf.cc	/^void buf_page_make_young(buf_page_t *bpage) {$/;"	f
 buf_page_make_young_if_needed	buf/buf0buf.cc	/^static void buf_page_make_young_if_needed(buf_page_t *bpage) {$/;"	f	file:
 buf_page_monitor	buf/buf0buf.cc	/^static void buf_page_monitor($/;"	f	file:
-buf_page_mutex_enter	include/buf0buf.h	2014;"	d
-buf_page_mutex_exit	include/buf0buf.h	2020;"	d
-buf_page_mutex_own	include/buf0buf.h	2011;"	d
+buf_page_mutex_enter	include/buf0buf.h	2018;"	d
+buf_page_mutex_exit	include/buf0buf.h	2024;"	d
+buf_page_mutex_own	include/buf0buf.h	2015;"	d
 buf_page_optimistic_get	buf/buf0buf.cc	/^bool buf_page_optimistic_get(ulint rw_latch, buf_block_t *block,$/;"	f
 buf_page_peek	include/buf0buf.ic	/^ibool buf_page_peek(const page_id_t &page_id) {$/;"	f
 buf_page_peek_if_too_old	include/buf0buf.ic	/^ibool buf_page_peek_if_too_old(const buf_page_t *bpage) {$/;"	f
@@ -5689,7 +5690,7 @@ buf_page_set_state	include/buf0buf.ic	/^void buf_page_set_state(buf_page_t *bpag
 buf_page_set_sticky	include/buf0buf.ic	/^void buf_page_set_sticky(buf_page_t *bpage) {$/;"	f
 buf_page_state	include/buf0buf.h	/^enum buf_page_state {$/;"	g	class:Cache_hint
 buf_page_t	include/buf0buf.h	/^class buf_page_t {$/;"	c	class:Cache_hint
-buf_page_try_get	include/buf0buf.h	433;"	d
+buf_page_try_get	include/buf0buf.h	437;"	d
 buf_page_try_get_func	buf/buf0buf.cc	/^const buf_block_t *buf_page_try_get_func(const page_id_t &page_id,$/;"	f
 buf_page_unset_sticky	include/buf0buf.ic	/^void buf_page_unset_sticky(buf_page_t *bpage) \/*!< in\/out: control block *\/$/;"	f
 buf_pointer_is_block_field_instance	buf/buf0buf.cc	/^static ibool buf_pointer_is_block_field_instance($/;"	f	file:
@@ -5721,8 +5722,8 @@ buf_pool_info_t	include/buf0buf.h	/^struct buf_pool_info_t {$/;"	s	class:Cache_h
 buf_pool_init	buf/buf0buf.cc	/^dberr_t buf_pool_init(ulint total_size, ulint n_instances) {$/;"	f
 buf_pool_invalidate	buf/buf0buf.cc	/^void buf_pool_invalidate(void) {$/;"	f
 buf_pool_invalidate_instance	buf/buf0buf.cc	/^static void buf_pool_invalidate_instance(buf_pool_t *buf_pool) {$/;"	f	file:
-buf_pool_is_block_lock	include/buf0buf.h	941;"	d
-buf_pool_is_block_mutex	include/buf0buf.h	937;"	d
+buf_pool_is_block_lock	include/buf0buf.h	945;"	d
+buf_pool_is_block_mutex	include/buf0buf.h	941;"	d
 buf_pool_is_obsolete	include/buf0buf.ic	/^bool buf_pool_is_obsolete(ulint withdraw_clock) {$/;"	f
 buf_pool_ptr	buf/buf0buf.cc	/^buf_pool_t *buf_pool_ptr;$/;"	v
 buf_pool_reads	include/srv0srv.h	/^  ulint_ctr_1_t buf_pool_reads;$/;"	m	struct:srv_stats_t
@@ -5887,6 +5888,7 @@ check_interrupted	buf/buf0flu.cc	/^bool FlushObserver::check_interrupted() {$/;"
 check_keyring	os/os0file.cc	/^bool Encryption::check_keyring() {$/;"	f	class:Encryption
 check_missing_tablespaces	fil/fil0fil.cc	/^bool Fil_system::check_missing_tablespaces() {$/;"	f	class:Fil_system
 check_name	include/dict0dict.h	/^enum check_name {$/;"	g
+check_nvdimm_caching_page	include/dynamic0nvdimm.h	/^inline bool check_nvdimm_caching_page(unsigned int space_id) {$/;"	f
 check_path	fil/fil0fil.cc	/^  bool check_path(const std::string &path) const {$/;"	f	class:Fil_system
 check_pending	os/os0file.cc	/^ulint SimulatedAIOHandler::check_pending(ulint global_segment,$/;"	f	class:SimulatedAIOHandler
 check_pending_io	fil/fil0fil.cc	/^ulint Fil_shard::check_pending_io(const fil_space_t *space,$/;"	f	class:Fil_shard
@@ -7242,7 +7244,10 @@ dyn0buf_h	include/dyn0buf.h	34;"	d
 dyn0types_h	include/dyn0types.h	34;"	d
 dyn_buf_t	include/dyn0buf.h	/^  dyn_buf_t() : m_heap(), m_size() {$/;"	f	class:dyn_buf_t
 dyn_buf_t	include/dyn0buf.h	/^class dyn_buf_t {$/;"	c
+dynamic0nvdimm_h	include/dynamic0nvdimm.h	8;"	d
 dynamic_metadata	include/dict0dict.h	/^  dict_table_t *dynamic_metadata;$/;"	m	struct:dict_sys_t
+dynamic_nc_space_ids	pmem/dynamic0nvdimm.cc	/^std::vector<unsigned int> dynamic_nc_space_ids;$/;"	v
+dynamic_nc_tables	pmem/dynamic0nvdimm.cc	/^std::vector<std::string> dynamic_nc_tables;$/;"	v
 elapsed_time	fts/fts0fts.cc	/^static ib_time_t elapsed_time = 0;$/;"	v	file:
 elem_type	include/ut0lst.h	/^  typedef Type elem_type;$/;"	t	struct:ut_list_base
 else_part	include/pars0pars.h	/^  que_node_t *else_part;    \/*!< else-part statement list *\/$/;"	m	struct:if_node_t
@@ -15877,6 +15882,8 @@ same_filepath_as	fsp/fsp0file.cc	/^bool Datafile::same_filepath_as(const char *o
 same_pk	row/row0log.cc	/^  bool same_pk;        \/*!< whether the definition of the PRIMARY KEY$/;"	m	struct:row_log_t	file:
 save	handler/ha_innodb.cc	/^    const void *save MY_ATTRIBUTE((unused))) {$/;"	f	file:
 save_auto_increment	handler/ha_innopart.cc	/^void ha_innopart::save_auto_increment(ulonglong nr) {$/;"	f	class:ha_innopart
+save_dnc_space_ids	pmem/dynamic0nvdimm.cc	/^void save_dnc_space_ids() {$/;"	f
+save_dnc_tables	pmem/dynamic0nvdimm.cc	/^void save_dnc_tables (char* table_list) {$/;"	f
 save_error	include/clone0clone.h	/^  void save_error(int err) {$/;"	f	class:Clone_Handle
 savepoints	include/btr0cur.h	/^  ulint savepoints[3];$/;"	m	struct:btr_latch_leaves_t
 savepoints	include/fts0fts.h	/^  ib_vector_t *savepoints; \/*!< Active savepoints, must have at$/;"	m	struct:fts_trx_t
@@ -16219,6 +16226,7 @@ short	fts/fts0pars.cc	182;"	d	file:
 short	pars/pars0grm.cc	234;"	d	file:
 should_skip	include/buf0stats.h	/^  bool should_skip(const index_id_t &id) {$/;"	f	class:buf_stat_per_index_t
 show	include/ut0dbg.h	/^  void show() {$/;"	f	class:ut_chrono_t
+show_dnc_status	pmem/dynamic0nvdimm.cc	/^void show_dnc_status() {$/;"	f
 show_innodb_vars	handler/ha_innodb.cc	/^static int show_innodb_vars(THD *thd, SHOW_VAR *var, char *buff) {$/;"	f	file:
 shutdown	fsp/fsp0file.cc	/^void Datafile::shutdown() {$/;"	f	class:Datafile
 shutdown	fsp/fsp0space.cc	/^void Tablespace::shutdown() {$/;"	f	class:Tablespace
@@ -16345,7 +16353,7 @@ srv0srv_h	include/srv0srv.h	49;"	d
 srv0start_h	include/srv0start.h	34;"	d
 srv0tmp_h	include/srv0tmp.h	28;"	d
 srv_LRU_scan_depth	srv/srv0srv.cc	/^ulong srv_LRU_scan_depth = 1024;$/;"	v
-srv_active_wake_master_thread	include/srv0srv.h	865;"	d
+srv_active_wake_master_thread	include/srv0srv.h	872;"	d
 srv_active_wake_master_thread_low	srv/srv0srv.cc	/^void srv_active_wake_master_thread_low() {$/;"	f
 srv_adaptive_flushing	srv/srv0srv.cc	/^bool srv_adaptive_flushing = TRUE;$/;"	v
 srv_adaptive_flushing_lwm	srv/srv0srv.cc	/^ulong srv_adaptive_flushing_lwm = 10;$/;"	v
@@ -16407,6 +16415,7 @@ srv_dml_needed_delay	srv/srv0srv.cc	/^ulint srv_dml_needed_delay = 0;$/;"	v
 srv_do_purge	srv/srv0srv.cc	/^static ulint srv_do_purge($/;"	f	file:
 srv_doublewrite_batch_size	srv/srv0srv.cc	/^ulong srv_doublewrite_batch_size = 120;$/;"	v
 srv_downgrade_logs	srv/srv0srv.cc	/^bool srv_downgrade_logs = false;$/;"	v
+srv_dynamic_nvdimm_tables	srv/srv0srv.cc	/^char* srv_dynamic_nvdimm_tables = NULL;$/;"	v
 srv_enable_undo_encryption_if_set	srv/srv0srv.cc	/^void srv_enable_undo_encryption_if_set() {$/;"	f
 srv_enter_innodb_with_tickets	srv/srv0conc.cc	/^static void srv_enter_innodb_with_tickets($/;"	f	file:
 srv_error_event	srv/srv0srv.cc	/^os_event_t srv_error_event;$/;"	v
@@ -16436,8 +16445,8 @@ srv_get_task_queue_length	srv/srv0srv.cc	/^ulint srv_get_task_queue_length(void)
 srv_ibuf_disable_background_merge	ibuf/ibuf0ibuf.cc	/^bool srv_ibuf_disable_background_merge;$/;"	v
 srv_inc_activity_count	srv/srv0srv.cc	/^void srv_inc_activity_count(void) { srv_sys->activity_count.inc(); }$/;"	f
 srv_init	srv/srv0srv.cc	/^static void srv_init(void) {$/;"	f	file:
-srv_init_abort	srv/srv0start.cc	1738;"	d	file:
-srv_init_abort	srv/srv0start.cc	1741;"	d	file:
+srv_init_abort	srv/srv0start.cc	1742;"	d	file:
+srv_init_abort	srv/srv0start.cc	1745;"	d	file:
 srv_init_abort_low	srv/srv0start.cc	/^static dberr_t srv_init_abort_low(bool create_new_db,$/;"	f	file:
 srv_innodb_monitor_mutex	srv/srv0srv.cc	/^static ib_mutex_t srv_innodb_monitor_mutex;$/;"	v	file:
 srv_innodb_monitor_mutex_key	sync/sync0sync.cc	/^mysql_pfs_key_t srv_innodb_monitor_mutex_key;$/;"	v
@@ -16635,10 +16644,10 @@ srv_suspend_thread_low	srv/srv0srv.cc	/^static int64_t srv_suspend_thread_low($/
 srv_sync_array_size	sync/sync0arr.cc	/^ulong srv_sync_array_size = 1;$/;"	v
 srv_sync_debug	sync/sync0debug.cc	/^bool srv_sync_debug;$/;"	v
 srv_sys	srv/srv0srv.cc	/^static srv_sys_t *srv_sys = NULL;$/;"	v	file:
-srv_sys_mutex_enter	srv/srv0srv.cc	619;"	d	file:
-srv_sys_mutex_exit	srv/srv0srv.cc	628;"	d	file:
+srv_sys_mutex_enter	srv/srv0srv.cc	626;"	d	file:
+srv_sys_mutex_exit	srv/srv0srv.cc	635;"	d	file:
 srv_sys_mutex_key	sync/sync0sync.cc	/^mysql_pfs_key_t srv_sys_mutex_key;$/;"	v
-srv_sys_mutex_own	srv/srv0srv.cc	625;"	d	file:
+srv_sys_mutex_own	srv/srv0srv.cc	632;"	d	file:
 srv_sys_space	fsp/fsp0sysspace.cc	/^SysTablespace srv_sys_space;$/;"	v
 srv_sys_t	srv/srv0srv.cc	/^struct srv_sys_t {$/;"	s	file:
 srv_sys_tablespaces_open	srv/srv0start.cc	/^bool srv_sys_tablespaces_open = false;$/;"	v
@@ -16680,6 +16689,7 @@ srv_unix_flush_t	include/srv0srv.h	/^enum srv_unix_flush_t {$/;"	g
 srv_update_cpu_usage	srv/srv0srv.cc	/^static void srv_update_cpu_usage() {$/;"	f	file:
 srv_upgrade_old_undo_found	srv/srv0srv.cc	/^bool srv_upgrade_old_undo_found = false;$/;"	v
 srv_use_doublewrite_buf	srv/srv0srv.cc	/^ibool srv_use_doublewrite_buf = TRUE;$/;"	v
+srv_use_dynamic_nvdimm_caching	srv/srv0srv.cc	/^bool srv_use_dynamic_nvdimm_caching = FALSE;$/;"	v
 srv_use_native_aio	srv/srv0srv.cc	/^bool srv_use_native_aio = TRUE; \/* enabled by default on Windows *\/$/;"	v
 srv_use_native_aio	srv/srv0srv.cc	/^bool srv_use_native_aio;$/;"	v
 srv_use_nvdimm_buf	srv/srv0srv.cc	/^bool srv_use_nvdimm_buf = FALSE;$/;"	v

@@ -49,6 +49,10 @@ this program; if not, write to the Free Software Foundation, Inc.,
 
 #include <ostream>
 
+#ifdef UNIV_DYNAMIC_NVDIMM_CACHE
+#include "dynamic0nvdimm.h"
+#endif
+
 // Forward declaration
 struct fil_addr_t;
 

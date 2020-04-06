@@ -54,6 +54,7 @@ SET(INNOBASE_ZIP_DECOMPRESS_SOURCES
 
 SET(INNOBASE_SOURCES
   pmem/pmem0mmap.cc
+  pmem/dynamic0nvdimm.cc
 	api/api0api.cc
 	api/api0misc.cc
 	arch/arch0arch.cc

@@ -124,6 +124,10 @@ extern char* gb_pm_mmap;
 char  PMEM_FILE_PATH [PMEM_MMAP_MAX_FILE_NAME_LENGTH];
 #endif /* UNIV_NVDIMM_CACHE */
 
+#if defined(UNIV_NVDIMM_CACHE) && defined(UNIV_DYNAMIC_NVDIMM_CACHE)
+#include "dynamic0nvdimm.h"
+#endif
+
 /** fil_space_t::flags for hard-coded tablespaces */
 extern ulint predefined_flags;
 
@@ -2816,10 +2820,17 @@ files_checked:
 
 #if defined(UNIV_NVDIMM_CACHE) && defined(UNIV_DYNAMIC_NVDIMM_CACHE)
   if (srv_use_dynamic_nvdimm_caching) {
-    NVDIMM_DEBUG_PRINT("Dynamic NVDIMM Caching enabled\n");
-    
-    // print out dynamic caching tables
-    NVDIMM_DEBUG_PRINT("table names: %s\n", srv_dynamic_nvdimm_tables); 
+    // print out dynamic caching status 
+    NVDIMM_DEBUG_PRINT("[DYNAMIC_CACHING] Dynamic NVDIMM Caching enabled\n");
+    // print out dynamic caching tables server variable
+    NVDIMM_DEBUG_PRINT("[DYNAMIC_CACHING] table names: %s\n", srv_dynamic_nvdimm_tables);
+
+    // save the table spaces names for dynamic caching
+    save_dnc_tables(srv_dynamic_nvdimm_tables);
+    // save the table space ids for dynamic caching
+    save_dnc_space_ids();
+    // print out dynamic caching status
+    show_dnc_status();
   }
 #endif
 
