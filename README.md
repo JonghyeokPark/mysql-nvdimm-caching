@@ -54,4 +54,24 @@ innodb_nvdimm_pc_threshold_pct=5
 ```bash
 $ cd bld
 $ ./bin/mysqld --defaults-file=my-nvdimm.cnf --disable-log-bin
-``` 
+```
+
+## Enable Dynamic NVDIMM caching
+
+1. Add the following three server variables to the `my.cnf` file:
+
+| System Variable                     | Description | 
+| :---------------------------------- | :---------- |
+| innodb_use_dynamic_nvdimm_caching   | Specifies whether to use Dynamic NVDIMM caching. **true** or **false**. |
+| innodb_dynamic_nvdimm_tables        | NVDIMM caching table names (database_name/table_name). The default value is NULL. |
+
+For example:
+
+```bash
+$ vi my.cnf
+...
+innodb_use_dynamic_nvdimm_caching=true
+innodb_dynamic_nvdimm_tables="tpcc2000/new_orders;tpcc2000/order_line"
+...
+```
+
