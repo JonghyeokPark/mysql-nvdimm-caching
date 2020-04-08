@@ -10,6 +10,9 @@
 #include <assert.h>
 #include <unistd.h>
 
+// memory allocator
+#include <memory>
+
 // (jhpark): this header file for UNIV_NVDIMM_CACHE
 //					 use persistent memroy with mmap on dax-enabled file system
 //					 numoerous data structures and functions are silimilar to 
@@ -117,5 +120,57 @@ struct __pmem_mmap_mtrlog_hdr {
 int pm_mmap_mtrlogbuf_alloc(const size_t size);
 ssize_t pm_mmap_mtrlogbuf_write(const uint8_t* buf, 
                                 unsigned long int n, unsigned long int lsn);
+
+// (jhpark):  Custom memory allocator with aligned. 
+//            For current pmem_mmap version doesn't use this technique.
+//            references: https://docs.w3cub.com/cpp/memory/align/
+template <std::size_t N>
+struct MyAllocator
+{
+    char data[N];
+    void* p;
+    std::size_t sz;
+    MyAllocator() : p(data), sz(N) {}
+    template <typename T>
+    T* aligned_alloc(std::size_t a = alignof(T))
+    {
+        if (std::align(a, sizeof(T), p, sz))
+        {
+            T* result = reinterpret_cast<T*>(p);
+            p = (char*)p + sizeof(T);
+            sz -= sizeof(T);
+            return result;
+        }
+        return nullptr;
+    }
+};
+
+// CACHE_LINE_SIZE aligned memcpy
+inline char* aligned_memcpy (char* dst, const char* src, size_t len) {
+  size_t i;
+  if (len >= CACHE_LINE_SIZE) {
+    i = len / CACHE_LINE_SIZE;
+    len &= (CACHE_LINE_SIZE-1);
+    while (i-- > 0) {
+      __asm__ __volatile__( 
+          "movdqa (%0), %%xmm0\n"
+          "movdqa 16(%0), %%xmm1\n"
+          "movdqa 32(%0), %%xmm2\n"
+          "movdqa 48(%0), %%xmm3\n"
+          "movntps  %%xmm0, (%1)\n"
+          "movntps  %%xmm1, 16(%1)\n"
+          "movntps  %%xmm2, 32(%1)\n"
+          "movntps  %%xmm3, 48(%1)\n"
+          ::"r"(src), "r"(dst):"memory");
+      dst += CACHE_LINE_SIZE;
+      src += CACHE_LINE_SIZE;
+    }
+  }
+
+  if (len) {
+    memcpy(dst, src, len);
+  }
+  return dst;
+}
 
 #endif  /* __PMEMMAPOBJ_H__ */

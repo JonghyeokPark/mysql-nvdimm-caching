@@ -8,7 +8,6 @@
 #include <unistd.h>
 #include <errno.h>
 
-
 // gloabl persistent memmory region
 char* gb_pm_mmap;
 int gb_pm_mmap_fd;
@@ -75,6 +74,7 @@ int pm_mmap_mtrlogbuf_alloc(const size_t size) {
 // write mtr log
 ssize_t pm_mmap_mtrlogbuf_write( 
     const uint8_t* buf,
+    //uint8_t* buf,
     unsigned long int n,
     unsigned long int lsn) 
 {
@@ -132,17 +132,33 @@ ssize_t pm_mmap_mtrlogbuf_write(
   //mmap_mtrlogbuf->cur_offset = offset + n;
   //flush_cache(&mmap_mtrlogbuf->cur_offset, sizeof(mmap_mtrlogbuf->cur_offset));
 #elif UNIV_LOG_ZERO
-  // log << header << cnt << payload << persist(log)
+  // cacheline alignment version for data
   volatile int org_offset = offset;
   memcpy(pdata+offset, mmap_mtr_hdr, (size_t)PMEM_MMAP_MTRLOG_HDR_SIZE);
   offset += PMEM_MMAP_MTRLOG_HDR_SIZE;
   int cnt = __builtin_popcount((uint64_t)buf);
   memcpy(pdata+offset, &cnt, sizeof(cnt));
   offset += sizeof(cnt);
-  memcpy(pdata+offset, buf, (size_t)n);
+  aligned_memcpy(pdata+offset, (const char*) buf, (size_t)n);
+
   // persistent barrier
   flush_cache(pdata+org_offset, (size_t)(PMEM_MMAP_MTRLOG_HDR_SIZE+sizeof(cnt)+n));
   mmap_mtrlogbuf->cur_offset = offset + n;
+
+  ///////////////////////////////////////////////////////////////////////////////////
+  // (jhpark): old version (for now commented out)
+  // log << header << cnt << payload << persist(log)
+  //volatile int org_offset = offset;
+  //memcpy(pdata+offset, mmap_mtr_hdr, (size_t)PMEM_MMAP_MTRLOG_HDR_SIZE);
+  //offset += PMEM_MMAP_MTRLOG_HDR_SIZE;
+  //int cnt = __builtin_popcount((uint64_t)buf);
+  //memcpy(pdata+offset, &cnt, sizeof(cnt));
+  //offset += sizeof(cnt);
+  //memcpy(pdata+offset, buf, (size_t)n);
+  // persistent barrier
+  //flush_cache(pdata+org_offset, (size_t)(PMEM_MMAP_MTRLOG_HDR_SIZE+sizeof(cnt)+n));
+  //mmap_mtrlogbuf->cur_offset = offset + n;
+  ///////////////////////////////////////////////////////////////////////////////////
   // persistent barrier (for now, just ignore)
   //flush_cache(&mmap_mtrlogbuf->cur_offset, sizeof(mmap_mtrlogbuf->cur_offset));
 #endif
