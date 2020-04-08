@@ -54,7 +54,7 @@ ARCH_STATE_ACTIVE	include/arch0arch.h	/^  ARCH_STATE_ACTIVE,$/;"	e	enum:Arch_Sta
 ARCH_STATE_IDLE	include/arch0arch.h	/^  ARCH_STATE_IDLE,$/;"	e	enum:Arch_State
 ARCH_STATE_INIT	include/arch0arch.h	/^  ARCH_STATE_INIT = 0,$/;"	e	enum:Arch_State
 ARCH_STATE_PREPARE_IDLE	include/arch0arch.h	/^  ARCH_STATE_PREPARE_IDLE,$/;"	e	enum:Arch_State
-ASMFLUSH	include/pmem_mmap_obj.h	34;"	d
+ASMFLUSH	include/pmem_mmap_obj.h	37;"	d
 ASSERT_ZERO	page/page0zip.cc	99;"	d	file:
 ASSERT_ZERO_BLOB	page/page0zip.cc	104;"	d	file:
 ATTRIB_USED_ONLY_IN_DEBUG	trx/trx0rec.cc	2372;"	d	file:
@@ -283,7 +283,7 @@ Buf_fetch_normal	buf/buf0buf.cc	/^  Buf_fetch_normal(const page_id_t &page_id, c
 Buf_fetch_normal	buf/buf0buf.cc	/^struct Buf_fetch_normal : public Buf_fetch<Buf_fetch_normal> {$/;"	s	file:
 Buf_fetch_other	buf/buf0buf.cc	/^  Buf_fetch_other(const page_id_t &page_id, const page_size_t &page_size)$/;"	f	struct:Buf_fetch_other
 Buf_fetch_other	buf/buf0buf.cc	/^struct Buf_fetch_other : public Buf_fetch<Buf_fetch_other> {$/;"	s	file:
-CACHE_LINE_SIZE	include/pmem_mmap_obj.h	33;"	d
+CACHE_LINE_SIZE	include/pmem_mmap_obj.h	36;"	d
 CACHE_MIN_IDLE_TIME_US	trx/trx0i_s.cc	827;"	d	file:
 CACHE_STORAGE_HASH_CELLS	trx/trx0i_s.cc	189;"	d	file:
 CACHE_STORAGE_INITIAL_SIZE	trx/trx0i_s.cc	187;"	d	file:
@@ -1556,7 +1556,7 @@ INITIAL	fts/fts0tlex.cc	499;"	d	file:
 INITIAL	include/fts0blex.h	268;"	d
 INITIAL	include/fts0tlex.h	267;"	d
 INITIAL	pars/lexyy.cc	958;"	d	file:
-INIT_LOG_FILE0	srv/srv0start.cc	329;"	d	file:
+INIT_LOG_FILE0	srv/srv0start.cc	333;"	d	file:
 INIT_SCANNING	handler/p_s.cc	/^  INIT_SCANNING,$/;"	e	enum:scan_pass	file:
 INIT_SIZE	srv/srv0tmp.cc	/^const uint32_t INIT_SIZE = 10;$/;"	m	namespace:ibt	file:
 INNOBASE_ALTER_DATA	handler/handler0alter.cc	/^static const Alter_inplace_info::HA_ALTER_FLAGS INNOBASE_ALTER_DATA =$/;"	v	file:
@@ -2627,6 +2627,8 @@ MutexPolicy	include/ib0mutex.h	/^  typedef Policy<OSTrackMutex> MutexPolicy;$/;"
 MutexPolicy	include/ib0mutex.h	/^  typedef Policy<TTASFutexMutex> MutexPolicy;$/;"	t	struct:TTASFutexMutex
 MutexType	include/sync0policy.h	/^  typedef Mutex MutexType;$/;"	t	class:BlockMutexPolicy
 MutexType	include/sync0policy.h	/^  typedef Mutex MutexType;$/;"	t	struct:GenericPolicy
+MyAllocator	include/pmem_mmap_obj.h	/^    MyAllocator() : p(data), sz(N) {}$/;"	f	struct:MyAllocator
+MyAllocator	include/pmem_mmap_obj.h	/^struct MyAllocator$/;"	s
 MySQL_datadir_path	fil/fil0fil.cc	/^Fil_path MySQL_datadir_path;$/;"	v
 NAME_CHAR_LEN_PARTITIONS_STR	handler/ha_innodb.cc	11455;"	d	file:
 NEG	include/pars0grm.h	/^  NEG = 349$/;"	e	enum:yytokentype
@@ -2652,7 +2654,8 @@ NUM_BITS_ULINT	include/srv0mon.h	543;"	d
 NUM_MONITOR	include/srv0mon.h	/^  NUM_MONITOR$/;"	e	enum:monitor_id_t
 NUM_RETRIES_ON_PARTIAL_IO	os/os0file.cc	/^static const ulint NUM_RETRIES_ON_PARTIAL_IO = 10;$/;"	v	file:
 NVDIMM_DEBUG_PRINT	include/buf0nvdimm.h	10;"	d
-NVDIMM_MMAP_FILE_NAME	include/pmem_mmap_obj.h	21;"	d
+NVDIMM_FILE_NAME	include/pmem_pmdk_obj.h	18;"	d
+NVDIMM_MMAP_FILE_NAME	include/pmem_mmap_obj.h	24;"	d
 N_COLS	include/dict0dict.h	/^  static constexpr unsigned N_COLS = N_USER_COLS + DATA_N_SYS_COLS;$/;"	m	class:DDTableBuffer
 N_DIFF_REQUIRED	dict/dict0stats.cc	138;"	d	file:
 N_FIELDS	include/dict0dict.h	/^  static constexpr unsigned N_FIELDS = METADATA_FIELD_NO + 1;$/;"	m	class:DDTableBuffer
@@ -3111,16 +3114,22 @@ PFS_SKIP_BUFFER_MUTEX_RWLOCK	include/sync0sync.h	76;"	d
 PFS_SKIP_EVENT_MUTEX	include/sync0sync.h	79;"	d
 PFX	dict/dict0stats.cc	2443;"	d	file:
 PFX_LEN	dict/dict0stats.cc	2444;"	d	file:
-PMEMMMAP_ERROR_PRINT	include/pmem_mmap_obj.h	28;"	d
-PMEMMMAP_INFO_PRINT	include/pmem_mmap_obj.h	24;"	d
+PMEMMMAP_ERROR_PRINT	include/pmem_mmap_obj.h	31;"	d
+PMEMMMAP_INFO_PRINT	include/pmem_mmap_obj.h	27;"	d
+PMEMPMDK_ERROR_PRINT	include/pmem_pmdk_obj.h	24;"	d
+PMEMPMDK_INFO_PRINT	include/pmem_pmdk_obj.h	20;"	d
 PMEM_FILE_PATH	srv/srv0start.cc	/^char  PMEM_FILE_PATH [PMEM_MMAP_MAX_FILE_NAME_LENGTH];$/;"	v
 PMEM_MMAP_LOGFILE_CKPT_LSN	include/pmem_mmap_obj.h	/^constexpr uint32_t PMEM_MMAP_LOGFILE_CKPT_LSN = 1;$/;"	v
 PMEM_MMAP_LOGFILE_HEADER_SZ	include/pmem_mmap_obj.h	/^constexpr uint32_t PMEM_MMAP_LOGFILE_HEADER_SZ = PMEM_MMAP_RECOVERY_FLAG$/;"	v
-PMEM_MMAP_MAX_FILE_NAME_LENGTH	include/pmem_mmap_obj.h	22;"	d
+PMEM_MMAP_MAX_FILE_NAME_LENGTH	include/pmem_mmap_obj.h	25;"	d
 PMEM_MMAP_MTRLOG_BUF	include/pmem_mmap_obj.h	/^typedef struct __pmem_mmap_mtrlog_buf PMEM_MMAP_MTRLOG_BUF;$/;"	t	typeref:struct:__pmem_mmap_mtrlog_buf
 PMEM_MMAP_MTRLOG_HDR	include/pmem_mmap_obj.h	/^typedef struct __pmem_mmap_mtrlog_hdr PMEM_MMAP_MTRLOG_HDR;$/;"	t	typeref:struct:__pmem_mmap_mtrlog_hdr
-PMEM_MMAP_MTRLOG_HDR_SIZE	include/pmem_mmap_obj.h	77;"	d
+PMEM_MMAP_MTRLOG_HDR_SIZE	include/pmem_mmap_obj.h	80;"	d
 PMEM_MMAP_RECOVERY_FLAG	include/pmem_mmap_obj.h	/^constexpr uint32_t PMEM_MMAP_RECOVERY_FLAG = 0;$/;"	v
+PMEM_MTRLOG_BUF	include/pmem_pmdk_obj.h	/^typedef struct __pmem_pmtrlog_buf PMEM_MTRLOG_BUF;$/;"	t	typeref:struct:__pmem_pmtrlog_buf
+PMEM_MTRLOG_HDR	include/pmem_pmdk_obj.h	/^typedef struct __pmem_pmtrlog_hdr PMEM_MTRLOG_HDR;$/;"	t	typeref:struct:__pmem_pmtrlog_hdr
+PMEM_MTRLOG_HDR_SIZE	include/pmem_pmdk_obj.h	39;"	d
+PMEM_WRAPPER	include/pmem_pmdk_obj.h	/^typedef struct __pmem_wrapper PMEM_WRAPPER;$/;"	t	typeref:struct:__pmem_wrapper
 PM_BIGGEST_TYPE	include/dict0mem.h	/^  PM_BIGGEST_TYPE = 3$/;"	e	enum:persistent_type_t
 PM_INDEX_CORRUPTED	include/dict0mem.h	/^  PM_INDEX_CORRUPTED = 1,$/;"	e	enum:persistent_type_t
 PM_SMALLEST_TYPE	include/dict0mem.h	/^  PM_SMALLEST_TYPE = 0,$/;"	e	enum:persistent_type_t
@@ -3510,7 +3519,7 @@ SRV_MAX_IO_CAPACITY_DUMMY_DEFAULT	include/srv0srv.h	531;"	d
 SRV_MAX_IO_CAPACITY_LIMIT	include/srv0srv.h	532;"	d
 SRV_MAX_N_IO_THREADS	include/srv0srv.h	624;"	d
 SRV_MAX_N_IO_THREADS	include/srv0srv.h	626;"	d
-SRV_MAX_N_PENDING_SYNC_IOS	srv/srv0start.cc	180;"	d	file:
+SRV_MAX_N_PENDING_SYNC_IOS	srv/srv0start.cc	184;"	d	file:
 SRV_NEW_RAW	include/fsp0file.h	/^  SRV_NEW_RAW,$/;"	e	enum:device_t
 SRV_NONE	include/srv0srv.h	/^  SRV_NONE,   \/*!< None *\/$/;"	e	enum:srv_thread_type
 SRV_NOT_RAW	include/fsp0file.h	/^  SRV_NOT_RAW = 0,$/;"	e	enum:device_t
@@ -4691,6 +4700,7 @@ _Noreturn	pars/pars0grm.cc	309;"	d	file:
 _Noreturn	pars/pars0grm.cc	311;"	d	file:
 _WIN32_WINNT	include/os0numa.h	58;"	d
 __PMEMMMAPOBJ_H_	include/pmem_mmap_obj.h	2;"	d
+__PMEMOBJ_H__	include/pmem_pmdk_obj.h	2;"	d
 __STDC_LIMIT_MACROS	fts/fts0blex.cc	78;"	d	file:
 __STDC_LIMIT_MACROS	fts/fts0tlex.cc	77;"	d	file:
 __STDC_LIMIT_MACROS	include/fts0blex.h	81;"	d
@@ -4699,6 +4709,9 @@ __STDC_LIMIT_MACROS	include/srv0mon.h	41;"	d
 __STDC_LIMIT_MACROS	pars/lexyy.cc	42;"	d	file:
 __pmem_mmap_mtrlog_buf	include/pmem_mmap_obj.h	/^struct __pmem_mmap_mtrlog_buf {$/;"	s
 __pmem_mmap_mtrlog_hdr	include/pmem_mmap_obj.h	/^struct __pmem_mmap_mtrlog_hdr {$/;"	s
+__pmem_pmtrlog_buf	include/pmem_pmdk_obj.h	/^struct __pmem_pmtrlog_buf {$/;"	s
+__pmem_pmtrlog_hdr	include/pmem_pmdk_obj.h	/^struct __pmem_pmtrlog_hdr {$/;"	s
+__pmem_wrapper	include/pmem_pmdk_obj.h	/^struct __pmem_wrapper {$/;"	s
 _gis0geo_h	include/gis0geo.h	30;"	d
 _mm_crc32_u64	ut/crc32.cc	/^ALWAYS_INLINE uint64_t _mm_crc32_u64(uint64_t __C, uint64_t __V) {$/;"	f
 _mm_crc32_u8	ut/crc32.cc	/^ALWAYS_INLINE uint32_t _mm_crc32_u8(uint32_t __C, uint32_t __V) {$/;"	f
@@ -4799,7 +4812,9 @@ age	include/trx0trx.h	/^  int32_t age;$/;"	m	struct:trx_t
 age_updated	include/trx0trx.h	/^  uint64_t age_updated;$/;"	m	struct:trx_t
 aggregate_already_fetched	include/row0sel.h	/^  ibool aggregate_already_fetched;$/;"	m	struct:sel_node_t
 alias	include/pars0sym.h	/^  sym_node_t *alias;       \/*!< pointer to$/;"	m	struct:sym_node_t
+aligned_alloc	include/pmem_mmap_obj.h	/^    T* aligned_alloc(std::size_t a = alignof(T))$/;"	f	struct:MyAllocator
 aligned_array_pointer	include/ut0new.h	/^class aligned_array_pointer : public aligned_memory<T_Type, T_Align_to> {$/;"	c
+aligned_memcpy	include/pmem_mmap_obj.h	/^inline char* aligned_memcpy (char* dst, const char* src, size_t len) {$/;"	f
 aligned_memory	include/ut0new.h	/^class aligned_memory {$/;"	c
 aligned_pointer	include/ut0new.h	/^class aligned_pointer : public aligned_memory<T_Type, T_Align_to> {$/;"	c
 aligned_t	include/ut0mpmcbq.h	/^      sizeof(cell_t), std::alignment_of<cell_t>::value>::type aligned_t;$/;"	t	class:mpmc_bq
@@ -6237,6 +6252,7 @@ cur_end	include/que0que.h	/^  ulint cur_end;             \/*!< QUE_CUR_NOT_DEFIN
 cur_node	fts/fts0que.cc	/^  fts_ast_node_t *cur_node; \/*!< Current tree node *\/$/;"	m	struct:fts_query_t	file:
 cur_node	include/fts0ast.h	/^  fts_ast_node_t *cur_node; \/*!< Current node into which$/;"	m	struct:fts_ast_state_t
 cur_offset	include/pmem_mmap_obj.h	/^	size_t cur_offset;$/;"	m	struct:__pmem_mmap_mtrlog_buf
+cur_offset	include/pmem_pmdk_obj.h	/^	size_t cur_offset;				\/\/ mtr_log current offset $/;"	m	struct:__pmem_pmtrlog_buf
 cur_on_row	include/que0que.h	/^  ibool cur_on_row;          \/*!< TRUE if cursor is on a row, i.e.,$/;"	m	struct:que_fork_t
 cur_page	include/lob0ins.h	/^  page_t *cur_page() const { return (buf_block_get_frame(m_cur_blob_block)); }$/;"	f	struct:lob::BaseInserter
 cur_pos	include/que0que.h	/^  ulint cur_pos;             \/*!< if there are n rows in the result$/;"	m	struct:que_fork_t
@@ -6268,6 +6284,8 @@ data	include/lock0prdt.h	/^  void *data; \/* Predicate data *\/$/;"	m	struct:loc
 data	include/log0recv.h	/^  recv_data_t *data;$/;"	m	struct:recv_t
 data	include/page0types.h	/^  page_zip_t *data; \/*!< compressed page data *\/$/;"	m	struct:page_zip_des_t
 data	include/pmem_mmap_obj.h	/^	char* data;$/;"	m	struct:__pmem_mmap_mtrlog_buf
+data	include/pmem_mmap_obj.h	/^    char data[N];$/;"	m	struct:MyAllocator
+data	include/pmem_pmdk_obj.h	/^	PMEMoid data; 						\/\/ mtr log data$/;"	m	struct:__pmem_pmtrlog_buf
 data	include/read0types.h	/^    const trx_id_t *data() const { return (m_ptr); }$/;"	f	class:ReadView::ids_t
 data	include/read0types.h	/^    trx_id_t *data() { return (m_ptr); }$/;"	f	class:ReadView::ids_t
 data	include/row0sel.h	/^  byte *data; \/*!< data, or NULL; if not NULL, this field$/;"	m	struct:sel_buf_t
@@ -8535,6 +8553,7 @@ g_engine	handler/p_s.cc	/^static const char *g_engine = "INNODB";$/;"	v	file:
 g_engine_length	handler/p_s.cc	/^static const size_t g_engine_length = 6;$/;"	v	file:
 gb_pm_mmap	pmem/pmem0mmap.cc	/^char* gb_pm_mmap;$/;"	v
 gb_pm_mmap_fd	pmem/pmem0mmap.cc	/^int gb_pm_mmap_fd;$/;"	v
+gb_pmw	pmem/pmem0wrapper.cc	/^PMEM_WRAPPER* gb_pmw = NULL;$/;"	v
 general_fetch	handler/ha_innodb.cc	/^int ha_innobase::general_fetch($/;"	f	class:ha_innobase
 general_space_name	include/fil0fil.h	/^static constexpr char general_space_name[] = "innodb_general";$/;"	v
 generic_indexer_t	include/ut0counter.h	/^struct generic_indexer_t {$/;"	s
@@ -10354,6 +10373,7 @@ is_marked	include/trx0purge.h	/^  bool is_marked() const { return (m_space_id_ma
 is_marked_space_empty	include/trx0purge.h	/^  bool is_marked_space_empty() const { return (m_marked_space_is_empty); }$/;"	f	class:undo::Truncate
 is_modified	include/row0upd.h	/^  bool is_modified(const ulint field_no) const {$/;"	f	struct:upd_t
 is_network_error	include/clone0clone.h	/^  bool is_network_error(int err) {$/;"	f	class:Clone_Task_Manager
+is_new	include/pmem_pmdk_obj.h	/^	bool is_new;$/;"	m	struct:__pmem_wrapper
 is_ngram	include/dict0mem.h	/^  bool is_ngram;$/;"	m	struct:dict_index_t
 is_ngram	include/fts0types.h	/^  bool is_ngram; \/*!< Whether it is a ngram parser *\/$/;"	m	struct:fts_doc_t
 is_ngram	include/row0merge.h	/^  bool is_ngram;             \/*!< true if it's ngram parser *\/$/;"	m	struct:index_def_t
@@ -10520,6 +10540,7 @@ len	include/log0recv.h	/^  ulint len;$/;"	m	struct:recv_sys_t
 len	include/log0recv.h	/^  ulint len;$/;"	m	struct:recv_t
 len	include/mem0mem.h	/^  ulint len;        \/*!< physical length of this block in bytes *\/$/;"	m	struct:mem_block_info_t
 len	include/pmem_mmap_obj.h	/^	unsigned long int len;$/;"	m	struct:__pmem_mmap_mtrlog_hdr
+len	include/pmem_pmdk_obj.h	/^  unsigned long int len;    \/\/ mtr_log length$/;"	m	struct:__pmem_pmtrlog_hdr
 len	include/row0ext.h	/^  ulint len[1]; \/*!< prefix lengths; 0 if not cached *\/$/;"	m	struct:row_ext_t
 len	include/row0sel.h	/^  ulint len;  \/*!< data length or UNIV_SQL_NULL *\/$/;"	m	struct:sel_buf_t
 length	include/lob0lob.h	/^  ulint length() const { return (m_stream.total_out); }$/;"	f	struct:lob::zReader
@@ -11112,6 +11133,7 @@ lru_hp	include/buf0buf.h	/^  LRUHp lru_hp;$/;"	m	struct:Cache_hint::buf_pool_t
 lru_len	include/buf0buf.h	/^  ulint lru_len;                     \/*!< Length of buf_pool->LRU *\/$/;"	m	struct:Cache_hint::buf_pool_info_t
 lru_scan_itr	include/buf0buf.h	/^  LRUItr lru_scan_itr;$/;"	m	struct:Cache_hint::buf_pool_t
 lsn	include/pmem_mmap_obj.h	/^	unsigned long int lsn;$/;"	m	struct:__pmem_mmap_mtrlog_hdr
+lsn	include/pmem_pmdk_obj.h	/^  unsigned long int lsn;    \/\/ start_lsn of log handler when this mtrlog is written$/;"	m	struct:__pmem_pmtrlog_hdr
 lsn_avg_rate	buf/buf0flu.cc	/^static lsn_t lsn_avg_rate = 0;$/;"	v	file:
 lsn_ctr_1_t	include/srv0srv.h	/^  typedef ib_counter_t<lsn_t, 1, single_indexer_t> lsn_ctr_1_t;$/;"	t	struct:srv_stats_t
 lsn_limit	buf/buf0flu.cc	/^  lsn_t lsn_limit;          \/*!< upper limit of LSN to be$/;"	m	struct:page_cleaner_t	file:
@@ -12647,6 +12669,7 @@ mutex	include/dict0mem.h	/^  SysMutex *mutex; \/*!< mutex protecting the info *\
 mutex	include/dict0mem.h	/^  ib_mutex_t *mutex;$/;"	m	struct:dict_table_t
 mutex	include/gis0type.h	/^  ib_mutex_t mutex;  \/*!< mutex protect the seq num *\/$/;"	m	struct:rtree_ssn
 mutex	include/lock0lock.h	/^  LockMutex mutex;              \/*!< Mutex protecting the$/;"	m	struct:lock_sys_t
+mutex	include/pmem_pmdk_obj.h	/^	PMEMmutex mutex;          \/\/ synchronization for accessing mtr log buffer$/;"	m	struct:__pmem_pmtrlog_buf
 mutex	include/row0ftsort.h	/^  ib_mutex_t mutex;                 \/*!< mutex for fts_doc_list *\/$/;"	m	struct:fts_psort_t
 mutex	include/sync0rw.h	/^  mutable ib_mutex_t mutex;$/;"	m	struct:rw_lock_t
 mutex	include/trx0sys.h	/^  TrxSysMutex mutex; \/*!< mutex protecting most fields in$/;"	m	struct:trx_sys_t
@@ -12713,6 +12736,8 @@ mutexes	include/hash0hash.h	/^    ib_mutex_t *mutexes; \/* NULL, or an array of 
 mvcc	include/trx0sys.h	/^  MVCC *mvcc;                   \/*!< Multi version concurrency control$/;"	m	struct:trx_sys_t
 my_error_innodb	handler/handler0alter.cc	/^static UNIV_COLD void my_error_innodb($/;"	f	file:
 my_gcolumn_templatecallback_t	handler/ha_innodb.h	/^typedef void (*my_gcolumn_templatecallback_t)(const TABLE *, void *);$/;"	t
+my_pmemobj	include/pmem_pmdk_obj.h	/^POBJ_LAYOUT_BEGIN(my_pmemobj);$/;"	v
+my_pmemobj	include/pmem_pmdk_obj.h	/^POBJ_LAYOUT_END(my_pmemobj);$/;"	v
 mysql_binlog_cache_pos	include/trx0roll.h	/^  int64_t mysql_binlog_cache_pos;$/;"	m	struct:trx_named_savept_t
 mysql_col_len	include/row0mysql.h	/^  ulint mysql_col_len;          \/*!< length of the column in the MySQL$/;"	m	struct:mysql_row_templ_t
 mysql_col_offset	include/row0mysql.h	/^  ulint mysql_col_offset;       \/*!< offset of the column in the MySQL$/;"	m	struct:mysql_row_templ_t
@@ -12912,6 +12937,7 @@ name	include/pars0pars.h	/^  const char *name;         \/*!< function name *\/$/
 name	include/pars0pars.h	/^  const char *name;    \/*!< name *\/$/;"	m	struct:pars_bound_lit_t
 name	include/pars0pars.h	/^  const char *name; \/*!< name *\/$/;"	m	struct:pars_bound_id_t
 name	include/pars0sym.h	/^  const char *name;              \/*!< name of an id *\/$/;"	m	struct:sym_node_t
+name	include/pmem_pmdk_obj.h	/^	char name[PMEM_MAX_FILE_NAME_LENGTH];$/;"	m	struct:__pmem_wrapper
 name	include/row0merge.h	/^  const char *name;          \/*!< index name *\/$/;"	m	struct:index_def_t
 name	include/trx0roll.h	/^  char *name;          \/*!< savepoint name *\/$/;"	m	struct:trx_named_savept_t
 name_hash	include/dict0mem.h	/^  hash_node_t name_hash;$/;"	m	struct:dict_table_t
@@ -12924,6 +12950,7 @@ need_page_lock	include/gis0type.h	/^  bool need_page_lock;$/;"	m	struct:rtr_info
 need_prdt_lock	include/gis0type.h	/^  bool need_prdt_lock;$/;"	m	struct:rtr_info
 need_rebuild	handler/handler0alter.cc	/^  bool need_rebuild() const { return (old_table != new_table); }$/;"	f	struct:ha_innobase_inplace_ctx
 need_recv	include/pmem_mmap_obj.h	/^	bool need_recv;$/;"	m	struct:__pmem_mmap_mtrlog_hdr
+need_recv	include/pmem_pmdk_obj.h	/^  bool need_recv;           \/\/ recovery flag$/;"	m	struct:__pmem_pmtrlog_hdr
 need_rename	handler/handler0alter.cc	/^  bool need_rename() const { return (m_conflict); }$/;"	f	class:alter_part_add	file:
 need_to_access_clustered	include/row0mysql.h	/^  unsigned need_to_access_clustered : 1;   \/*!< if we are fetching$/;"	m	struct:row_prebuilt_t
 needs_truncation	include/trx0purge.h	/^  bool needs_truncation() {$/;"	f	struct:undo::Tablespace
@@ -12946,6 +12973,7 @@ next	include/ha0storage.ic	/^  ha_storage_node_t *next; \/*!< next node in hash 
 next	include/lob0index.h	/^  buf_block_t *next() {$/;"	f	struct:lob::index_entry_t
 next	include/log0recv.h	/^  recv_data_t *next;$/;"	m	struct:recv_data_t
 next	include/pmem_mmap_obj.h	/^	size_t next;$/;"	m	struct:__pmem_mmap_mtrlog_hdr
+next	include/pmem_pmdk_obj.h	/^  size_t next;              \/\/ next mtr log header offset$/;"	m	struct:__pmem_pmtrlog_hdr
 next	include/ut0list.h	/^  ib_list_node_t *next; \/*!< next node *\/$/;"	m	struct:ib_list_node_t
 next	include/ut0lst.h	/^  Type *next; \/*!< pointer to next node,$/;"	m	struct:ut_list_node
 next	lock/lock0lock.cc	/^  ulint next() { return (++m_index); }$/;"	f	class:TrxLockIterator
@@ -13677,6 +13705,7 @@ override	handler/ha_innopart.h	/^  void update_create_info(HA_CREATE_INFO *creat
 override	handler/ha_innopart.h	/^  ~ha_innopart() override;$/;"	m	class:ha_innopart
 own_latch	include/trx0purge.h	/^  bool own_latch() {$/;"	f	class:undo::Tablespaces
 owns_mutex	include/trx0trx.h	/^  bool owns_mutex; \/*!< Set to the transaction that owns$/;"	m	struct:trx_t
+p	include/pmem_mmap_obj.h	/^    void* p;$/;"	m	struct:MyAllocator
 p_s_fill_lock_data	trx/trx0i_s.cc	/^void p_s_fill_lock_data(const char **lock_data, const lock_t *lock,$/;"	f
 p_s_h	handler/p_s.h	33;"	d
 pad	include/dict0mem.h	/^  ulint pad;       \/*!< number of bytes used as pad *\/$/;"	m	struct:zip_pad_info_t
@@ -14241,6 +14270,19 @@ pm_mmap_create	pmem/pmem0mmap.cc	/^char* pm_mmap_create(const char* path, const 
 pm_mmap_free	pmem/pmem0mmap.cc	/^void pm_mmap_free(const uint64_t pool_size) {$/;"	f
 pm_mmap_mtrlogbuf_alloc	pmem/pmem0mmap.cc	/^int pm_mmap_mtrlogbuf_alloc(const size_t size) {$/;"	f
 pm_mmap_mtrlogbuf_write	pmem/pmem0mmap.cc	/^ssize_t pm_mmap_mtrlogbuf_write( $/;"	f
+pm_pobjp_alloc_bytes	pmem/pmem0wrapper.cc	/^PMEMoid pm_pobjp_alloc_bytes(PMEMobjpool* pobjp, size_t size) {$/;"	f
+pm_pobjp_free	pmem/pmem0wrapper.cc	/^void pm_pobjp_free(PMEMobjpool* pobjp) {$/;"	f
+pm_pobjp_get_mtrlogbuf	pmem/pmem0pmdk.cc	/^PMEM_MTRLOG_BUF* pm_pobjp_get_mtrlogbuf(PMEMobjpool* pobjp) {$/;"	f
+pm_pobjp_mtrlogbuf_alloc	pmem/pmem0pmdk.cc	/^PMEM_MTRLOG_BUF* pm_pobjp_mtrlogbuf_alloc(PMEMobjpool* pobjp, const size_t size) {$/;"	f
+pm_pobjp_mtrlogbuf_realloc	pmem/pmem0pmdk.cc	/^PMEM_MTRLOG_BUF* pm_pobjp_mtrlogbuf_realloc(PMEMobjpool* pobjp, const size_t size) {$/;"	f
+pm_wrapper_create	pmem/pmem0wrapper.cc	/^PMEM_WRAPPER* pm_wrapper_create(const char *path, const size_t pool_size) {$/;"	f
+pm_wrapper_free	pmem/pmem0wrapper.cc	/^void pm_wrapper_free(PMEM_WRAPPER* pmw) {$/;"	f
+pm_wrapper_logbuf_realloc	pmem/pmem0pmdk.cc	/^int pm_wrapper_logbuf_realloc(PMEM_WRAPPER* pmw, const size_t size) {$/;"	f
+pm_wrapper_mtrlogbuf_alloc	pmem/pmem0pmdk.cc	/^int pm_wrapper_mtrlogbuf_alloc(PMEM_WRAPPER* pmw, const size_t size) {$/;"	f
+pm_wrapper_mtrlogbuf_get_logdata	pmem/pmem0pmdk.cc	/^void* pm_wrapper_mtrlogbuf_get_logdata(PMEM_WRAPPER* pmw){$/;"	f
+pm_wrapper_mtrlogbuf_write	pmem/pmem0pmdk.cc	/^ssize_t pm_wrapper_mtrlogbuf_write( $/;"	f
+pmtrlogbuf	include/pmem_pmdk_obj.h	/^	PMEM_MTRLOG_BUF *pmtrlogbuf;$/;"	m	struct:__pmem_wrapper
+pobjp	include/pmem_pmdk_obj.h	/^	PMEMobjpool *pobjp;$/;"	m	struct:__pmem_wrapper
 pointer	include/mem0mem.h	/^  typedef T *pointer;$/;"	t	class:mem_heap_allocator
 pointer	include/ut0new.h	/^  typedef T *pointer;$/;"	t	class:ut_allocator
 poll	os/os0file.cc	/^dberr_t LinuxAIOHandler::poll(fil_node_t **m1, void **m2, IORequest *request) {$/;"	f	class:LinuxAIOHandler
@@ -14311,6 +14353,7 @@ prepare_to_free_file	fil/fil0fil.cc	/^void Fil_shard::prepare_to_free_file(fil_n
 prepare_write	handler/handler0alter.cc	/^  void prepare_write(row_prebuilt_t *prebuilt, uint new_part_id) const {$/;"	f	class:Altered_partitions
 prepare_write	mtr/mtr0mtr.cc	/^ulint mtr_t::Command::prepare_write() {$/;"	f	class:mtr_t::Command
 prev	include/pmem_mmap_obj.h	/^	size_t prev;$/;"	m	struct:__pmem_mmap_mtrlog_hdr
+prev	include/pmem_pmdk_obj.h	/^  size_t prev;              \/\/ prev mtr log header offset $/;"	m	struct:__pmem_pmtrlog_hdr
 prev	include/ut0list.h	/^  ib_list_node_t *prev; \/*!< previous node *\/$/;"	m	struct:ib_list_node_t
 prev	include/ut0lst.h	/^  Type *prev; \/*!< pointer to the previous$/;"	m	struct:ut_list_node
 prev_node	include/que0que.h	/^  que_node_t *prev_node;   \/*!< pointer to the node from which$/;"	m	struct:que_thr_t
@@ -15007,6 +15050,7 @@ resurrected_trx_tables	trx/trx0trx.cc	/^static trx_table_map resurrected_trx_tab
 return_node_t	include/pars0pars.h	/^struct return_node_t {$/;"	s
 return_step	eval/eval0proc.cc	/^que_thr_t *return_step(que_thr_t *thr) \/*!< in: query thread *\/$/;"	f
 reusable_offset	include/pmem_mmap_obj.h	/^	size_t reusable_offset;$/;"	m	struct:__pmem_mmap_mtrlog_buf
+reusable_offset	include/pmem_pmdk_obj.h	/^  size_t reusable_offset;   \/\/ latest reusable log offset$/;"	m	struct:__pmem_pmtrlog_buf
 reverse	include/ut0lst.h	/^  void reverse() {$/;"	f	struct:ut_list_base
 reverse	include/ut0lst.h	/^  void reverse() {$/;"	f	struct:ut_list_node
 rewind	lock/lock0lock.cc	/^  void rewind() { m_index = 0; }$/;"	f	class:TrxLockIterator
@@ -16242,6 +16286,7 @@ size	include/fsp0file.h	/^  page_no_t size() const { return (m_size); }$/;"	f	cl
 size	include/ibuf0ibuf.ic	/^  ulint size;          \/*!< current size of the ibuf index$/;"	m	struct:ibuf_t	file:
 size	include/os0file.h	/^  os_offset_t size;            \/*!< file size in bytes *\/$/;"	m	struct:Encryption::AIO_mode::os_file_stat_t
 size	include/pmem_mmap_obj.h	/^	size_t size;$/;"	m	struct:__pmem_mmap_mtrlog_buf
+size	include/pmem_pmdk_obj.h	/^  size_t size; 							\/\/ mtr_log area size$/;"	m	struct:__pmem_pmtrlog_buf
 size	include/read0types.h	/^    ulint size() const { return (m_size); }$/;"	f	class:ReadView::ids_t
 size	include/trx0purge.h	/^  ulint size() { return (m_spaces.size()); }$/;"	f	class:undo::Tablespaces
 size	include/trx0types.h	/^  ulint size() const { return (m_rsegs.size()); }$/;"	f	class:TrxUndoRsegs
@@ -16436,8 +16481,8 @@ srv_get_task_queue_length	srv/srv0srv.cc	/^ulint srv_get_task_queue_length(void)
 srv_ibuf_disable_background_merge	ibuf/ibuf0ibuf.cc	/^bool srv_ibuf_disable_background_merge;$/;"	v
 srv_inc_activity_count	srv/srv0srv.cc	/^void srv_inc_activity_count(void) { srv_sys->activity_count.inc(); }$/;"	f
 srv_init	srv/srv0srv.cc	/^static void srv_init(void) {$/;"	f	file:
-srv_init_abort	srv/srv0start.cc	1738;"	d	file:
-srv_init_abort	srv/srv0start.cc	1741;"	d	file:
+srv_init_abort	srv/srv0start.cc	1742;"	d	file:
+srv_init_abort	srv/srv0start.cc	1745;"	d	file:
 srv_init_abort_low	srv/srv0start.cc	/^static dberr_t srv_init_abort_low(bool create_new_db,$/;"	f	file:
 srv_innodb_monitor_mutex	srv/srv0srv.cc	/^static ib_mutex_t srv_innodb_monitor_mutex;$/;"	v	file:
 srv_innodb_monitor_mutex_key	sync/sync0sync.cc	/^mysql_pfs_key_t srv_innodb_monitor_mutex_key;$/;"	v
@@ -16912,6 +16957,7 @@ sys_tables	include/dict0dict.h	/^  dict_table_t *sys_tables;  \/*!< SYS_TABLES t
 sys_tablespace_auto_extend_increment	fsp/fsp0sysspace.cc	/^ulong sys_tablespace_auto_extend_increment;$/;"	v
 sys_threads	srv/srv0srv.cc	/^  srv_slot_t *sys_threads; \/*!< server thread table *\/$/;"	m	struct:srv_sys_t	file:
 sys_virtual	include/dict0dict.h	/^  dict_table_t *sys_virtual; \/*!< SYS_VIRTUAL table *\/$/;"	m	struct:dict_sys_t
+sz	include/pmem_mmap_obj.h	/^    std::size_t sz;$/;"	m	struct:MyAllocator
 sz_of_offsets	include/dict0mem.h	/^  uint32_t sz_of_offsets;$/;"	m	class:rec_cache_t
 tab_def	include/dict0crea.h	/^  ins_node_t *tab_def;   \/*!< child node which does the insert of$/;"	m	struct:tab_node_t
 tab_lock	include/lock0priv.h	/^    lock_table_t tab_lock;$/;"	m	union:lock_t::__anon5
@@ -17584,6 +17630,7 @@ type	include/mem0mem.h	/^  ulint type;       \/*!< type of heap: MEM_HEAP_DYNAMI
 type	include/mtr0mtr.h	/^  ulint type;$/;"	m	struct:mtr_memo_slot_t
 type	include/os0file.h	/^  os_file_type_t type;         \/*!< file type *\/$/;"	m	struct:Encryption::AIO_mode::os_file_stat_t
 type	include/pars0pars.h	/^  ulint type;          \/*!< type, e.g. DATA_FIXBINARY *\/$/;"	m	struct:pars_bound_lit_t
+type	include/pmem_pmdk_obj.h	/^  PMEM_MTRLOG_TYPES type;   \/\/ mtr log type (insert, update, delete)$/;"	m	struct:__pmem_pmtrlog_hdr
 type	include/que0types.h	/^  ulint type;          \/*!< query node type *\/$/;"	m	struct:que_common_t
 type	include/row0mysql.h	/^  ulint type;                   \/*!< column type in Innobase mtype$/;"	m	struct:mysql_row_templ_t
 type	include/srv0srv.h	/^  srv_thread_type type;   \/*!< thread type: user,$/;"	m	struct:srv_slot_t

@@ -120,8 +120,11 @@ this program; if not, write to the Free Software Foundation, Inc.,
 #ifdef UNIV_NVDIMM_CACHE
 #include "buf0nvdimm.h"
 #include "pmem_mmap_obj.h"
+
 #ifdef UNIV_LOG_PMDK
 #include "pmem_pmdk_obj.h"
+extern PMEM_WRAPPER* gb_pmw;
+char  PMEM_PMDK_FILE_PATH [PMEM_MAX_FILE_NAME_LENGTH]; 
 #endif /* UNIV_LOG_PMDK */
 
 extern char* gb_pm_mmap;
@@ -1866,7 +1869,7 @@ dberr_t srv_start(bool create_new_db, const std::string &scan_directories) {
   /* Reset the start state. */
   srv_start_state = SRV_START_STATE_NONE;
 
-#ifdef UNIV_NVDIMM_CACHE
+#if defined(UNIV_NVDIMM_CACHE) && !defined(UNIV_LOG_PMDK) 
 	sprintf(PMEM_FILE_PATH, "%s/%s", srv_nvdimm_home_dir, NVDIMM_MMAP_FILE_NAME);
 	size_t srv_pmem_pool_size = 8 * 1024;
 	uint64_t pool_size = srv_pmem_pool_size * 1024 * 1024UL;
@@ -1874,6 +1877,18 @@ dberr_t srv_start(bool create_new_db, const std::string &scan_directories) {
   if (!gb_pm_mmap) {
     PMEMMMAP_ERROR_PRINT("gb_pm_mmap created failed  dir: %s\nsize: %zu\n", PMEM_FILE_PATH, pool_size);
 	  assert(gb_pm_mmap);
+	}
+#endif
+
+#ifdef UNIV_LOG_PMDK
+	sprintf(PMEM_PMDK_FILE_PATH, "%s/%s", srv_nvdimm_home_dir, NVDIMM_PMDK_FILE_NAME);
+	size_t srv_pmem_pool_size = 8*1024;
+	size_t pool_size = srv_pmem_pool_size * 1024 * 1024UL;
+	gb_pmw = pm_wrapper_create(PMEM_PMDK_FILE_PATH, pool_size);
+	assert(gb_pmw);
+	int check_pmem = pmemobj_check(PMEM_PMDK_FILE_PATH, POBJ_LAYOUT_NAME(my_pmemobj));
+	if(check_pmem == -1) {
+    PMEMPMDK_ERROR_PRINT("pmemobj_check faile dir: %s\nsize: %zu\n", PMEM_FILE_PATH, pool_size);
 	}
 #endif
 
@@ -2337,9 +2352,13 @@ dberr_t srv_start(bool create_new_db, const std::string &scan_directories) {
 
   ut_a(log_sys != nullptr);
 
-#ifdef UNIV_NVDIMM_CACHE
+#if defined(UNIV_NVDIMM_CACHE) && !defined(UNIV_LOG_PMDK)
   pm_mmap_mtrlogbuf_alloc(1024*1024*256);
 #endif /* UNIV_PMEM_MMAP */
+
+#ifdef UNIV_LOG_PMDK
+	pm_wrapper_mtrlogbuf_alloc(gb_pmw, 1024*1024*256);
+#endif
 
   /* Open all log files and data files in the system
   tablespace: we keep them open until database shutdown.
@@ -3364,9 +3383,13 @@ void srv_shutdown() {
   }
 
   // TODO(jhpark): change this location after the shutdown issue resolved.
-#ifdef UNIV_NVDIMM_CACHE
+#if defined(UNIV_NVDIMM_CACHE) && !defined(UNIV_LOG_PMDK)
   uint64_t srv_pmem_pool_size = 8 * 1024 * 1024 * 1024UL;
   pm_mmap_free(srv_pmem_pool_size);
+#endif
+
+#ifdef UNIV_LOG_PMDK
+	pm_wrapper_free(gb_pmw);
 #endif
 
   /* 2. Make all threads created by InnoDB to exit */

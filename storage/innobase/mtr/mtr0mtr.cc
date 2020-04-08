@@ -51,6 +51,11 @@ this program; if not, write to the Free Software Foundation, Inc.,
 extern char* gb_pm_mmap;
 #endif
 
+#ifdef UNIV_LOG_PMDK
+#include "pmem_pmdk_obj.h"
+extern PMEM_WRAPPER* gb_pmw;
+#endif
+
 static_assert(static_cast<int>(MTR_MEMO_PAGE_S_FIX) ==
                   static_cast<int>(RW_S_LATCH),
               "");
@@ -374,17 +379,19 @@ struct mtr_nvm_write_log_t {
 		if (block->used() == 0) {
 			return (true);
 		}
-		// write nvdimm mtr log buffer 
 
+#ifdef UNIV_LOG_PMDK
+		if (pm_wrapper_mtrlogbuf_write(gb_pmw, block->begin(), 
+                                    block->used(), m_lsn) <= 0){ 
+			PMEMPMDK_ERROR_PRINT("mlogbuf_write failed\n");
+    }
+#else
+		// write nvdimm mtr log buffer 
 		if (pm_mmap_mtrlogbuf_write(block->begin(), block->used(), m_lsn) <= 0) { 
 			PMEMMMAP_ERROR_PRINT("pm_mmap_mlogbuf_write failed\n");
 		}
+#endif
 		
-		// TODO(jhpark): add nvdimm mtr logging
-		//if (pm_wrapper_mtrlogbuf_write(gb_pmw, block->begin(), block->used(), m_lsn) <= 0){ 
-		//	PMEMOBJ_ERROR_PRINT("mlogbuf_write failed\n");
-		//}
-
 		m_left_to_write -= block->used();
 		return (true);
 	}
