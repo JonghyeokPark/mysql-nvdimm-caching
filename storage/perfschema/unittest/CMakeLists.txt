@@ -66,6 +66,8 @@ ADD_DEPENDENCIES(pfs_connect_attr-t GenServerSource)
 TARGET_LINK_LIBRARIES(pfs_connect_attr-t mytap perfschema)
 # We need to explicitly link in everything referenced in sql/sql_builtin.cc
 TARGET_LINK_LIBRARIES(pfs_connect_attr-t ${MYSQLD_STATIC_PLUGIN_LIBS})
+# (jhpark) : Add PMDK library 
+TARGET_LINK_LIBRARIES(pfs_connect_attr-t ${NVM_LIB_PMEMOBJ} ${NVM_LIB_PMEM})
 TARGET_LINK_LIBRARIES(pfs_connect_attr-t sql_main binlog rpl master slave)
 TARGET_LINK_LIBRARIES(pfs_connect_attr-t sql_main sql_dd sql_gis sql_main sql_dd)
 TARGET_LINK_LIBRARIES(pfs_connect_attr-t mysys mysys_ssl)

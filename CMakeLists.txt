@@ -20,6 +20,10 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301  USA
 
+# (jhpark) : Add PMDK library 
+SET(NVM_LIB_PMEM pmem)
+SET(NVM_LIB_PMEMOBJ pmemobj)
+
 IF(WIN32)
   # CMake 3.8.0 is needed for Visual Studio 2017 and x64 toolset.
   CMAKE_MINIMUM_REQUIRED(VERSION 3.8.0)
@@ -599,7 +603,10 @@ IF(WIN32)
   # which does not use gold. Thus, default to off to save the test.
   OPTION(USE_LD_GOLD "Use GNU gold linker" OFF)
 ELSE()
-  OPTION(USE_LD_GOLD "Use GNU gold linker" ON)
+# (jhpark): I observed that GNU gold linker doesn't detect the PMDK library
+#           Thus I decided to turn off gold linker in PMDK version.
+  OPTION(USE_LD_GOLD "Use GNU gold linker" OFF)
+  #OPTION(USE_LD_GOLD "Use GNU gold linker" ON)
 ENDIF()
 
 IF(CMAKE_SYSTEM_NAME MATCHES "Linux")

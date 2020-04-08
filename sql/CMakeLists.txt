@@ -680,7 +680,8 @@ ADD_DEPENDENCIES(sql_main GenBootstrapPriv)
 ADD_DEPENDENCIES(sql_main GenSysSchema)
 TARGET_LINK_LIBRARIES(sql_main ${MYSQLD_STATIC_PLUGIN_LIBS} 
   ${MYSQLD_STATIC_COMPONENT_LIBS}  mysys mysys_ssl dbug strings vio
-  binlogevents_static ${LIBWRAP} ${LIBCRYPT} ${LIBDL} ${SSL_LIBRARIES})
+# (jhpark) : Add PMDK library
+  binlogevents_static ${LIBWRAP} ${LIBCRYPT} ${LIBDL} ${SSL_LIBRARIES} ${NVM_LIB_PMEMOBJ} ${NVM_LIB_PMEM})
 
 ADD_CONVENIENCE_LIBRARY(sql_gis ${SQL_GIS_SOURCES})
 ADD_DEPENDENCIES(sql_gis GenServerSource)

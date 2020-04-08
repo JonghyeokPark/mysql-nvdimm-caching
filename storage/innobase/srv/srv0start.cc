@@ -120,6 +120,10 @@ this program; if not, write to the Free Software Foundation, Inc.,
 #ifdef UNIV_NVDIMM_CACHE
 #include "buf0nvdimm.h"
 #include "pmem_mmap_obj.h"
+#ifdef UNIV_LOG_PMDK
+#include "pmem_pmdk_obj.h"
+#endif /* UNIV_LOG_PMDK */
+
 extern char* gb_pm_mmap;
 char  PMEM_FILE_PATH [PMEM_MMAP_MAX_FILE_NAME_LENGTH];
 #endif /* UNIV_NVDIMM_CACHE */
