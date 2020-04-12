@@ -176,6 +176,8 @@
 ./read/read0read.cc
 ./api/api0misc.cc
 ./api/api0api.cc
+./pmem/pmem0pmdk.cc
+./pmem/pmem0wrapper.cc
 ./pmem/pmem0mmap.cc
 ./ut/ut0rbt.cc
 ./ut/ut0new.cc
@@ -402,6 +404,7 @@
 ./include/lock0prdt.h
 ./include/data0types.h
 ./include/page0zip.h
+./include/pmem_pmdk_obj.h
 ./include/lob0first.h
 ./include/buf0flu.h
 ./include/lob0del.h
